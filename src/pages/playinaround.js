@@ -125,14 +125,6 @@ const LoveBombBaby = ({setfilm}) => {
                             </div>
                             <h2 className='p-2  text-black text-H2'>DIRECTOR WRITER CO-EDITOR</h2>
                             <p className='text-body text-black '> Determined to buy the perfect gift for her little brother, a young woman must fight her way through crazed customers at a toy store turned madhouse.</p>
-                            {credit_names[filmState - 1] && credit_names[filmState - 1].map((name, index) => (
-                                <div key={index}>
-                                <p>{name}</p>
-                                {index === 0 && <p>Director</p>}
-                                {index === 4 && <p>Producer</p>}
-                                {index === 5 && <p>Stunt Coordinator</p>}
-                              </div>
-                            ))}
 
                         </div>
                     </div>
