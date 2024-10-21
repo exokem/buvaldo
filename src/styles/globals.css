@@ -18,16 +18,143 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background: white;
+   
+  padding: 0;
+
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+body {
+  margin: 0;
+  font-family: Lato,-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.gradient {
+  background:linear-gradient(180deg, #F8F5FF 0%, #7C7D9D 100%);
+}
+
+.white_gradient {
+  background:linear-gradient(180deg, #FFFFFF 0%, rgba(204, 204, 204, 0.4) 50%, rgba(153, 153, 153, 0) 100%);
+}
+
+.unselectable {
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+
+  /*
+    Introduced in IE 10.
+    See http://ie.microsoft.com/testdrive/HTML5/msUserSelect/
+  */
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.unclickable {
+  pointer-events: none;
+}
+
+#container {
+  display: flex;
+  flex-direction: column; 
+  overflow: auto;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; 
+}
+
+.slide {
+  transform: translate(105px);
+  transform: scale(0.8);
+}
+
+
+.glow-box_lbb {
+  box-shadow: 0 0 50px 20px #cca1c788, 
+              0 0 70px 30px rgba(255, 255, 255, 0.6), 
+              0 0 100px 40px rgba(255, 255, 255, 0.4);
+  border-radius: 10px; 
+}
+
+.glow {
+  background: rgba(255, 255, 255, 0.56); /* Semi-transparent background */
+
+}
+
+.bg_purple {
+  background-color: #4B4C6F;
+}
+
+/* .glow-box {
+  box-shadow: 0 0 50px 20px rgba(255, 255, 255, 0.8), 
+              0 0 70px 30px rgba(255, 255, 255, 0.6), 
+              0 0 100px 40px rgba(255, 255, 255, 0.4);
+} */
+.glow-box {
+  background: rgba(255, 255, 255, 0.862); /* Semi-transparent background */
+  box-shadow: 0 0 50px 20px rgba(255, 255, 255, 0.8), 
+              0 0 70px 30px rgba(255, 255, 255, 0.6), 
+              0 0 100px 40px rgba(255, 255, 255, 0.4);
+  border-radius: 10px; /* Optional: adds smooth edges */
+}
+
+.white_gradient2 {
+  background:linear-gradient(0deg, #FFFFFF 0%, rgba(204, 204, 204, 0.4) 50%, rgba(153, 153, 153, 0) 100%);
+}
+
+.blur_ {
+  backdrop-filter: blur(20px);
+}
+
+.gradient_yellow {
+  background: linear-gradient(90deg, #FBFF43 61.5%, rgba(255, 255, 255, 0) 100%);
+}
+
+
+.gradient_yellow_2 {
+  background: linear-gradient(180deg, #FBFF43 61.5%, rgba(255, 255, 255, 0) 100%);
+}
+
+.playin_around {
+  background: linear-gradient(180deg, rgba(219, 246, 255, 0) 0%, #DBF6FF 25%, #DBF6FF 75%, rgba(219, 246, 255, 0) 100%); filter: blur(16px); border-radius: 20px;
+}
+
+.green_gradient {
+  background: linear-gradient(90deg, #0CFE09 61.5%, rgba(255, 255, 255, 0) 100%);
+}
+
+.pink_grad {
+  background: linear-gradient(90deg, #FD34DA 61.5%, rgba(255, 255, 255, 0) 100%);
+}
+
+.blue {
+  background: linear-gradient(180deg, #FFFFFF 0%, #98D8F4 100%), linear-gradient(180deg, #FFFFFF 0%, #7C7D9D 100%);
+}
+
+.blue-bg {
+  background-color: #98D8F4;
+}
+
+.no-click {
+  pointer-events: none;
+}
+
+.click {
+  pointer-events: auto;
 }
