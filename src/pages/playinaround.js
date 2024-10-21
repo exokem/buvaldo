@@ -5,7 +5,7 @@ import useScrollSnap from '../useScrollSnap'
 import Footer from '@/components/Footer'
 import { useRouter } from 'next/router'
 
-const lovebombbaby = ({setfilm}) => {
+const LoveBombBaby = ({setfilm}) => {
     const router = useRouter()
 
     const [state, setState] = useState(0)
@@ -307,4 +307,4 @@ const Menu = ({film, scroll, setScroll,}) => {
   )
 }
 
-export default lovebombbaby
+export default LoveBombBaby
