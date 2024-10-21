@@ -300,7 +300,7 @@ const Menu = ({film, scroll, setScroll,}) => {
                     <h2 key={index} className={`${film === 1 ? scroll[0] === index && "green_gradient w-fit pr-10 pl-1 text-bold text-black" : scroll[0] === index && "text-pink"}`} onClick={() => setScroll([index, 1])}>
                         {item}
                     </h2>
-                ))
+                )) 
             }
         </div>
        
