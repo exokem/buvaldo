@@ -296,7 +296,11 @@ const Menu = ({film, scroll, setScroll,}) => {
         </div> */}
         <div className='cursor-pointer flex flex-col justify-between gap-5 text-sm lg:text-body'>
             {
-                menuItems[film - 1].map((item,index)=><h2 className={`${film === 1 ? scroll[0] === index && "green_gradient w-fit pr-10 pl-1 text-bold text-black": scroll[0] === index && "text-pink"}`} onClick={()=>setScroll([index,1])}>{item}</h2>)
+                menuItems[film - 1].map((item, index) => (
+                    <h2 key={index} className={`${film === 1 ? scroll[0] === index && "green_gradient w-fit pr-10 pl-1 text-bold text-black" : scroll[0] === index && "text-pink"}`} onClick={() => setScroll([index, 1])}>
+                        {item}
+                    </h2>
+                ))
             }
         </div>
        
