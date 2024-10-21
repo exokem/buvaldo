@@ -120,11 +120,11 @@ const LoveBombBaby = ({setfilm}) => {
                         <img className={`w-96`} src='/Website_Photos/New Photos 240722/ComingSoonPoster.jpg'/>
                         <div className={` text-white absolute ${filmState === 1 ? "flex" : "hidden"} h-64 w-full left-[500px] flex flex-col justify-center gap-10 ${animation[2]}`}>
                         <div className='flex flex-col'>
-                                <h1 className=' text-[25px] text-black lg:text-menu'>PLAYIN' AROUND</h1>
+                                <h1 className=' text-[25px] text-black lg:text-menu'>PLAYIN&apos; AROUND</h1>
                                 <h2 className='text-[12px] text-black lg:text-body'>Short / 10m 3s / Action Comedy / 2024</h2>
                             </div>
                             <h2 className='p-2  text-black text-H2'>DIRECTOR WRITER CO-EDITOR</h2>
-                            <p className='text-body text-black '> Determined to buy the perfect gift for her little brother&apos;s, a young woman must fight her way through crazed customers at a toy store turned madhouse.</p>
+                            <p className='text-body text-black '> Determined to buy the perfect gift for her little brother, a young woman must fight her way through crazed customers at a toy store turned madhouse.</p>
 
                         </div>
                     </div>
@@ -159,7 +159,7 @@ const LoveBombBaby = ({setfilm}) => {
                         <img src={timelines[filmState-1]} className='w-full lg:w-[60rem]'/>
                         </div>
                         <div className='text-[20px] text-center w-[60rem] flex justify-center text-black'>
-                            <h1>Timeline for Playin' Around
+                            <h1>Timeline for Playin&apos; Around
                         <br/>Edited by Bryan Uvaldo</h1>
                     </div>
                     <div className={`${filmState === 2 ? "":""} glow-box mb-10 mt-10`}>

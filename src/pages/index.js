@@ -51,7 +51,7 @@ export default function Home() {
       <Parallax opacity={[70,0,'easeOutQuad']} >
         <div className="w-full h-1/2 flex justify-center">
           <div className="mt-20 flex w-1/2  h-full left-[25%] top-[60%] text-black bg-yellow  p-10 glow-box flex flex-col text-[20px] rounded " style={{opacity:"calc(1-var(--progress))"}}>
-            <p>Bryan Uvaldo, a Brazilian-American filmmaker and NYU Tisch graduate, is set to debut his action short Love Bomb Baby this year, followed by his thesis film Playin’ Around next year. With ten short films and HBO Max promos edited, he's now lead editor on a feature film. After interning at Warner Brothers Discovery in 2022, Bryan aims to leverage his post-production experience to become a blockbuster director.</p>
+            <p>Bryan Uvaldo, a Brazilian-American filmmaker and NYU Tisch graduate, is set to debut his action short Love Bomb Baby this year, followed by his thesis film Playin&apos Around next year. With ten short films and HBO Max promos edited, he's now lead editor on a feature film. After interning at Warner Brothers Discovery in 2022, Bryan aims to leverage his post-production experience to become a blockbuster director.</p>
             <div className="flex flex-col items-center">
               Scroll to view films
               <FaArrowCircleDown size={"40px"}/>
