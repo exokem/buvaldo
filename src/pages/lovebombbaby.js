@@ -138,10 +138,13 @@ const LoveBombBaby = ({setfilm}) => {
                         <div className='text-[10px] w-auto'>
                             <p>PRIVATE LINK AVAILABLE UPON REQUEST</p>
                         </div>
-                        {credit_names[filmState-1].map((name, index) => (
-                           <div key={index}>
-                             {name}
-                             </div>
+                        {credit_names[filmState - 1].map((name, index) => (
+                            <div key={index}>
+                            <p>{name}</p>
+                            {index === 0 && <p>Director</p>}
+                            {index === 4 && <p>Producer</p>}
+                            {index === 5 && <p>Stunt Coordinator</p>}
+                            </div>
                         ))}
                     </div>
                 </div>
