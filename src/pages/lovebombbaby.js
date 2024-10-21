@@ -239,7 +239,12 @@ const LoveBombBaby = ({setfilm}) => {
                                 <div className=' h-full w-1/3 flex flex-col'>
                                     <img src={credit_images[2][0]} className=' glow-box_lbb object-cover h-full'/>
                                     <div className='flex flex-col justify-center items-center'>
-                                        <p className='text-lg'>{credit_names[filmState-1][3]}</p>
+                                        <p className='text-lg'>{credit_names[filmState - 1].map((name, index) => (
+                                            <div key={index}>
+                                                {name}
+                                            </div>
+                                        ))}
+                                            </p>
                                         <p className='text-lg'>Director</p>
                                     </div>
                                 </div>

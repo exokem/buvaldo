@@ -276,10 +276,18 @@ const Menu = ({film, scroll, setScroll,}) => {
             <h2 className='text-[12px] lg:text-body'>{description[film-1]}</h2>
         </div>
         <div className='cursor-pointer flex flex-col justify-between gap-1 text-sm lg:text-body'>
-            {
-                menuItems[film - 1].map((item,index)=><h2 className={`${film === 1 ? scroll[0] === index && "text-blue": scroll[0] === index && "text-pink"}`} onClick={()=>setScroll([index,1])}>{item}</h2>)
-            }
-        </div>
+    {
+        menuItems[film - 1].map((item, index) => (
+            <h2 
+                key={`menu-item-${index}`}
+                className={`${film === 1 ? scroll[0] === index && "text-blue" : scroll[0] === index && "text-pink"}`} 
+                onClick={() => setScroll([index, 1])}
+            >
+                {item}
+            </h2>
+        ))
+    }
+</div>
        
     </div>
     }
