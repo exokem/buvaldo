@@ -139,7 +139,7 @@ const LoveBombBaby = ({setfilm}) => {
                             <p>PRIVATE LINK AVAILABLE UPON REQUEST</p>
                         </div>
                         {credit_names[filmState-1].map((name, index) => (
-                           <div key={index}>
+                           <div key={index}>  {/* Added key prop */}
                              {name}
                              </div>
                         ))}
@@ -262,15 +262,14 @@ const LoveBombBaby = ({setfilm}) => {
                                         <p className='text-lg'>Stunt Coordinator</p>
                                     </div>
                                     {credit_images[filmState-1].map((image, index) => (
-                                        <img key={index} src={image} alt={`Credit ${index}`} />
+                                        <img key={index} src={image} alt={`Credit ${index}`} />  /* Added key prop */
                                     ))}
                                     {images[filmState-1].map((imageSet, setIndex) => (
-                                      <div key={`set-${setIndex}`}>
-                                          {imageSet.map((image, imageIndex) => (
-                                            <img key={`image-${setIndex}-${imageIndex}`} src={image} alt=
-                                            {`Image ${imageIndex}`} />
-                                        ))}
-                                        </div>
+                                       <div key={`set-${setIndex}`}>  {/* Added key prop */}
+                                       {imageSet.map((image, imageIndex) => (
+                                           <img key={`image-${setIndex}-${imageIndex}`} src={image} alt={`Image ${imageIndex}`} />  
+                                       ))}
+                                   </div>
                                     ))}
                                 </div>
                                 
