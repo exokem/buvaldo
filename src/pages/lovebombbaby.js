@@ -303,7 +303,11 @@ const Menu = ({film, scroll, setScroll,}) => {
         </div>
         <div className='cursor-pointer flex flex-col justify-between gap-1 text-sm lg:text-body'>
             {
-                menuItems[film - 1].map((item,index)=><h2 className={`${film === 1 ? scroll[0] === index && "text-blue": scroll[0] === index && "text-bold pink_grad  pr-8 pl-1 w-fit text-[#2D2D34]"}`} onClick={()=>setScroll([index,1])}>{item}</h2>)
+                menuItems[film - 1].map((item, index) => 
+                    <h2 key={index} className={`${film === 1 ? scroll[0] === index && "text-blue": scroll[0] === index && "text-bold pink_grad  pr-8 pl-1 w-fit text-[#2D2D34]"}`} 
+                        onClick={() => setScroll([index, 1])}>
+                        {item}
+                    </h2>) 
             }
         </div>
        
