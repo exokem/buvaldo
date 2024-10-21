@@ -6,112 +6,307 @@ import Footer from '@/components/Footer'
 import { useRouter } from 'next/router'
 
 const LoveBombBaby = ({setfilm}) => {
-  const router = useRouter()
-  const [state, setState] = useState(0)
-  const [filmState, setFilmState] = useState(2)
-  const images = [
-    [
-      ["/Website_Photos/DSC08452.jpeg","/Website_Photos/New Photos 240722/PA_Still00.jpeg"],
-      ["/Website_Photos/DSC08780.jpeg","/Website_Photos/Playin Around BTS @RSBMedia.us -150.jpeg","/Website_Photos/DSC08475.JPG","/Website_Photos/Playin Around BTS @RSBMedia.us -176.jpeg","/Website_Photos/DSC09330.JPG"]
-    ],
-    [
-      ["/Website_Photos/New Photos 240722/LBB_Still001.jpeg","/Website_Photos/New Photos 240722/LBB_Still003.jpeg","/Website_Photos/New Photos 240722/LBB_Still006.jpeg"],
-      ["/Website_Photos/ARI07462-1.jpg","/Website_Photos/LBB_7.4.jpg","/Website_Photos/LOWRES_BTS_3.jpg","/Website_Photos/ARI06897-1.jpg"]
-    ]
-  ]
-  const credit_images = [
-    ["/Website_Photos/Cast_Q1.jpg", "/Website_Photos/Cast_K1.jpg","/Website_Photos/Cast_A1.jpg","/Website_Photos/concept4bryanCOLOR+.jpg"],
-    [],
-    ["/Website_Photos/Crew_b4.jpg","/Website_Photos/Crew_m5.jpg","/Website_Photos/Crew_i3.jpg"]
-  ]
-  const credit_names = [[""],["Quinn Bringelson","Kat Capili","Amanda Whyte","Bryan Uvaldo","Maggie Soik","Ian Dugan"]]
-  const timelines = ["/Website_Photos/240701 Picture Lock.png","/Website_Photos/New Photos 240722/LBB_Final Timeline.jpeg"]
-  const [scrollState, setScroll] = useState([0,0])
-  
-  const handleScroll =(x)=>{
+    const router = useRouter()
+
+    const [state, setState] = useState(0)
+    const [filmState, setFilmState] = useState(2)
+    const images = [
+        [
+          ["/Website_Photos/DSC08452.jpeg","/Website_Photos/New Photos 240722/PA_Still00.jpeg"],
+          ["/Website_Photos/DSC08780.jpeg","/Website_Photos/Playin Around BTS @RSBMedia.us -150.jpeg","/Website_Photos/DSC08475.JPG","/Website_Photos/Playin Around BTS @RSBMedia.us -176.jpeg","/Website_Photos/DSC09330.JPG"]
+        ],
+        [
+          ["/Website_Photos/New Photos 240722/LBB_Still001.jpeg","/Website_Photos/New Photos 240722/LBB_Still003.jpeg","/Website_Photos/New Photos 240722/LBB_Still006.jpeg"],
+          ["/Website_Photos/ARI07462-1.jpg","/Website_Photos/LBB_7.4.jpg","/Website_Photos/LOWRES_BTS_3.jpg","/Website_Photos/ARI06897-1.jpg"]
+        ]
+      ]
+
+    const credit_images = [
+        ["/Website_Photos/Cast_Q1.jpg", "/Website_Photos/Cast_K1.jpg","/Website_Photos/Cast_A1.jpg","/Website_Photos/concept4bryanCOLOR+.jpg"],
+        [],
+        ["/Website_Photos/Crew_b4.jpg","/Website_Photos/Crew_m5.jpg","/Website_Photos/Crew_i3.jpg"]
+      ]
+
+    const credit_names = [[""],["Quinn Bringelson","Kat Capili","Amanda Whyte","Bryan Uvaldo","Maggie Soik","Ian Dugan"]]
+    const timelines = ["/Website_Photos/240701 Picture Lock.png","/Website_Photos/New Photos 240722/LBB_Final Timeline.jpeg"]
+    const [scrollState, setScroll] = useState([0,0])
+      
+    const handleScroll =(x)=>{
     const height = window.screen.height * 0.8
     const pos = containerRef.current.scrollTop
-    setScroll([Math.floor(pos/height), x])
-  }
-  
-  useEffect(()=>{
-    scrollState[1] && elements[scrollState[0]].current?.scrollIntoView({ behavior: "smooth" })
-  },[scrollState])
-  
-  const [animation,setAnimation] = useState(["",""])
-  const containerRef = useRef(null);
-  const elements = [useRef(null),useRef(null),useRef(null),useRef(null),useRef(null)]
-  
-  const [bind, unbind] = useScrollSnap(
-    containerRef,
-    {
-      snapDestinationY: '100vh',
-      timeout: 0,
-      duration: 100,
-      threshold: 0.2,
-      snapStop: false
-    },
-    () => handleScroll(0)
-  );
-  
-  function handleClick(next) {
-    if(state === next) return
-    if(next === 1){
-      setAnimation(["animate-slide_film","animate-vanish"])
-      setTimeout(() => { setFilmState(1) },800);
-    } else if(next === 2){
-      setAnimation(["animate-vanish","animate-slide_film_2"])
-      setTimeout(() => { setFilmState(2) }, 800);
-    } else {
-      setAnimation(["animate-slide_film_r","animate-appear"])
-      setTimeout(() => { setFilmState(0) }, 800);
+        setScroll([Math.floor(pos/height), x])
     }
-  }
-  
-  const handleClickM = (next) => {
-    if(state === next) return
-    if(next === 1){
-      setFilmState(1)
-      setfilm(1)
-    } else if(next === 2){
-      setFilmState(2)
-    } else {
-      setFilmState(0)
-    }
-  }
-  
+
+    useEffect(()=>{
+        scrollState[1] && elements[scrollState[0]].current?.scrollIntoView({ behavior: "smooth" })
+    },[scrollState])
+   
+
+      const [animation,setAnimation] = useState(["",""])
+      const containerRef = useRef(null);
+      const elements = [useRef(null),useRef(null),useRef(null),useRef(null),useRef(null)]
+      
+      const [bind, unbind] = useScrollSnap(
+        containerRef,
+        {
+          snapDestinationY: '100vh',
+          timeout: 0,
+          duration: 100,
+          threshold: 0.2,
+          snapStop: false
+        },
+        () => handleScroll(0)
+      );
+
+ 
+      function handleClick(next) {
+        if(state === next) return
+        if(next === 1){
+          setAnimation(["animate-slide_film","animate-vanish"])
+          setTimeout(() => { setFilmState(1) },800);
+        } else if(next === 2){
+          setAnimation(["animate-vanish","animate-slide_film_2"])
+          setTimeout(() => { setFilmState(2) }, 800);
+        } else {
+          setAnimation(["animate-slide_film_r","animate-appear"])
+          setTimeout(() => { setFilmState(0) }, 800);
+        }
+      }
+
+      const handleClickM = (next) => {
+        if(state === next) return
+        if(next === 1){
+          setFilmState(1)
+          setfilm(1)
+        } else if(next === 2){
+          setFilmState(2)
+        } else {
+          setFilmState(0)
+        }
+      }
+ 
   return (
-    <div>
-      {/* Your JSX here */}
-      <div>
-        Determined to buy the perfect gift for her little brother, a young woman must fight her way through crazed customers at a toy store turned madhouse.
-      </div>
-      <div>
-        After catching her cheating girlfriend, a fiery, drunk woman beats up an entire Halloween college party--all while prioritizing which booze is in her hand.
-      </div>
-      <div>
-        PRIVATE LINK AVAILABLE UPON REQUEST
-      </div>
-      {credit_names[filmState-1].map((name, index) => (
-        <div key={index}>
-          {name}
+    <div ref={containerRef} id="container" className='static lg:absolute h-[200vh] md:h-[400vh]'>
+    {/* <div ref={elements[0]} className={`${(filmState === 0 ? "gradient": filmState === 2 ? "bg-bg2 ":"bg-bg1" )} h-screen w-auto`}> */}
+    <div ref={elements[0]} className={`${(filmState === 0 ? "none": filmState === 2 ? "bg-bg2 ":"bg-bg1" )} h-screen w-auto`}>
+        <Nav/>
+        <div className='fixed top-[20%] xl:top-[30%] w-1/3 lg:w-1/4 flex items-center pl-10 z-[3] md:block hidden'>
+                <Menu film={filmState} scroll={scrollState} setScroll={setScroll}/>
         </div>
-      ))}
-      <div>Director</div>
-      <div>Producer</div>
-      <div>Stunt Coordinator</div>
-      {credit_images[filmState-1].map((image, index) => (
-        <img key={index} src={image} alt={`Credit ${index}`} />
-      ))}
-      {images[filmState-1].map((imageSet, setIndex) => (
-        <div key={`set-${setIndex}`}>
-          {imageSet.map((image, imageIndex) => (
-            <img key={`image-${setIndex}-${imageIndex}`} src={image} alt={`Image ${imageIndex}`} />
-          ))}
+        {/* <div className={`${filmState > 0 && "white_gradient"} p-10 pb-5 pt-5`}>
+            <Nav box={2} state={state} setState={setState} setFilmState={setFilmState}/>
+        </div> */}
+        <div className={`block lg:hidden flex ${filmState == 0 ? "justify-around " : "justify-end"} px-10 pb-10`}>
+            {
+            filmState === 0 &&  <img className={`w-80`} src='/Website_Photos/_32A6359.jpeg' onClick={()=>handleClickM(1)}/>
+            }
+            {
+                filmState === 1 ? <img className={`w-80`} src='/Website_Photos/_32A6359.jpeg' onClick={()=>handleClickM(1)}/> :  <img className={`w-80`} src='Website_Photos/IMG_7286.png' onClick={()=>handleClick(2)}/>
+            }
         </div>
-      ))}
-      {/* Rest of your JSX */}
+
+        <div className='p-10 pt-0 hidden h-screen lg:block pb-20'>
+            <div className='flex justify-center  items-center w-full'>
+                <div className={`unselectable flex items-center relative z-[0] ${filmState === 1 && "glow-box"} ${animation[0]} ${filmState != 0 && "unclickable"} `} onClick={()=>handleClick(1)}>
+                    {/* <img className={`w-96`} src='/Website_Photos/_32A6359.jpeg'/> */}
+                    <div className={` text-white absolute ${filmState === 1 ? "block" : "hidden"} h-64 w-full left-[500px] flex flex-col justify-center gap-10 ${animation[2]}`}>
+                        <h2 className='p-2 glow-box text-black text-H2'>DIRECTOR WRITER CO-EDITOR</h2>
+                        <p className=' glow-box text-body text-black '> Determined to buy the perfect gift for her little brother&apos;s, a young woman must fight her way through crazed customers at a toy store turned madhouse.</p>
+
+                    </div>
+                </div>
+                <div className={`unselectable flex items-center relative ml-20 z[-1] ${filmState === 2 && "glow-box_lbb"} ${animation[1]} ${filmState != 0 && "unclickable"}`} onClick={()=>handleClick(2)}>
+                    <img className={`w-96`} src='Website_Photos/IMG_7286.png'/>
+                    <div className={` absolute ${filmState === 2 ? "flex" : "hidden"} lbb text-white h-64 w-full left-[450px] flex flex-col justify-center gap-5 h-96 ${animation[2]}`}>
+                        <div className='flex flex-col'>
+                             <h1 className=' text-[25px] lg:text-menu'>LOVE BOMB BABY</h1>
+                             <h2 className='text-[12px] lg:text-body'>Short / 10m 3s / Action Comedy / 2023</h2>
+                         </div>
+                        <h2 className='text-H2'>DIRECTOR WRITER CO-EDITOR</h2>
+                        <p className='text-white '>After catching her cheating girlfriend, a fiery, drunk woman beats up an entire Halloween college party--all while prioritizing which booze is in her hand.</p>
+                        <div className='flex justify-center items-center w-full'>
+                            <div className="flex justify-center h-3/4 w-1/3">
+                                <img className="w-full h-full object-contain" src="/Website_Photos/WINNER - The Art of Movie Making Film Festival TAMMFF - 2024 copy.png"/>
+                            </div>
+                            <div className="flex justify-center w-1/3 h-3/4">
+                                <img className="w-full h-full object-contain" src="/Website_Photos/New Photos 240722/Austin Action Fest ALT.PNG"/>
+                            </div>
+                            <div className="flex justify-center w-1/3 h-3/4">
+                                <img className="w-full h-full object-contain" src="/Website_Photos/Urban Action Fest Laruel.png"/>
+                            </div>
+                        </div>
+                        <div className='text-[10px] w-auto'>
+                            <p>PRIVATE LINK AVAILABLE UPON REQUEST</p>
+                        </div>
+                        {credit_names[filmState-1].map((name, index) => (
+                           <div key={index}>
+                             {name}
+                             </div>
+                        ))}
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+            {
+                filmState > 0 &&  
+                <div ref = {elements[1]} className='hidden md:block lg:h-screen w-screen'>
+                    <Lightbox images={images[filmState-1][0]}/>
+                </div>
+
+            }
+
+            {
+                filmState > 0 &&  
+                <div ref={elements[2]} className='hidden md:block lg:h-screen w-screen'>
+                    <Lightbox images={images[filmState-1][1]}/>
+                </div>
+            }
+        {
+            filmState > 0 &&  
+            <div ref={elements[3]} className={`h-screen w-auto hidden md:flex md:flex-col `}>
+                <div className={`w-full bg-center h-screen ${filmState === 1 ? "bg-bg2":"bg-bg3"} `}>
+                    <div  className='flex flex-col items-end justify-center lg:pr-20 w-full h-[95%] '>
+
+                    <div className={`${filmState === 2 ? "":""} glow-box_lbb`}>
+                    <img src={timelines[filmState-1]} className='w-full lg:w-[60rem]'/>
+                    </div>
+                    <div className='text-center w-[60rem] flex justify-center text-black text-[30px]'>
+                        <h1>Timeline for Love Bomb Baby
+                    <br/>Edited by Bryan Uvaldo</h1>
+                    </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        }
+
+{
+            filmState > 0 & filmState === 2 &&  
+            <div ref={elements[4]} className={`h-screen w-auto `}>
+                <div className='w-full bg-right-top h-screen bg-bg3 flex justify-center md:justify-end items-center '>
+                    <div className='w-full md:w-2/3 h-full p-5 md:p-10 flex md:flex-row flex-col gap-5 '>
+                        <div className='bg-white h-full w-full flex justify-center items-center md:w-1/2 glow-box_lbb'>
+                            <img src="/Website_Photos/lbb_credits.png" className='object-cover '/>
+                        </div>
+                        <div className='w-full md:w-1/2 hidden md:flex flex-col gap-10 md:gap-5 '>
+                            <div className='flex justify-around w-full h-1/3 gap-5 text-white '>
+                                <div className='h-full w-1/3 '>
+                                    {
+                                        filmState === 2 && (<>
+                                            <img src={credit_images[0][0]}/>
+                                            <div className='flex justify-center items-center'>
+                                                <p className='text-lg'>{credit_names[filmState-1][0]}</p>
+                                            </div>
+                                        </>)
+                                    }
+                                </div>
+                                <div className='h-full w-1/3'>
+                                    {
+                                        filmState === 2 && (<>
+                                            <img src={credit_images[0][1]} />
+                                            <div className='flex justify-center items-center'>
+                                                <p className='text-lg'>{credit_names[filmState-1][1]}</p>
+                                            </div>
+                                        </>)
+                                    }
+                                </div>
+                                <div className='h-full w-1/3'>
+                                    {
+                                        filmState === 2 && (<>
+                                            <img src={credit_images[0][2]}/>
+                                            <div className='flex justify-center items-center'>
+                                                <p className='text-lg'>{credit_names[filmState-1][2]}</p>
+                                            </div>
+                                        </>)
+                                    }
+                                </div>
+                            </div>
+                            <div className='flex justify-around w-full h-1/3 gap-5'>
+                                <div className='h-full w-full'>
+                                    {
+                                        filmState === 2 && (<>
+                                            <img className="h-full glow-box_lbb" src={credit_images[0][3]}/>
+                                        </>)
+                                    }
+                                </div>
+                            </div>
+                            <div className='flex justify-around w-full h-1/3 gap-5 text-white'>
+                                <div className=' h-full w-1/3 flex flex-col'>
+                                    <img src={credit_images[2][0]} className=' glow-box_lbb object-cover h-full'/>
+                                    <div className='flex flex-col justify-center items-center'>
+                                        <p className='text-lg'>{credit_names[filmState-1][3]}</p>
+                                        <p className='text-lg'>Director</p>
+                                    </div>
+                                </div>
+                                <div className=' h-full w-1/3 flex flex-col'>
+                                    <img src={credit_images[2][1]} className=' glow-box_lbb object-cover h-full'/>
+                                    <div className='flex flex-col justify-center items-center'>
+                                        <p className='text-lg'>{credit_names[filmState-1][4]}</p>
+                                        <p className='text-lg'>Producer</p>
+                                    </div>
+                                </div>
+                                <div className='h-full w-1/3 flex flex-col'>
+                                    <img src={credit_images[2][2]} className='glow-box_lbb object-cover h-full'/>
+                                    <div className='flex justify-center flex-col items-center'>
+                                        <p className='text-lg'>{credit_names[filmState-1][5]}</p>
+                                        <p className='text-lg'>Stunt Coordinator</p>
+                                    </div>
+                                    {credit_images[filmState-1].map((image, index) => (
+                                        <img key={index} src={image} alt={`Credit ${index}`} />
+                                    ))}
+                                    {images[filmState-1].map((imageSet, setIndex) => (
+                                      <div key={`set-${setIndex}`}>
+                                          {imageSet.map((image, imageIndex) => (
+                                            <img key={`image-${setIndex}-${imageIndex}`} src={image} alt=
+                                            {`Image ${imageIndex}`} />
+                                        ))}
+                                        </div>
+                                    ))}
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        }
+    </div>
+  )
+}
+
+
+const Menu = ({film, scroll, setScroll,}) => {
+
+
+  const titles = ["Playin' Around","Love Bomb Baby"]
+  const description = ["Short / 10m 3s / Action Comedy / 2024", "Short / 10m 3s / Action Comedy / 2023"]
+
+  const menuItems = [["OVERVIEW", "FILM STILLS", "BEHIND THE SCENES", "TIMELINE"],["OVERVIEW", "FILM STILLS", "BEHIND THE SCENES", "TIMELINE","CREDITS"]]
+
+  return (
+    <>
+    {film > 0 && 
+    <div className='z-[3] flex flex-col h-1/3 justify-around gap-5 lg:gap-10 text-white'>
+        <div className='flex flex-col'>
+            <h1 className=' text-[25px] lg:text-menu'>{titles[film-1] }</h1>
+            <h2 className='text-[12px] lg:text-body'>{description[film-1]}</h2>
+        </div>
+        <div className='cursor-pointer flex flex-col justify-between gap-1 text-sm lg:text-body'>
+            {
+                menuItems[film - 1].map((item,index)=><h2 className={`${film === 1 ? scroll[0] === index && "text-blue": scroll[0] === index && "text-bold pink_grad  pr-8 pl-1 w-fit text-[#2D2D34]"}`} onClick={()=>setScroll([index,1])}>{item}</h2>)
+            }
+        </div>
+       
+    </div>
+    }
+    
+    </>
   )
 }
 

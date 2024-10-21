@@ -124,7 +124,7 @@ const LoveBombBaby = ({setfilm}) => {
                                 <h2 className='text-[12px] text-black lg:text-body'>Short / 10m 3s / Action Comedy / 2024</h2>
                             </div>
                             <h2 className='p-2  text-black text-H2'>DIRECTOR WRITER CO-EDITOR</h2>
-                            <p className='text-body text-black '> Determined to buy the perfect gift for her little brother, a young woman must fight her way through crazed customers at a toy store turned madhouse.</p>
+                            <p className='text-body text-black '> Determined to buy the perfect gift for her little brother&apos;s, a young woman must fight her way through crazed customers at a toy store turned madhouse.</p>
 
                         </div>
                     </div>
