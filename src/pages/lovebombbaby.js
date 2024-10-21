@@ -111,7 +111,7 @@ const LoveBombBaby = ({setfilm}) => {
                     {/* <img className={`w-96`} src='/Website_Photos/_32A6359.jpeg'/> */}
                     <div className={` text-white absolute ${filmState === 1 ? "block" : "hidden"} h-64 w-full left-[500px] flex flex-col justify-center gap-10 ${animation[2]}`}>
                         <h2 className='p-2 glow-box text-black text-H2'>DIRECTOR WRITER CO-EDITOR</h2>
-                        <p className=' glow-box text-body text-black '> Determined to buy the perfect gift for her little brother&apos;s, a young woman must fight her way through crazed customers at a toy store turned madhouse.</p>
+                        <p className=' glow-box text-body text-black '> Determined to buy the perfect gift for her little brother, a young woman must fight her way through crazed customers at a toy store turned madhouse.</p>
 
                     </div>
                 </div>
