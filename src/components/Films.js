@@ -5,6 +5,7 @@ import useScrollSnap from '../useScrollSnap'
 import Footer from '@/components/Footer'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
+import Image from 'next/image';
 
 const Films = ({setfilm}) => {
     const router = useRouter()
@@ -107,17 +108,17 @@ const Films = ({setfilm}) => {
         </div> */}
         <div className={`md:hidden flex flex-col justify-between gap-10 px-10 pb-10`}>
             {
-            filmState === 0 &&  <Link href={'/playinaround'}><img className={`w-80`} src='/Website_Photos/_32A6359.jpeg' /></Link>
+            filmState === 0 &&  <Link href={'/playinaround'}><Image className={`w-80`} src='/Website_Photos/_32A6359.jpeg' alt="description" width={200} height={400} /></Link>
             }
             {
-                <Link href={'/lovebombbaby'}><img className={`w-80`} src='Website_Photos/IMG_7286.png' /></Link>
+                <Link href={'/lovebombbaby'}><Image className={`w-80`} src='/Website_Photos/IMG_7286.png' alt="description" width={300} height={200} /></Link>
             }
         </div>
 
         <div className='p-10 pt-0 hidden lg:block pb-20'>
             <div className='flex justify-center  items-center w-full fixed'>
                 <div className={`unselectable flex items-center relative z-[0] ${filmState === 1 && "glow-box"} ${animation[0]} ${filmState != 0 && "unclickable"} `} onClick={()=>handleClick(1)}>
-                    <img className={`w-96`} src='/Website_Photos/_32A6359.jpeg'/>
+                <img className={`w-96`} src='/Website_Photos/_32A6359.jpeg'/>
                     <div className={` text-white absolute ${filmState === 1 ? "block" : "hidden"} h-64 w-full left-[500px] flex flex-col justify-center gap-10 ${animation[2]}`}>
                         <h2 className='p-2 glow-box text-black text-H2'>DIRECTOR WRITER CO-EDITOR</h2>
                         <p className=' glow-box text-body text-black '> Determined to buy the perfect gift for her little brother, a young woman must fight her way through crazed customers at a toy store turned madhouse.</p>
