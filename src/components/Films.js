@@ -111,7 +111,7 @@ const Films = ({setfilm}) => {
             filmState === 0 &&  <Link href={'/playinaround'}><Image className={`w-80`} src='/Website_Photos/_32A6359.jpeg' alt="description" width={200} height={400} /></Link>
             }
             {
-                <Link href={'/lovebombbaby'}><Image className={`w-80`} src='/Website_Photos/IMG_7286.png' alt="description" width={300} height={200} /></Link>
+                <Link href={'/lovebombbaby'}><Image className={`w-80`} src='/Website_Photos/IMG_7286.png' alt="descriptionLove" width={300} height={200} /></Link>
             }
         </div>
 
@@ -126,7 +126,7 @@ const Films = ({setfilm}) => {
                     </div>
                 </div>
                 <div className={`unselectable flex items-center relative ml-20 z[-1] ${filmState === 2 && "glow-box_lbb"} ${animation[1]} ${filmState != 0 && "unclickable"}`} onClick={()=>handleClick(2)}>
-                <Image className={`w-96`} src='/Website_Photos/IMG_7286.png' alt="description" width={400} height={300} />
+                <Image className={`w-96`} src='/Website_Photos/IMG_7286.png' alt="LoveBombBaby" width={400} height={300} />
                     <div className={` absolute ${filmState === 2 ? "flex" : "hidden"} lbb text-white h-64 w-full left-[500px] flex flex-col justify-center gap-5 h-96 ${animation[2]}`}>
                         <h2 className='text-H2'>DIRECTOR WRITER CO-EDITOR</h2>
                         <p className='text-white '>After catching her cheating girlfriend, a fiery, drunk woman beats up an entire Halloween college party--all while prioritizing which booze is in her hand.</p>
