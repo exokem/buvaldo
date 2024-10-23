@@ -16,8 +16,8 @@ const AboutPage = ({state, setState,home}) => {
         <div className='h-3/4  w-full p-10 flex md:flex-row flex-col gap-10 justify-around'>
             <div className='h-full w-full md:w-2/3  flex flex-col'>
                 <img className="object-cover h-full shadow-lg md:w-auto w-full" src={home ? "/Website_Photos/ARI06304-1.jpg":'/Website_Photos/ARI07793-1.jpg'}/>
-                <div className='text-white w-full'>
-                    <p>Contact: email@gmail.com</p>
+                <div className='text-black w-full'>
+                    <p>Contact: buvaldo218@gmail.com</p>
                     <div className='flex justify-between w-1/2'>
                         <a href='https://www.instagram.com/buvaldo218/'>
                         <FaInstagram size="30px" color='white'/>

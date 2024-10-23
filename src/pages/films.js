@@ -21,7 +21,7 @@ const Films = ({state, setState}) => {
     const descriptionsCommercial = ["Pity Party Music Video"];
 
     const links = [
-        ["lovebombbaby", "playinaround"],
+        ["playinaround", "lovebombbaby"],
         ["films/poster","films/solong","films/Catharsis","films/Omicron","films/helloagain"],
         ["films/pity_party"]
     ];

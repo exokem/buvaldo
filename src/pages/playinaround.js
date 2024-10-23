@@ -109,7 +109,7 @@ const LoveBombBaby = ({setfilm}) => {
             filmState === 0 &&  <img className={`w-80`} src='/Website_Photos/_32A6359.jpeg' onClick={()=>handleClickM(1)}/>
             }
             {
-                filmState === 1 ? <img className={`w-80`} src='/Website_Photos/_32A6359.jpeg' onClick={()=>handleClickM(1)}/> :  <img className={`w-80`} src='Website_Photos/IMG_7286.png' onClick={()=>handleClick(2)}/>
+                filmState === 1 ? <img className={`w-80`} src='/Website_Photos/_32A6359.jpeg' onClick={()=>handleClickM(1)}/> :  <img className={`w-80`} src='/Website_Photos/IMG_7286.png' onClick={()=>handleClick(2)}/>
             }
         </div>
 

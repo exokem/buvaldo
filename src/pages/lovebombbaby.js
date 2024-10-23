@@ -101,7 +101,7 @@ const LoveBombBaby = ({setfilm}) => {
             filmState === 0 &&  <img className={`w-80`} src='/Website_Photos/_32A6359.jpeg' onClick={()=>handleClickM(1)}/>
             }
             {
-                filmState === 1 ? <img className={`w-80`} src='/Website_Photos/_32A6359.jpeg' onClick={()=>handleClickM(1)}/> :  <img className={`w-80`} src='Website_Photos/IMG_7286.png' onClick={()=>handleClick(2)}/>
+                filmState === 1 ? <img className={`w-80`} src='/Website_Photos/_32A6359.jpeg' onClick={()=>handleClickM(1)}/> :  <img className={`w-80`} src='/Website_Photos/IMG_7286.png' onClick={()=>handleClick(2)}/>
             }
         </div>
 
@@ -116,7 +116,7 @@ const LoveBombBaby = ({setfilm}) => {
                     </div>
                 </div>
                 <div className={`unselectable flex items-center relative ml-20 z[-1] ${filmState === 2 && "glow-box_lbb"} ${animation[1]} ${filmState != 0 && "unclickable"}`} onClick={()=>handleClick(2)}>
-                    <img className={`w-96`} src='Website_Photos/IMG_7286.png'/>
+                    <img className={`w-96`} src='/Website_Photos/IMG_7286.png'/>
                     <div className={` absolute ${filmState === 2 ? "flex" : "hidden"} lbb text-white h-64 w-full left-[450px] flex flex-col justify-center gap-5 h-96 ${animation[2]}`}>
                         <div className='flex flex-col'>
                              <h1 className=' text-[25px] lg:text-menu'>LOVE BOMB BABY</h1>
