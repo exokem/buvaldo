@@ -118,7 +118,7 @@ const Films = ({setfilm}) => {
         <div className='p-10 pt-0 hidden lg:block pb-20'>
             <div className='flex justify-center  items-center w-full fixed'>
                 <div className={`unselectable flex items-center relative z-[0] ${filmState === 1 && "glow-box"} ${animation[0]} ${filmState != 0 && "unclickable"} `} onClick={()=>handleClick(1)}>
-                <img className={`w-96`} src='/Website_Photos/_32A6359.jpeg'/>
+                <Image className={`w-96`} src='/Website_Photos/_32A6359.jpeg' alt="description" width={400} height={300} />
                     <div className={` text-white absolute ${filmState === 1 ? "block" : "hidden"} h-64 w-full left-[500px] flex flex-col justify-center gap-10 ${animation[2]}`}>
                         <h2 className='p-2 glow-box text-black text-H2'>DIRECTOR WRITER CO-EDITOR</h2>
                         <p className=' glow-box text-body text-black '> Determined to buy the perfect gift for her little brother, a young woman must fight her way through crazed customers at a toy store turned madhouse.</p>
@@ -126,13 +126,13 @@ const Films = ({setfilm}) => {
                     </div>
                 </div>
                 <div className={`unselectable flex items-center relative ml-20 z[-1] ${filmState === 2 && "glow-box_lbb"} ${animation[1]} ${filmState != 0 && "unclickable"}`} onClick={()=>handleClick(2)}>
-                    <img className={`w-96`} src='Website_Photos/IMG_7286.png'/>
+                <Image className={`w-96`} src='/Website_Photos/IMG_7286.png' alt="description" width={400} height={300} />
                     <div className={` absolute ${filmState === 2 ? "flex" : "hidden"} lbb text-white h-64 w-full left-[500px] flex flex-col justify-center gap-5 h-96 ${animation[2]}`}>
                         <h2 className='text-H2'>DIRECTOR WRITER CO-EDITOR</h2>
                         <p className='text-white '>After catching her cheating girlfriend, a fiery, drunk woman beats up an entire Halloween college party--all while prioritizing which booze is in her hand.</p>
                         <div className='flex justify-center items-center w-full'>
                             <div className="flex justify-center h-3/4 w-1/3">
-                                <img className="w-full h-full object-contain" src="/Website_Photos/WINNER - The Art of Movie Making Film Festival TAMMFF - 2024 copy.png"/>
+                            <Image className="w-full h-full object-contain" src="/Website_Photos/WINNER - The Art of Movie Making Film Festival TAMMFF - 2024 copy.png" alt="award logo" width={400} height={300} />
                             </div>
                             <div className="flex justify-center w-1/3 h-3/4">
                                 <img className="w-full h-full object-contain" src="/Website_Photos/New Photos 240722/Austin Action Fest ALT.PNG"/>
