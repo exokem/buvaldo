@@ -5,5 +5,6 @@ import {ParallaxProvider} from 'react-scroll-parallax'
 import Home from '@page/home'
 export default function Page() 
 {
-	return <ParallaxProvider><Home/></ParallaxProvider>
+	return <div className="bg-red-500">a</div>
+	// return <ParallaxProvider><Home/></ParallaxProvider>
 }

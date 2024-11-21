@@ -5,6 +5,7 @@
       "@comp/*": ["./src/components/*"],
       "@page/*": ["./src/pages/*"],
       "@api/*": ["./src/api/*"],
+	  "@font": ["./src/app/fonts"]
     }
   }
 }
