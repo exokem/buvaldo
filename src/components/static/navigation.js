@@ -8,9 +8,11 @@ import {passionOne, inter} from '@font'
 function Title() 
 {
 	return (
-		<NavbarBrand className="text-black flex flex-col">
-			<h1 className={`${passionOne.className} self-start text-3xl sm:text-4xl md:text-6xl`}>BRYAN UVALDO</h1>
-			<h3 className={`${inter.className} self-start font-bold`}>DIRECTOR.EDITOR.</h3>
+		<NavbarBrand>
+			<Link className="text-black flex flex-col" href="/">
+				<h1 className={`${passionOne.className} self-start text-3xl sm:text-4xl md:text-6xl`}>BRYAN UVALDO</h1>
+				<h3 className={`${inter.className} self-start font-bold`}>DIRECTOR.EDITOR.</h3>
+			</Link>
 		</NavbarBrand>
 	)
 }
