@@ -7,8 +7,6 @@ export default function BackgroundCover({src, alt=""})
 			src={src}
 			alt={alt}
 			className="top-0 left-0 right-0 fixed z-[-1]"
-		>
-		
-		</Image>
+		/>
 	)
 }
