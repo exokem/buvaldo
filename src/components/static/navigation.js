@@ -10,8 +10,18 @@ function Title()
 	return (
 		<NavbarBrand>
 			<Link className="text-black flex flex-col" href="/">
-				<h1 className={`${passionOne.className} self-start text-4xl md:text-5xl lg:text-6xl`}>BRYAN UVALDO</h1>
-				<h3 className={`${inter.className} self-start font-bold`}>DIRECTOR.EDITOR.</h3>
+				<h1 
+					className={`
+						${passionOne.className}
+						self-start 
+						text-4xl md:text-5xl lg:text-6xl
+						px-3
+						bg-gradient-to-r from-yellow-300 from-70% to-transparent
+					`}
+				>
+					BRYAN UVALDO
+				</h1>
+				<h3 className={`${inter.className} self-start font-bold pl-3`}>DIRECTOR.EDITOR.</h3>
 			</Link>
 		</NavbarBrand>
 	)
