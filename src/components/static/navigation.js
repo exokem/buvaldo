@@ -10,7 +10,7 @@ function Title()
 	return (
 		<NavbarBrand>
 			<Link className="text-black flex flex-col" href="/">
-				<h1 className={`${passionOne.className} self-start text-3xl sm:text-4xl md:text-6xl`}>BRYAN UVALDO</h1>
+				<h1 className={`${passionOne.className} self-start text-4xl md:text-6xl`}>BRYAN UVALDO</h1>
 				<h3 className={`${inter.className} self-start font-bold`}>DIRECTOR.EDITOR.</h3>
 			</Link>
 		</NavbarBrand>
@@ -47,20 +47,20 @@ export default function Navigation()
 {
 	const [isMenuOpen, setIsMenuOpen] = React.useState(false)
 
-	return <Navbar height={'6rem'} maxWidth="xl">
+	return <Navbar height={'6rem'} maxWidth="xl" position="sticky">
 		<NavbarContent>
 			
 			<Title/>
 		</NavbarContent>
 
-		<NavbarContent className="hidden sm:flex gap-4" justify="end">
+		<NavbarContent className="hidden md:flex gap-4" justify="end">
 			<MenuItems isMobile={false}/>
 		</NavbarContent>
 
-		<NavbarContent className="sm:hidden flex gap-4" justify="end">
+		<NavbarContent className="md:hidden flex gap-4" justify="end">
 			<NavbarMenuToggle
 				aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-				className="sm:hidden text-black"
+				className="md:hidden text-black"
 			/>
 		</NavbarContent>
 		<NavbarMenu>
