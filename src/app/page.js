@@ -1,8 +1,9 @@
+'use client'
 import Image from "next/image"
 import {Button} from "@nextui-org/button"
-export default function Home() 
+import {ParallaxProvider} from 'react-scroll-parallax'
+import Home from '@page/home'
+export default function Page() 
 {
-	return (
-		<Button>asdf</Button>
-	)
+	return <ParallaxProvider><Home/></ParallaxProvider>
 }
