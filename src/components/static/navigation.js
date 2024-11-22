@@ -5,6 +5,8 @@ import React from "react"
 import {Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenuToggle, NavbarMenu, NavbarMenuItem, Link, Button} from "@nextui-org/react"
 import {passionOne, inter} from '@font'
 
+import {yellowGradientString, yellowGradientHoverString} from '@api/styles'
+
 function Title() 
 {
 	return (
@@ -16,7 +18,8 @@ function Title()
 						self-start 
 						text-4xl md:text-5xl lg:text-6xl
 						px-3
-						bg-gradient-to-r from-yellow-300 from-70% to-transparent
+						${yellowGradientString}
+						
 					`}
 				>
 					BRYAN UVALDO
@@ -32,23 +35,37 @@ function Item({label, href, isMobile = true})
 	const link = (
 		<Link 
 			href={href}
-			className={`${inter.className} text-black font-medium text-xl`}
+			className={`
+				${inter.className} 
+				text-black font-bold text-xl 
+				h-[80%]
+				group
+			`}
 		>
-			{label}
+			<span className="
+					group-hover:bg-gradient-to-r 
+					group-hover:from-highlight-300 
+					group-hover:from-[70%] 
+					group-hover:to-transparent 
+					px-3 
+				"
+			>
+				{label}
+			</span>
 		</Link>
 	)
 
 	if (isMobile)
 		return <NavbarMenuItem>{link}</NavbarMenuItem>
 	else 
-		return <NavbarItem>{link}</NavbarItem>
+		return <NavbarItem className="h-full flex items-center">{link}</NavbarItem>
 }
 
 function MenuItems({isMobile = true})
 {
 	return <>
 		<Item isMobile={isMobile} label='FILMS' href='/films'/>
-		<Item isMobile={isMobile} label='POST PRODUCTION' href='/post-production'/>
+		<Item isMobile={isMobile} label='POST-PRODUCTION' href='/post-production'/>
 		<Item isMobile={isMobile} label='ABOUT' href='/about'/>
 	</>
 }
