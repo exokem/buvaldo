@@ -20,6 +20,18 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 } */
 
+@layer utilities {
+	.highlight-gradient {
+		@apply bg-gradient-to-r from-highlight-300 from-70% to-transparent
+	}
+
+	.highlight-gradient-onhover {
+		@apply group-hover:bg-gradient-to-r group-hover:from-highlight-300 group-hover:from-70% group-hover:to-transparent
+	}
+}
+
+/* Old below this line */
+
 :root {
 	--foreground-rgb: 0, 0, 0;
 	--background-start-rgb: 214, 219, 220;
@@ -35,7 +47,7 @@ body {
 }
 
 body {
-	color: rgb(var(--foreground-rgb));
+	/* color: rgb(var(--foreground-rgb)); */
 	/* background: white; */
 
 	padding: 0;

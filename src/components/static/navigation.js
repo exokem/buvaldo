@@ -5,7 +5,7 @@ import React from "react"
 import {Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenuToggle, NavbarMenu, NavbarMenuItem, Link, Button} from "@nextui-org/react"
 import {passionOne, inter} from '@font'
 
-import {highlightGradient} from '@api/styles'
+import {config} from '@api/config'
 
 function Title() 
 {
@@ -18,8 +18,7 @@ function Title()
 						self-start 
 						text-4xl md:text-5xl lg:text-6xl
 						px-3
-						${highlightGradient()}
-						
+						highlight-gradient
 					`}
 				>
 					BRYAN UVALDO
@@ -44,7 +43,7 @@ function Item({label, href, isMobile = true})
 		>
 			<span 
 				className={`
-					${highlightGradient('group-hover:')}
+					highlight-gradient-onhover
 					px-3 
 				`}
 			>
@@ -72,9 +71,8 @@ export default function Navigation()
 {
 	const [isMenuOpen, setIsMenuOpen] = React.useState(false)
 
-	return <Navbar height={'6rem'} maxWidth="xl" position="sticky" className="[&>header]:px-3">
+	return <Navbar height={config.navigation.height} maxWidth="xl" position="sticky" className="[&>header]:px-3">
 		<NavbarContent>
-			
 			<Title/>
 		</NavbarContent>
 
