@@ -5,7 +5,7 @@ import React from "react"
 import {Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenuToggle, NavbarMenu, NavbarMenuItem, Link, Button} from "@nextui-org/react"
 import {passionOne, inter} from '@font'
 
-import {yellowGradientString, yellowGradientHoverString} from '@api/styles'
+import {yellowGradientString, yellowGradient} from '@api/styles'
 
 function Title() 
 {
@@ -42,13 +42,11 @@ function Item({label, href, isMobile = true})
 				group
 			`}
 		>
-			<span className="
-					group-hover:bg-gradient-to-r 
-					group-hover:from-highlight-300 
-					group-hover:from-[70%] 
-					group-hover:to-transparent 
+			<span 
+				className={`
+					${yellowGradient('group-hover:')}
 					px-3 
-				"
+				`}
 			>
 				{label}
 			</span>
