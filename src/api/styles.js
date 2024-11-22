@@ -6,9 +6,7 @@ const ruleParts = [
 	'to-transparent'
 ]
 
-export function yellowGradient(prefix = "") 
+export function highlightGradient(prefix = "") 
 {
 	return ruleParts.map((p) => `${prefix}${p}`).join(' ')
 }
-
-export const yellowGradientString = yellowGradient()
