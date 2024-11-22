@@ -1,4 +1,5 @@
 const {nextui} = require("@nextui-org/react")
+const colors = require('tailwindcss/colors')
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -13,6 +14,7 @@ module.exports = {
 			colors: {
 				background: "var(--background)",
 				foreground: "var(--foreground)",
+				highlight: colors.yellow
 			},
 		},
 	},
