@@ -4,7 +4,7 @@ import {Button} from "@nextui-org/button"
 import {ParallaxProvider} from 'react-scroll-parallax'
 import Home from '@page/home'
 import cover from './bryan-cover.jpg'
-import {config} from '@api/config'
+import {config, assets} from '@api/config'
 import {FaArrowCircleDown} from "react-icons/fa"
 import Container from '@comp/container'
 import Cover from '@comp/cover'
@@ -23,7 +23,7 @@ function AboutCover()
 				gap-12 py-12
 			">
 				<div className="bg-white px-5 py-4 rounded-xl max-w-[800px] text-xl drop-shadow-lg">
-					{load('home.aboutSummary')}
+					{load.config('home.aboutSummary')}
 				</div>
 				<a href="#films" className="self-center down-arrow-holder bg-black rounded-[50%]">
 					<FaArrowCircleDown className="self-center transition-colors fill-highlight-300 hover:fill-highlight-200" size={"40px"}/>
@@ -35,10 +35,24 @@ function AboutCover()
 	)
 }
 
-function Films()
+function FilmPreview({film})
 {
 	return (
-		<div id="films">
+		<div className="aspect-[calc(40/59)] relative p-9">
+			<a href={`/project/${film.id}`}>
+				{load.image(film.cover)}
+			</a>
+		</div>
+	)
+}
+
+function Films()
+{
+	const films = load.config('home.featuredFilms')
+
+	return (
+		<div className="flex flex-row">
+			{films.map((it) => <FilmPreview key={it.cover} film={it}/>)}
 		</div>
 	)
 }
@@ -47,11 +61,9 @@ export default function Page()
 {
 	return (
 		<>
-			{/* <div className="bg-red-500 h-[100vh] opacity-50 z-10">a</div> */}
 			<AboutCover/>
 			<Films/>
 			<BackgroundCover src={cover}/>
 		</>
 	)
-	// return <ParallaxProvider><Home/></ParallaxProvider>
 }
