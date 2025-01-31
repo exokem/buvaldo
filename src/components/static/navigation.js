@@ -29,6 +29,9 @@ function Title()
 	)
 }
 
+// highlight-gradient
+// hover:highlight-gradient-onhover
+
 function Item({label, href, isMobile = true})
 {
 	const link = (
@@ -43,11 +46,23 @@ function Item({label, href, isMobile = true})
 		>
 			<span 
 				className={`
-					highlight-gradient-onhover
-					px-3 
+					relative 
+					overflow-hidden 
+					transition-colors duration-300 group cursor-pointer
+					px-3 py-2
 				`}
 			>
 				{label}
+				<span aria-hidden="true" class="
+					highlight-gradient 
+					absolute 
+					inset-0 
+					-translate-x-full 
+					group-hover:translate-x-0 
+					transition-transform 
+					duration-300 
+					z-[-1]
+				"/>
 			</span>
 		</Link>
 	)
