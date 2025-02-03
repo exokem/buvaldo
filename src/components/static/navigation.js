@@ -53,7 +53,7 @@ function Item({label, href, isMobile = true})
 				`}
 			>
 				{label}
-				<span aria-hidden="true" class="
+				<span aria-hidden="true" className="
 					highlight-gradient 
 					absolute 
 					inset-0 
