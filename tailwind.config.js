@@ -14,7 +14,13 @@ module.exports = {
 			colors: {
 				background: "var(--background)",
 				foreground: "var(--foreground)",
-				highlight: colors.yellow
+				highlight: colors.yellow,
+				emphasis: {
+					DEFAULT: '#0000007D',
+					25: '#00000019',
+					50: '#00000032',
+					75: '#000000C0'
+				}
 			}
 		},
 	},
