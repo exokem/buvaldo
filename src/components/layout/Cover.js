@@ -1,5 +1,5 @@
 
-import Container from '@comp/container'
+import Container from '@comp/layout/Container'
 import config from '@api/config'
 
 // Covers the full page, minus the navbar height
