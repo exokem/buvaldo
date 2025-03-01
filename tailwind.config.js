@@ -21,6 +21,20 @@ module.exports = {
 					50: '#00000032',
 					75: '#000000C0'
 				}
+			},
+			keyframes: {
+				blur: {
+					'0%': {filter: "blur(0px)"},
+					'100%': {filter: "blur(8px)"},
+				},
+				unblur: {
+					'0%': {filter: "blur(8px)"},
+					'100%': {filter: "blur(0px)"},
+				}
+			},
+			animation: {
+				blur: 'blur 300ms linear both',
+				unblur: 'unblur 300ms linear both'
 			}
 		},
 	},

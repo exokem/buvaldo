@@ -13,6 +13,7 @@ import {passionOne, inter} from '@font'
 
 
 import BackgroundCover from '@comp/static/bgcover'
+import {useState} from "react"
 
 function AboutCover()
 {
@@ -20,9 +21,9 @@ function AboutCover()
 		<div className="full-height flex flex-col justify-end">
 			<div className="bg-gradient-to-b from-transparent to-emphasis">
 				<Container className="
-					flex flex-col 
+					flex flex-col
 					h-min
-					self-end 
+					self-end
 					gap-12 py-12
 				">
 					<div className="bg-white px-5 py-4 rounded-xl max-w-[800px] text-xl drop-shadow-lg self-center">
@@ -37,91 +38,160 @@ function AboutCover()
 	)
 }
 
-function FilmPreview({film})
+function SectionHeading({title, id})
 {
 	return (
-		<div className="
-			aspect-[calc(40/59)] 
-			relative 
-			p-9
-			grow
-			hover:rotate-3
-			overflow-clip
-			hover:scale-110 duration-300
-			z-0 hover:z-10
-			bg-black
-			blur-none
-			transition-all
-			group-hover:blur-sm
-			hover:[filter:_blur(0)_!important;]
-			rounded-lg
-			drop-shadow-lg
-			group/prev
-		">
-			<div className="
+		<div className='flex justify-center items-center py-5'>
+			<h1 id={id} className={`
+				font-bold ${passionOne.className} 
+				text-4xl md:text-5xl lg:text-6xl
+				text-nowrap text-black
+				highlight-gradient
+				w-min
+				px-3
+				self-center
+				z-20
+			`}>{title}</h1>
+		</div>
+	)
+}
+
+function Section({title, id, className = '', children = null})
+{
+	return (
+		<div className={`full-height ${className}`}>
+			<Container className="
+				h-full
+				flex flex-col
+			">
+				<SectionHeading title={title} id={id}/>
+				{children}
+			</Container>
+		</div>
+	)
+}
+
+function useFocus()
+{
+	const [focusedItem, setFocusedItem] = useState(null)
+
+	const isItemFocused = (item) => focusedItem === item
+
+	const isOtherItemFocused = (item) =>
+	{
+		if (focusedItem === null)
+			return false
+
+		return focusedItem !== item
+	}
+
+	const assignFocus = (item) => setFocusedItem(item)
+	const unassignFocus = (item) =>
+	{
+		if (focusedItem === item)
+		{
+			setFocusedItem(null)
+		}
+	}
+
+	return {
+		isItemFocused,
+		isOtherItemFocused,
+		assignFocus,
+		unassignFocus,
+	}
+}
+
+function FilmPreview({film, setFocusedFilm, focus})
+{
+	return (
+		<div
+			className={`
+				aspect-[calc(40/59)]
+				relative
+				p-9
+				cursor-pointer
+				overflow-clip
+				bg-black
+				z-10
+				
+				hover:rotate-3
+				hover:scale-110
+				hover:[filter:_blur(0)_!important;]
+				hover:z-50 
+				
+				rounded-lg
+				drop-shadow-lg
+				
+				transition-all
+				${focus.isOtherItemFocused(film) ? 'animate-blur' : 'animate-unblur'}
+			`}
+			onMouseEnter={() => focus.assignFocus(film)}
+			onMouseLeave={() => focus.unassignFocus(film)}
+		>
+			<div className={`
 				w-full h-full
 				absolute
-				bg-transparent
-				group-hover:bg-black
-				group-hover/prev:!bg-transparent
-				group-hover/prev:!z-0
-				transition-colors
+				
+				${focus.isOtherItemFocused(film) ? '!bg-black' : 'bg-transparent'}
+				
+				transition-all
 				opacity-50
 				top-0 left-0
-				z-10
-			"/>
-			<a href={`/project/${film.id}`} className="">
+				z-51
+			`}/>
+			<a href={`/project/${film.id}`} className=" ">
 				{load.image(film.cover)}
 			</a>
 		</div>
 	)
 }
 
-function Films()
+function FeaturedFilms()
 {
 	const films = load.config('home.featuredFilms')
 
+	const focus = useFocus()
+
 	return (
-		<div className="full-height bg-emphasis">
-			<Container className="h-full relative flex flex-col">
-				<h1 id='featured' className={`
-					font-bold text-black
-					text-6xl
-					highlight-gradient
-					w-min
-					text-nowrap
-					px-3
-					self-center
-					z-20
-					${passionOne.className}
-				`}>FEATURED PROJECTS</h1>
-				<div className="flex grow">
-					<div className="
-						flex flex-row self-center
-						justify-evenly items-center
-						w-full
-						h-min
-						gap-32
-						group
-					">
-						{films.map((it) => <FilmPreview key={it.cover} film={it}/>)}
-
-					</div>
-				</div>
-				
-				<div className=" absolute top-0 bottom-0 left-[calc(50%-4rem)] z-10 w-32"/>
-
-			</Container>
-		</div>
+		<Section title='FEATURED FILMS' id='featured-films' className='bg-emphasis'>
+			<div className='
+				p-20
+				pt-14
+				flex flex-row gap-20
+				grow
+				relative
+				place-content-evenly
+			'>
+				{films.map(film => <FilmPreview film={film} key={film.id} focus={focus}/>)}
+			</div>
+			<div className={`
+				fixed inset-0
+				w-screen h-screen 
+				pointer-events-none
+				transition-all
+				${focus.isOtherItemFocused(null) ? `
+					backdrop-blur-md 
+					backdrop-saturate-150 
+					bg-overlay/30 
+					z-40
+				` : `
+					backdrop-blur-0 
+					backdrop-saturate-100 
+					bg-overlay/0
+					z-0
+				`}
+			`}/>
+		</Section>
 	)
 }
 
-export default function Page() 
+export default function Page()
 {
 	return (
 		<>
 			<AboutCover/>
-			<Films/>
+			<FeaturedFilms/>
 			<BackgroundCover src={cover}/>
 		</>
 	)
