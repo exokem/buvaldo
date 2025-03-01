@@ -1,6 +1,6 @@
 import "./globals.css"
 import {Providers} from "./providers"
-import Navigation from '@comp/static/navigation'
+import Navigation from '@comp/static/Navigation'
 
 export const metadata = {
 	title: "Create Next App",

@@ -1,7 +1,7 @@
 'use client'
 import cover from './bryan-cover.jpg'
 import {FaArrowCircleDown} from "react-icons/fa"
-import Container from '@comp/layout/container'
+import Container from '@comp/layout/Container'
 
 import BackgroundCover from '@comp/static/BackgroundCover'
 import BlurOverlay from "@comp/layout/BlurOverlay"
@@ -25,7 +25,7 @@ function AboutCover()
 						{load.config('home.aboutSummary')}
 					</div>
 					<a href="#featured-films" className="self-center down-arrow-holder bg-black rounded-[50%]">
-						<FaArrowCircleDown className="self-center transition-colors fill-highlight-400 hover:fill-highlight-300" size={"40px"}/>
+						<FaArrowCircleDown className="self-center transition-colors fill-highlight-400 hover:fill-highlight-300 animate-pulse" size={"40px"}/>
 					</a>
 				</Container>
 			</div>

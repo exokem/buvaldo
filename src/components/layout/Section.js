@@ -1,5 +1,5 @@
 import {passionOne} from "@font"
-import Container from "@comp/layout/container"
+import Container from "@comp/layout/Container"
 
 export function SectionHeading({title, id})
 {
