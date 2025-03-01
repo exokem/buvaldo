@@ -3,11 +3,11 @@ import cover from './bryan-cover.jpg'
 import {FaArrowCircleDown} from "react-icons/fa"
 import Container from '@comp/layout/container'
 
-import BackgroundCover from '@comp/static/bgcover'
-import BlurOverlay from "@comp/layout/blurOverlay"
-import FilmPreview from "@comp/display/filmPreview"
+import BackgroundCover from '@comp/static/BackgroundCover'
+import BlurOverlay from "@comp/layout/BlurOverlay"
+import FilmPreview from "@comp/display/FilmPreview"
 import {useFocus} from "@api/hooks/useFocus"
-import Section from "@comp/layout/section"
+import Section from "@comp/layout/Section"
 import load from "@api/loader"
 
 function AboutCover()
