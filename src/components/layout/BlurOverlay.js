@@ -10,7 +10,7 @@ export default function BlurOverlay({isVisible})
 				backdrop-blur-md 
 				backdrop-saturate-150 
 				bg-overlay/30 
-				z-40
+				z-50
 			` : `
 				backdrop-blur-0 
 				backdrop-saturate-100 

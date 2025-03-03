@@ -16,7 +16,7 @@ export default function FilmPreview({film, setFocusedFilm, focus})
 				hover:rotate-3
 				hover:scale-110
 				hover:[filter:_blur(0)_!important;]
-				hover:z-50 
+				hover:z-60 
 				
 				rounded-lg
 				drop-shadow-lg
@@ -36,7 +36,7 @@ export default function FilmPreview({film, setFocusedFilm, focus})
 				transition-all
 				opacity-50
 				top-0 left-0
-				z-51
+				z-61
 			`}/>
 			<a href={`/project/${film.id}`} className=" ">
 				{load.image(film.cover)}
