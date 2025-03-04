@@ -1,10 +1,10 @@
 import {passionOne} from "@font"
 import Container from "@comp/layout/Container"
 
-export function SectionHeading({title, id})
+export function SectionHeading({children, id})
 {
 	return (
-		<div className='flex justify-center items-center py-5'>
+		<div className='flex justify-center items-center py-9'>
 			<h1 id={id} className={`
 				font-bold ${passionOne.className} 
 				text-4xl md:text-5xl lg:text-6xl
@@ -14,7 +14,7 @@ export function SectionHeading({title, id})
 				px-3
 				self-center
 				z-20
-			`}>{title}</h1>
+			`}>{children}</h1>
 		</div>
 	)
 }
@@ -27,7 +27,9 @@ export default function Section({title, id, className = '', children = null})
 				h-full
 				flex flex-col
 			">
-				<SectionHeading title={title} id={id}/>
+				<SectionHeading id={id}>
+					{title}
+				</SectionHeading>
 				{children}
 			</Container>
 		</div>
