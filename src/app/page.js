@@ -43,7 +43,7 @@ function FeaturedFilms()
 			<div className='
 				p-20 pt-14 gap-20
 				flex flex-row grow relative
-				place-content-evenly
+				place-content-center
 			'>
 				{films.map(film => <FilmPreview film={film} key={film.id} focus={focus}/>)}
 			</div>

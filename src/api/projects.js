@@ -52,7 +52,7 @@ const postProduction = Object.freeze(
 			date: '2022',
 			cover: null,
 		},
-		
+
 		// Narrative
 		chasingButterflyDreams: {
 			title: 'Chasing Butterfly Dreams',
@@ -177,8 +177,8 @@ const films = Object.freeze(
 
 const projects = Object.freeze(
 	{
-		...films,
-		...postProduction
+		films: films,
+		postProduction: postProduction
 	}
 )
 

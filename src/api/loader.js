@@ -4,7 +4,7 @@ import projects from '@api/projects'
 import assets from '@api/assets'
 import assetType from '@api/assetType'
 
-const loadX = (source, sourceName, id) => 
+const load = (source, sourceName, id) =>
 {
 	if (id === undefined)
 	{
@@ -25,25 +25,24 @@ const loadX = (source, sourceName, id) =>
 	return obj
 }
 
-const loadConfig = (id) => loadX(config, 'config', id)
-const loadAsset = (id) => loadX(assets, 'assets', id)
-const loadProject = (id) => loadX(projects, 'projects', id)
-const loadImage = (id) => 
+const loadAsset = (id) => load(assets, 'assets', id)
+const loadImage = (id) =>
 {
 	const entry = loadAsset(id)
 	const typeName = entry.type
-	const type = loadX(assetType, 'assetType', typeName)
+	const type = load(assetType, 'assetType', typeName)
 
 	return type.load(entry.url, entry.alt)
 }
 
-const load = Object.freeze(
+const loader = Object.freeze(
 	{
 		asset: loadAsset,
-		config: loadConfig,
-		project: loadProject,
+		config: (id) => load(config, 'config', id),
+		film: (id) => load(projects.films, 'projects.films', id),
+		postProduction: (id) => load(projects.postProduction, 'projects.postProduction', id),
 		image: loadImage,
 	}
 )
 
-export default load
+export default loader
