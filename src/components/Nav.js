@@ -4,13 +4,13 @@ import React, {useEffect, useRef, useState} from 'react'
 import Link from 'next/link'
 import {usePathname} from 'next/navigation'
 
-export async function getServerSideProps(context) 
+export async function getServerSideProps(context)
 {
 	console.log(context.req.headers.referer)
 	return
 }
 
-const Nav = ({box, grad=1}) => 
+const Nav = ({box, grad=1}) =>
 {
 
 	const path = usePathname()
@@ -18,8 +18,8 @@ const Nav = ({box, grad=1}) =>
 	const [animation, setAnimation] = useState("")
 
 	const boxref = useRef(box)
- 
- 
+
+
 
 	return (
 		<nav className={`md:flex w-full text-black  ${grad === 0 && "white_gradient"} p-10 pb-5 pt-5`}>
@@ -30,7 +30,7 @@ const Nav = ({box, grad=1}) =>
 				<div className='relative font-semibold flex text-H2 gap-3'>
 					<div className={`${box === 0 && "hidden"} absolute w-[7.5rem] gradient_yellow h-8 left-0 ${box === 1 && "slide animate-slide_r"} ${box === 2 && "left-0 animate-slide"} `}></div>
 					<div className='absolute z-2 flex gap-3'>
-						<Link href={"/films"}>
+						<Link href={"/film"}>
 							<h2>DIRECTOR.</h2>
 						</Link>
 						<Link href={"/post-productions"}>
@@ -40,7 +40,7 @@ const Nav = ({box, grad=1}) =>
 				</div>
 			</div>
 			<div className={`font-medium text-[12px] sm:text-[16px] lg:text-H2 h-32 flex w-full md:w-1/2 md:justify-center gap-5 justify-between items-center `}>
-				<Link href={'/films'}>
+				<Link href={'/film'}>
 					<h2 className={`${path === "/films" && "underline"}`}>FILMS</h2>
 				</Link>
 				<Link href={'/post-productions'}>

@@ -1,17 +1,18 @@
 import load from "@api/loader"
-import {Skeleton} from "@nextui-org/react"
+import {Skeleton, Spinner} from "@nextui-org/react"
 
-export function SimpleFilmPreview({film})
+export function SimpleFilmPreview({film, isLandscape = true})
 {
 	return (
 		<div
 			className={`
-				aspect-[calc(40/59)]
+				${isLandscape ? 'aspect-[calc(16/9)]' : 'aspect-[calc(40/59)]' }
 				relative
+				flex
 				p-9
 				cursor-pointer
 				overflow-clip
-				bg-black
+				bg-transparent
 				z-10
 				
 				hover:rotate-3
@@ -20,13 +21,21 @@ export function SimpleFilmPreview({film})
 				hover:z-[60] 
 				
 				rounded-lg
-				drop-shadow-lg
+				drop-shadow-2xl
 				
 				transition-all
+				content-center
 			`}
 		>
+			<div className={`w-full h-full absolute top-0 left-0 bottom-0 right-0 bg-black bg-opacity-70 blur-md`}/>
+			{/*<Spinner className={`h-full w-full`} size='lg' classNames={*/}
+			{/*	{*/}
+			{/*		circle1: 'border-b-lgray-xxd',*/}
+			{/*		circle2: 'border-b-lgray-xxd'*/}
+			{/*	}*/}
+			{/*}/>*/}
 			<a href={`/film/${film.id}`} className="w-full h-full absolute top-0 left-0 bottom-0 right-0">
-				{film.cover !== '' ? load.image(film.cover) : <></>}
+				{load.image(isLandscape ? film.thumbnail : film.cover)}
 			</a>
 		</div>
 	)

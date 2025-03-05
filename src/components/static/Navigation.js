@@ -7,12 +7,12 @@ import {passionOne, inter} from '@font'
 
 import config from '@api/config'
 
-function Title() 
+function Title()
 {
 	return (
 		<NavbarBrand>
 			<Link className="text-black flex flex-col" href="/">
-				<h1 
+				<h1
 					className={`
 						${passionOne.className}
 						self-start 
@@ -35,7 +35,7 @@ function Title()
 function Item({label, href, isMobile = true})
 {
 	const link = (
-		<Link 
+		<Link
 			href={href}
 			className={`
 				${inter.className} 
@@ -44,7 +44,7 @@ function Item({label, href, isMobile = true})
 				group
 			`}
 		>
-			<span 
+			<span
 				className={`
 					relative 
 					overflow-hidden 
@@ -54,13 +54,13 @@ function Item({label, href, isMobile = true})
 			>
 				{label}
 				<span aria-hidden="true" className="
-					highlight-gradient 
-					absolute 
-					inset-0 
-					-translate-x-full 
-					group-hover:translate-x-0 
-					transition-transform 
-					duration-300 
+					highlight-gradient
+					absolute
+					inset-0
+					-translate-x-full
+					group-hover:translate-x-0
+					transition-transform
+					duration-300
 					z-[-1]
 				"/>
 			</span>
@@ -69,7 +69,7 @@ function Item({label, href, isMobile = true})
 
 	if (isMobile)
 		return <NavbarMenuItem>{link}</NavbarMenuItem>
-	else 
+	else
 		return <NavbarItem className="h-full flex items-center">{link}</NavbarItem>
 }
 
@@ -77,12 +77,12 @@ function MenuItems({isMobile = true})
 {
 	return <>
 		<Item isMobile={isMobile} label='FILMS' href='/films'/>
-		<Item isMobile={isMobile} label='POST-PRODUCTION' href='/post-production'/>
+		<Item isMobile={isMobile} label='POST-PRODUCTION' href='/post-productions'/>
 		<Item isMobile={isMobile} label='ABOUT' href='/about'/>
 	</>
 }
 
-export default function Navigation() 
+export default function Navigation()
 {
 	const [isMenuOpen, setIsMenuOpen] = React.useState(false)
 

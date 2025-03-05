@@ -5,7 +5,7 @@ export default function ItemGrid({className = '', children})
 	return (
 		<div className={`
 			grid
-			grid-cols-5
+			grid-cols-3
 			auto-rows-min
 			
 			gap-9 pb-9

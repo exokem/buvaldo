@@ -15,6 +15,16 @@ const assetType = Object.freeze(
 					/>
 				)
 			}
+		},
+		local: {
+			name: 'local',
+			load: (url, alt) => (
+				<Image
+					src={url}
+					alt={alt}
+					fill
+				/>
+			)
 		}
 	}
 )

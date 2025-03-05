@@ -28,7 +28,23 @@ const load = (source, sourceName, id) =>
 const loadAsset = (id) => load(assets, 'assets', id)
 const loadImage = (id) =>
 {
+	if (id === undefined || id === null || id === '')
+	{
+		return <></>
+	}
+
 	const entry = loadAsset(id)
+
+	if (entry === null || entry === undefined)
+	{
+		throw Error(`Unable to read entry for image ${id}`)
+	}
+
+	if (entry.type === null || entry.type === undefined)
+	{
+		throw Error(`Unable to read entry type for image ${id}`)
+	}
+
 	const typeName = entry.type
 	const type = load(assetType, 'assetType', typeName)
 
