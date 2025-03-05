@@ -1,4 +1,5 @@
 import load from "@api/loader"
+import {Skeleton} from "@nextui-org/react"
 
 export function SimpleFilmPreview({film})
 {
@@ -24,8 +25,8 @@ export function SimpleFilmPreview({film})
 				transition-all
 			`}
 		>
-			<a href={`/film/${film.id}`} className=" ">
-				{/*{load.image(film.cover)}*/}
+			<a href={`/film/${film.id}`} className="w-full h-full absolute top-0 left-0 bottom-0 right-0">
+				{film.cover !== '' ? load.image(film.cover) : <></>}
 			</a>
 		</div>
 	)

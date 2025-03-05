@@ -41,7 +41,7 @@ function FeaturedFilms()
 	return (
 		<Section title='FEATURED FILMS' id='featured-films' className='bg-emphasis'>
 			<div className='
-				p-20 pt-14 gap-20
+				p-20 pt-12 gap-20
 				flex flex-row grow relative
 				place-content-center
 			'>

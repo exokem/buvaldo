@@ -1,0 +1,20 @@
+import {SimpleFilmPreview} from "@comp/display/FilmPreview"
+
+export default function ItemGrid({className = '', children})
+{
+	return (
+		<div className={`
+			grid
+			grid-cols-5
+			auto-rows-min
+			
+			gap-9 pb-9
+			
+			h-min min-h-min
+			relative
+			${className}
+		`}>
+			{children}
+		</div>
+	)
+}
