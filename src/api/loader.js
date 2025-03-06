@@ -26,7 +26,7 @@ const load = (source, sourceName, id) =>
 }
 
 const loadAsset = (id) => load(assets, 'assets', id)
-const loadImage = (id) =>
+const loadImage = (id, setLoadState) =>
 {
 	if (id === undefined || id === null || id === '')
 	{
@@ -48,7 +48,7 @@ const loadImage = (id) =>
 	const typeName = entry.type
 	const type = load(assetType, 'assetType', typeName)
 
-	return type.load(entry.url, entry.alt)
+	return type.load(entry.url, entry.alt, setLoadState)
 }
 
 const loader = Object.freeze(

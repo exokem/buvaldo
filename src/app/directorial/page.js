@@ -5,7 +5,7 @@ import {Skeleton} from "@nextui-org/react"
 import ItemGrid from "@comp/layout/ItemGrid"
 import background from './background.jpg'
 import BackgroundCover from "@comp/static/BackgroundCover"
-import {FilmThumbnail} from "@comp/display/FilmThumbnail"
+import FilmThumbnail from "@comp/display/FilmThumbnail"
 
 export default async function Page()
 {
