@@ -13,6 +13,7 @@ export function SectionHeading({children, id})
 				w-min
 				px-3
 				self-center
+				rounded-l-lg
 				z-20
 			`}>{children}</h1>
 		</div>
