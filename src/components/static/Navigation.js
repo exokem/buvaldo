@@ -23,7 +23,7 @@ function Title()
 				>
 					BRYAN UVALDO
 				</h1>
-				<h3 className={`${inter.className} self-start font-bold pl-3`}>DIRECTOR.EDITOR.</h3>
+				<h3 className={`${inter.className} self-start font-bold pl-3`}>DIRECTOR. EDITOR.</h3>
 			</Link>
 		</NavbarBrand>
 	)
@@ -39,7 +39,7 @@ function Item({label, href, isMobile = true})
 			href={href}
 			className={`
 				${inter.className} 
-				text-black font-bold text-xl 
+				text-black font-bold text-xl
 				h-[80%]
 				group
 			`}
@@ -54,7 +54,8 @@ function Item({label, href, isMobile = true})
 			>
 				{label}
 				<span aria-hidden="true" className="
-					highlight-gradient
+					opacity-40
+					highlight-gradient-alt
 					absolute
 					inset-0
 					-translate-x-full
@@ -76,8 +77,8 @@ function Item({label, href, isMobile = true})
 function MenuItems({isMobile = true})
 {
 	return <>
-		<Item isMobile={isMobile} label='FILMS' href='/films'/>
-		<Item isMobile={isMobile} label='POST-PRODUCTION' href='/post-productions'/>
+		<Item isMobile={isMobile} label='DIRECTORIAL' href='/films'/>
+		<Item isMobile={isMobile} label='EDITORIAL' href='/edits'/>
 		<Item isMobile={isMobile} label='ABOUT' href='/about'/>
 	</>
 }
@@ -86,7 +87,7 @@ export default function Navigation()
 {
 	const [isMenuOpen, setIsMenuOpen] = React.useState(false)
 
-	return <Navbar height={config.navigation.height} maxWidth="xl" position="sticky" className="[&>header]:px-3">
+	return <Navbar height={config.navigation.height} maxWidth="xl" position="sticky" className="[&>header]:px-3 highlight-gradient">
 		<NavbarContent>
 			<Title/>
 		</NavbarContent>

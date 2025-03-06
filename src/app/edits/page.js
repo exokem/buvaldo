@@ -31,6 +31,7 @@ export default async function Page()
 				transition-all
 				backdrop-blur-sm
 				backdrop-saturate-150 
+				backdrop-brightness-50
 				bg-overlay/30 
 				-z-10
 			`}/>
