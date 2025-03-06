@@ -19,98 +19,114 @@ const filmCategory = Object.freeze(
 
 const postProduction = Object.freeze(
 	{
-		// NAME: {
-		// 	title: '',
-		// 	description: '',
-		// 	category: '',
-		// 	date: '',
-		// 	cover: null,
-		// },
-
-		// HBO
-		palante: {
-			title: 'Roberto Aguirre-Sacasa & Maia Reficco Pa\'lante Pa\' Mi',
-			id: 'palante-pa-mi',
-			description: 'Co-Creator, Roberto Aguirre-Sacasa, and actress, Maia Reficco, discuss their latin roots and how their heritage has shaped who they are and what they bring to the show. Part of the Pretty Little Liars: Original Sin Campaign through Palante Max.',
-			category: 'HBO Max Promo',
-			tags: [],
-			date: '2022',
-			cover: null,
-			thumbnail: 'images.palanteThumbnail',
-		},
-		maliaPyles: {
-			title: 'Malia Pyles Queerness in Conversation',
-			id: 'malia-pyles',
-			description: 'Actress Malia Pyles discusses how her character Mouse’s experiences help build an authentic queer representation on the show. Part of the Pretty Little Liars: Original Sin Campaign through Human by Orientation.',
-			category: 'HBO Max Promo',
-			tags: [],
-			date: '2022',
-			cover: null,
-			thumbnail: 'images.maliaPylesThumbnail',
-		},
-		minx: {
-			title: 'Minx',
-			id: 'minx',
-			description: 'Part of my application process in getting an internship at HBO. I was tasked with creating a minute-long promo of an episode of Minx.',
-			category: 'HBO Max Promo',
-			tags: [],
-			date: '2022',
-			cover: null,
-			thumbnail: 'images.minxThumbnail',
-		},
-
-		// Narrative
-		chasingButterflyDreams: {
-			title: 'Chasing Butterfly Dreams',
-			id: 'butterfly-dreams',
-			description: '',
-			category: 'Narrative',
-			tags: ['Feature Film'],
-			date: '',
-			cover: null,
-			thumbnail: 'images.butterflyDreamsThumbnail',
-		},
-		scrambledEggs: {
-			title: 'Scrambled Eggs',
-			id: 'scrambled-eggs',
-			description: '',
-			category: 'Narrative',
-			tags: ['NYU Thesis Short'],
-			date: '',
-			cover: null,
-			thumbnail: 'images.scrambledEggsThumbnail',
-		},
-		cloche: {
-			title: 'Cloche',
-			id: 'cloche',
-			description: '',
-			category: 'Narrative',
-			tags: ['NYU Thesis Short'],
-			date: '',
-			cover: '',
-			thumbnail: 'images.clocheThumbnail',
+		hbo: {
+			palante: {
+				title: 'Maia Reficco Pa\'lante Pa\' Mi HBO Max Promo',
+				id: 'palante-pa-mi',
+				description: 'Co-Creator, Roberto Aguirre-Sacasa, and actress, Maia Reficco, discuss their latin roots and how their heritage has shaped who they are and what they bring to the show. Part of the Pretty Little Liars: Original Sin Campaign through Palante Max.',
+				genre: 'Promotional',
+				categories: ['Pretty Little Liars: Original Sin'],
+				date: '2022',
+				thumbnail: 'images.palanteThumbnail',
+				url: 'https://www.youtube.com/watch?v=r0cMIRx3JiA'
+			},
+			maliaPyles: {
+				title: 'Malia Pyles Queerness in Conversation HBO Max Promo',
+				id: 'malia-pyles-queerness-in-conversation',
+				description: 'Actress Malia Pyles discusses how her character Mouse’s experiences help build an authentic queer representation on the show. Part of the Pretty Little Liars: Original Sin Campaign through Human by Orientation.',
+				genre: 'Promotional',
+				categories: ['Pretty Little Liars: Original Sin'],
+				date: '2022',
+				thumbnail: 'images.maliaPylesThumbnail',
+				url: 'https://www.youtube.com/watch?v=CQi9zzYs1Zg'
+			},
+			minx: {
+				title: 'Minx HBO Max Promo',
+				id: 'minx',
+				description: 'Part of my application process in getting an internship at HBO. I was tasked with creating a minute-long promo of an episode of Minx.',
+				genre: 'Promotional',
+				categories: ['HBO Application'],
+				date: '2022',
+				thumbnail: 'images.minxThumbnail',
+			},
+			edgeOfEarth: {
+				title: 'Edge of the Earth',
+				id: 'edge-of-the-earth',
+				description: 'Used to promote the four part-documentary series Edge of the Earth on the front page of HBO Max in July 2022.',
+				genre: 'Promotional',
+				categories: ['HBO Max Video Hero'],
+				date: '2022',
+				thumbnail: 'images.edgeOfEarthThumbnail'
+			},
+			jordanGonzales: {
+				title: 'Jordan Gonzalez Queerness in Conversation HBO Max Promo',
+				id: 'jordan-gonzalez-queerness-in-conversation',
+				description: 'Jordan Gonzalez discusses the importance of Ash’s character and his impact on Mouse’s journey on the show. Part of the Pretty Little Liars: Original Sin Campaign through Human by Orientation.',
+				genre: 'Promotional',
+				categories: ['Pretty Little Liars: Original Sin'],
+				date: '2022',
+				thumbnail: 'images.jordanGonzalesThumbnail',
+				url: 'https://www.youtube.com/watch?v=nD1kmj1xC0k&t=1s'
+			}
 		},
 
-		// Commercial
-		dianaFlorence: {
-			title: 'Diana Florence: Why it Matters',
-			id: 'diana-florence',
-			description: 'One of multiple short promos made for Diana Florence\'s Why It Matters campaign as part of her run for Manhattan District Attorney in 2021.',
-			category: 'Commercial',
-			tags: ['Advertising'],
-			date: '2020-2021',
-			cover: null,
-			thumbnail: 'images.dianaFlorenceThumbnail',
+		narrative: {
+			chasingButterflyDreams: {
+				title: 'Chasing Butterfly Dreams',
+				id: 'butterfly-dreams',
+				description: 'On the last day of summer, three people—a 10th grader seeking his first kiss, a college freshman chasing one wild experience, and a football star struggling with his fears—navigate friendship, love, and growing up, all while their paths collide.',
+				genre: 'Coming of Age',
+				categories: ['Feature Film'],
+				date: '2025',
+				thumbnail: 'images.butterflyDreamsThumbnail',
+				bryan: ['Editor, On-Set DIT'],
+				url: 'https://www.youtube.com/watch?v=NSMPPcNZosg',
+			},
+			scrambledEggs: {
+				title: 'Scrambled Eggs',
+				id: 'scrambled-eggs',
+				description: 'Stefanie, who just lost her son, is secretly pregnant in a world where one family can only conceive one child per life, and she has to face her husband, who is a birth control officer, and his new protege. A 20 minute thesis film made at NYU Tisch by director Xueyang Niu.',
+				genre: 'Drama',
+				categories: ['NYU Thesis Short'],
+				date: '2022',
+				thumbnail: 'images.scrambledEggsThumbnail',
+				bryan: ['Editor'],
+				url: 'https://filmfreeway.com/ScrambledEggs166'
+			},
+			cloche: {
+				title: 'Cloche',
+				id: 'cloche',
+				description: 'A college girl attends her popular friend’s potluck party in hopes of being accepted by the social group, but her inner self in animation joins to ruin the plan. A 10 minute short thesis film written and directed by Diana Miao for Parsons School of Design.',
+				genre: 'Comedy',
+				categories: ['Thesis Short'],
+				date: '2022',
+				thumbnail: 'images.clocheThumbnail',
+				bryan: ['Editor'],
+				url: 'https://www.youtube.com/watch?v=M5aKudxDckQ&t=3s'
+			},
 		},
-		stanLabs: {
-			title: 'Stan Labs Vehicle Deodorizer Instructional Video',
-			id: 'stan-labs',
-			description: 'Instructional How to Use video for a Stan Labs Deodorizer product.',
-			category: 'Commercial',
-			tags: [],
-			date: '2020',
-			cover: null,
-			thumbnail: 'images.stanLabsThumbnail',
+
+		commercial: {
+			dianaFlorence: {
+				title: 'Diana Florence: Why it Matters',
+				id: 'diana-florence',
+				description: 'One of multiple short promos made for Diana Florence\'s Why It Matters campaign as part of her run for Manhattan District Attorney in 2021.',
+				genre: 'Advertisement',
+				categories: ['Advertising Campaign'],
+				date: '2020-2021',
+				thumbnail: 'images.dianaFlorenceThumbnail',
+				url: 'https://www.youtube.com/watch?v=Ws7EbmiXohM',
+			},
+			stanLabs: {
+				title: 'Stan Labs Vehicle Deodorizer Instructional Video',
+				id: 'stan-labs',
+				description: 'Instructional How to Use video for a Stan Labs Deodorizer product.',
+				genre: 'Instructional',
+				categories: [],
+				date: '2020',
+				thumbnail: 'images.stanLabsThumbnail',
+				url: 'https://www.youtube.com/watch?v=C_BCKLYmKqA&t=1s'
+			},
 		},
 	}
 )

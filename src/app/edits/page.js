@@ -16,10 +16,22 @@ export default async function Page()
 				h-auto
 				flex flex-col
 			`}>
-				<SectionHeading id={'post-production-projects'}>POST-PRODUCTION</SectionHeading>
+				<SectionHeading id={'hbo'}>HBO</SectionHeading>
 				<ItemGrid>
-					{Object.values(postProjects).map(project => (
-						<SimpleFilmPreview key={project.id} film={project}/>
+					{Object.values(projects.postProduction.hbo).map(film => (
+						<SimpleFilmPreview key={film.id} film={film}/>
+					))}
+				</ItemGrid>
+				<SectionHeading id={'narrative'}>NARRATIVE</SectionHeading>
+				<ItemGrid>
+					{Object.values(projects.postProduction.narrative).map(film => (
+						<SimpleFilmPreview key={film.id} film={film}/>
+					))}
+				</ItemGrid>
+				<SectionHeading id={'commercial'}>COMMERCIAL</SectionHeading>
+				<ItemGrid>
+					{Object.values(projects.postProduction.commercial).map(film => (
+						<SimpleFilmPreview key={film.id} film={film}/>
 					))}
 				</ItemGrid>
 			</Container>

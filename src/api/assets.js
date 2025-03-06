@@ -63,6 +63,17 @@ const assets = Object.freeze(
 				alt: ''
 			},
 
+			edgeOfEarthThumbnail: {
+				type: assetType.local.name,
+				url: '/post/edge-of-earth/thumbnail.png',
+				alt: ''
+			},
+
+			jordanGonzalesThumbnail: {
+				type: assetType.local.name,
+				url: '/post/jordan-gonzales/thumbnail.png',
+				alt: ''
+			},
 
 
 
@@ -112,7 +123,7 @@ const assets = Object.freeze(
 				type: assetType.local.name,
 				url: '/film/omicron-spymaster/thumbnail.jpg',
 				alt: ''
-			}
+			},
 		}
 	}
 )
