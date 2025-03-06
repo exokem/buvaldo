@@ -9,7 +9,7 @@ import BackgroundCover from "@comp/static/BackgroundCover"
 
 export default async function Page()
 {
-	const films = projects.films
+	// TODO: divide into narrative/student/commercial
 
 	return (
 		<>
@@ -17,9 +17,21 @@ export default async function Page()
 				h-auto
 				flex flex-col
 			`}>
-				<SectionHeading id={'films'}>FILMS</SectionHeading>
+				<SectionHeading id={'narrative'}>NARRATIVE</SectionHeading>
 				<ItemGrid>
-					{Object.values(films).map(film => (
+					{Object.values(projects.films.narrative).map(film => (
+						<SimpleFilmPreview key={film.id} film={film}/>
+					))}
+				</ItemGrid>
+				<SectionHeading id={'student'}>STUDENT</SectionHeading>
+				<ItemGrid>
+					{Object.values(projects.films.student).map(film => (
+						<SimpleFilmPreview key={film.id} film={film}/>
+					))}
+				</ItemGrid>
+				<SectionHeading id={'commercial'}>COMMERCIAL</SectionHeading>
+				<ItemGrid>
+					{Object.values(projects.films.commercial).map(film => (
 						<SimpleFilmPreview key={film.id} film={film}/>
 					))}
 				</ItemGrid>
@@ -32,6 +44,7 @@ export default async function Page()
 				transition-all
 				backdrop-blur-sm
 				backdrop-saturate-150 
+				backdrop-brightness-50
 				bg-overlay/30 
 				-z-10
 			`}/>

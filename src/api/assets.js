@@ -95,6 +95,24 @@ const assets = Object.freeze(
 				url: '/film/poster/thumbnail.jpg',
 				alt: ''
 			},
+
+			pityPartyThumbnail: {
+				type: assetType.local.name,
+				url: '/film/pity-party/thumbnail.jpeg',
+				alt: ''
+			},
+
+			helloAgainThumbnail: {
+				type: assetType.local.name,
+				url: '/film/hello-again/thumbnail.jpg',
+				alt: ''
+			},
+
+			omicronSpymasterThumbnail: {
+				type: assetType.local.name,
+				url: '/film/omicron-spymaster/thumbnail.jpg',
+				alt: ''
+			}
 		}
 	}
 )

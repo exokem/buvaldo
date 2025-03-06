@@ -27,7 +27,11 @@ body {
 
 @layer utilities {
 	.highlight-gradient {
-		@apply bg-gradient-to-r from-highlight-300 from-70% to-transparent
+		@apply bg-gradient-to-r from-amber-400 from-60% to-transparent
+	}
+
+	.highlight-gradient-alt {
+		@apply bg-gradient-to-r from-amber-100 from-60% to-transparent
 	}
 
 	.highlight-gradient-onhover {
