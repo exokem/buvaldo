@@ -123,6 +123,7 @@ const films = Object.freeze(
 			tags: [],
 			date: '2023',
 			cover: 'images.loveBombBabyCover',
+			thumbnail: 'images.loveBombThumbnail',
 			durationSeconds: 603,
 			credits: {}
 		},
@@ -135,6 +136,7 @@ const films = Object.freeze(
 			tags: [],
 			date: '2024',
 			cover: 'images.playinAroundCover',
+			thumbnail: 'images.playinAroundThumbnail',
 			durationSeconds: 603,
 			credits: {}
 		},
@@ -149,6 +151,7 @@ const films = Object.freeze(
 			tags: [],
 			date: '2019',
 			cover: '',
+			thumbnail: 'images.soLongThumbnail',
 			durationSeconds: 0,
 			credits: {}
 		},
@@ -163,6 +166,7 @@ const films = Object.freeze(
 			],
 			date: '2021',
 			cover: '',
+			thumbnail: 'images.pierCatharsisThumbnail',
 			durationSeconds: 0,
 			credits: {}
 		},
@@ -177,6 +181,7 @@ const films = Object.freeze(
 			],
 			date: '2019',
 			cover: '',
+			thumbnail: 'images.posterThumbnail',
 			durationSeconds: 0,
 			credits: {}
 		},

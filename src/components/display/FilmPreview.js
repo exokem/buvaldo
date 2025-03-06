@@ -15,7 +15,6 @@ export function SimpleFilmPreview({film, isLandscape = true})
 				bg-transparent
 				z-10
 				
-				hover:rotate-3
 				hover:scale-110
 				hover:[filter:_blur(0)_!important;]
 				hover:z-[60] 

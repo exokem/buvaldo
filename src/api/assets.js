@@ -62,6 +62,39 @@ const assets = Object.freeze(
 				url: '/post/stan-labs/thumbnail.png',
 				alt: ''
 			},
+
+
+
+
+			loveBombThumbnail: {
+				type: assetType.local.name,
+				url: '/film/love-bomb/thumbnail.jpeg',
+				alt: ''
+			},
+
+			playinAroundThumbnail: {
+				type: assetType.local.name,
+				url: '/film/playin-around/thumbnail.jpeg',
+				alt: ''
+			},
+
+			soLongThumbnail: {
+				type: assetType.local.name,
+				url: '/film/so-long/thumbnail.jpg',
+				alt: ''
+			},
+
+			pierCatharsisThumbnail: {
+				type: assetType.local.name,
+				url: '/film/pier-catharsis/thumbnail.jpg',
+				alt: ''
+			},
+
+			posterThumbnail: {
+				type: assetType.local.name,
+				url: '/film/poster/thumbnail.jpg',
+				alt: ''
+			},
 		}
 	}
 )
