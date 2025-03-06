@@ -1,3 +1,10 @@
+const displayTypes = {
+	// Popup modal
+	popup: 'popup',
+	// Dedicated page
+	dedicated: 'dedicated',
+}
+
 const postProduction = Object.freeze(
 	{
 		hbo: {
@@ -9,7 +16,8 @@ const postProduction = Object.freeze(
 				categories: ['Pretty Little Liars: Original Sin'],
 				date: '2022',
 				thumbnail: 'images.palanteThumbnail',
-				url: 'https://www.youtube.com/watch?v=r0cMIRx3JiA'
+				url: 'https://www.youtube.com/watch?v=r0cMIRx3JiA',
+				displayType: displayTypes.popup
 			},
 			maliaPyles: {
 				title: 'Malia Pyles Queerness in Conversation HBO Max Promo',
@@ -19,7 +27,8 @@ const postProduction = Object.freeze(
 				categories: ['Pretty Little Liars: Original Sin'],
 				date: '2022',
 				thumbnail: 'images.maliaPylesThumbnail',
-				url: 'https://www.youtube.com/watch?v=CQi9zzYs1Zg'
+				url: 'https://www.youtube.com/watch?v=CQi9zzYs1Zg',
+				displayType: displayTypes.popup
 			},
 			minx: {
 				title: 'Minx HBO Max Promo',
@@ -29,6 +38,7 @@ const postProduction = Object.freeze(
 				categories: ['HBO Application'],
 				date: '2022',
 				thumbnail: 'images.minxThumbnail',
+				displayType: displayTypes.popup
 			},
 			edgeOfEarth: {
 				title: 'Edge of the Earth',
@@ -37,7 +47,8 @@ const postProduction = Object.freeze(
 				genre: 'Promotional',
 				categories: ['HBO Max Video Hero'],
 				date: '2022',
-				thumbnail: 'images.edgeOfEarthThumbnail'
+				thumbnail: 'images.edgeOfEarthThumbnail',
+				displayType: displayTypes.popup
 			},
 			jordanGonzales: {
 				title: 'Jordan Gonzalez Queerness in Conversation HBO Max Promo',
@@ -47,7 +58,8 @@ const postProduction = Object.freeze(
 				categories: ['Pretty Little Liars: Original Sin'],
 				date: '2022',
 				thumbnail: 'images.jordanGonzalesThumbnail',
-				url: 'https://www.youtube.com/watch?v=nD1kmj1xC0k&t=1s'
+				url: 'https://www.youtube.com/watch?v=nD1kmj1xC0k&t=1s',
+				displayType: displayTypes.popup
 			}
 		},
 
@@ -62,6 +74,7 @@ const postProduction = Object.freeze(
 				thumbnail: 'images.butterflyDreamsThumbnail',
 				bryan: ['Editor, On-Set DIT'],
 				url: 'https://www.youtube.com/watch?v=NSMPPcNZosg',
+				displayType: displayTypes.popup
 			},
 			scrambledEggs: {
 				title: 'Scrambled Eggs',
@@ -72,7 +85,8 @@ const postProduction = Object.freeze(
 				date: '2022',
 				thumbnail: 'images.scrambledEggsThumbnail',
 				bryan: ['Editor'],
-				url: 'https://filmfreeway.com/ScrambledEggs166'
+				url: 'https://filmfreeway.com/ScrambledEggs166',
+				displayType: displayTypes.popup
 			},
 			cloche: {
 				title: 'Cloche',
@@ -83,7 +97,8 @@ const postProduction = Object.freeze(
 				date: '2022',
 				thumbnail: 'images.clocheThumbnail',
 				bryan: ['Editor'],
-				url: 'https://www.youtube.com/watch?v=M5aKudxDckQ&t=3s'
+				url: 'https://www.youtube.com/watch?v=M5aKudxDckQ&t=3s',
+				displayType: displayTypes.popup
 			},
 		},
 
@@ -97,6 +112,7 @@ const postProduction = Object.freeze(
 				date: '2020-2021',
 				thumbnail: 'images.dianaFlorenceThumbnail',
 				url: 'https://www.youtube.com/watch?v=Ws7EbmiXohM',
+				displayType: displayTypes.popup
 			},
 			stanLabs: {
 				title: 'Stan Labs Vehicle Deodorizer Instructional Video',
@@ -106,7 +122,8 @@ const postProduction = Object.freeze(
 				categories: [],
 				date: '2020',
 				thumbnail: 'images.stanLabsThumbnail',
-				url: 'https://www.youtube.com/watch?v=C_BCKLYmKqA&t=1s'
+				url: 'https://www.youtube.com/watch?v=C_BCKLYmKqA&t=1s',
+				displayType: displayTypes.popup
 			},
 		},
 	}
@@ -126,7 +143,9 @@ const films = Object.freeze(
 				thumbnail: 'images.playinAroundThumbnail',
 				durationSeconds: 603,
 				bryan: ['Director', 'Editor'],
-				credits: {}
+				credits: {},
+				url: '',
+				displayType: displayTypes.dedicated
 			},
 			loveBombBaby: {
 				title: 'Love Bomb Baby',
@@ -139,7 +158,9 @@ const films = Object.freeze(
 				thumbnail: 'images.loveBombThumbnail',
 				durationSeconds: 603,
 				bryan: ['Director', 'Writer', 'Editor'],
-				credits: {}
+				credits: {},
+				url: '',
+				displayType: displayTypes.dedicated
 			},
 		},
 		student: {
@@ -154,7 +175,8 @@ const films = Object.freeze(
 				durationSeconds: 0,
 				bryan: ['Director', 'Editor'],
 				credits: {},
-				url: 'https://www.youtube.com/watch?v=uS_2iwAPDRk'
+				url: 'https://www.youtube.com/watch?v=uS_2iwAPDRk',
+				displayType: displayTypes.popup
 			},
 			soLong: {
 				title: 'So Long',
@@ -169,6 +191,7 @@ const films = Object.freeze(
 				bryan: ['Director', 'Writer', 'Editor'],
 				credits: {},
 				url: 'https://www.youtube.com/watch?v=2p1O0O32TSk',
+				displayType: displayTypes.popup
 			},
 			pierCatharsis: {
 				title: 'Catharsis at the Pier',
@@ -182,6 +205,7 @@ const films = Object.freeze(
 				bryan: ['Director', 'Editor'],
 				credits: {},
 				url: 'https://www.youtube.com/watch?v=Bj-33tOL95I',
+				displayType: displayTypes.popup
 			},
 			omicronSpymaster: {
 				title: 'The Omicron Spymaster',
@@ -195,6 +219,7 @@ const films = Object.freeze(
 				bryan: ['Director', 'Editor'],
 				credits: {},
 				url: 'https://www.youtube.com/watch?v=41eNpV6g0QI',
+				displayType: displayTypes.popup
 			},
 			helloAgain: {
 				title: 'Hello Again',
@@ -208,6 +233,7 @@ const films = Object.freeze(
 				bryan: ['Director', 'Writer', 'Editor'],
 				credits: {},
 				url: 'https://www.youtube.com/watch?v=74O2C8ktmcE',
+				displayType: displayTypes.popup
 			}
 		},
 		commercial: {
@@ -223,6 +249,7 @@ const films = Object.freeze(
 				bryan: ['Director'],
 				credits: {},
 				url: 'https://www.youtube.com/watch?v=Gfwce4TkSP8',
+				displayType: displayTypes.popup
 			}
 		},
 	}
