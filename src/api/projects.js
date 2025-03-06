@@ -1,3 +1,5 @@
+import {youtubeEmbed} from "@api/assets"
+
 export const displayTypes = {
 	// Popup modal
 	popup: 'popup',
@@ -16,7 +18,10 @@ const postProduction = Object.freeze(
 				categories: ['Pretty Little Liars: Original Sin'],
 				date: '2022',
 				thumbnail: 'images.palanteThumbnail',
-				url: 'https://www.youtube.com/watch?v=r0cMIRx3JiA',
+				embed: youtubeEmbed({
+					url: 'https://www.youtube.com/embed/r0cMIRx3JiA?si=lntiOLd-Mwnrgz9c',
+					alt: ''
+				}),
 				displayType: displayTypes.popup
 			},
 			maliaPyles: {
@@ -27,7 +32,10 @@ const postProduction = Object.freeze(
 				categories: ['Pretty Little Liars: Original Sin'],
 				date: '2022',
 				thumbnail: 'images.maliaPylesThumbnail',
-				url: 'https://www.youtube.com/watch?v=CQi9zzYs1Zg',
+				embed: youtubeEmbed({
+					url: 'https://www.youtube.com/embed/CQi9zzYs1Zg?si=216PbAp1sbUZW29o',
+					alt: ''
+				}),
 				displayType: displayTypes.popup
 			},
 			minx: {
@@ -58,7 +66,10 @@ const postProduction = Object.freeze(
 				categories: ['Pretty Little Liars: Original Sin'],
 				date: '2022',
 				thumbnail: 'images.jordanGonzalesThumbnail',
-				url: 'https://www.youtube.com/watch?v=nD1kmj1xC0k&t=1s',
+				embed: youtubeEmbed({
+					url: 'https://www.youtube.com/embed/nD1kmj1xC0k?si=Qj9W4rTOMCpklUtW',
+					alt: ''
+				}),
 				displayType: displayTypes.popup
 			}
 		},
@@ -73,7 +84,10 @@ const postProduction = Object.freeze(
 				date: '2025',
 				thumbnail: 'images.butterflyDreamsThumbnail',
 				bryan: ['Editor, On-Set DIT'],
-				url: 'https://www.youtube.com/watch?v=NSMPPcNZosg',
+				embed: youtubeEmbed({
+					url: 'https://www.youtube.com/embed/NSMPPcNZosg?si=N02IdhRT3rh0kXkI',
+					alt: ''
+				}),
 				displayType: displayTypes.popup
 			},
 			scrambledEggs: {
@@ -85,7 +99,10 @@ const postProduction = Object.freeze(
 				date: '2022',
 				thumbnail: 'images.scrambledEggsThumbnail',
 				bryan: ['Editor'],
-				url: 'https://filmfreeway.com/ScrambledEggs166',
+				embed: youtubeEmbed({
+					url: 'https://www.youtube.com/embed/NSMPPcNZosg?si=N02IdhRT3rh0kXkI',
+					alt: ''
+				}),
 				displayType: displayTypes.popup
 			},
 			cloche: {

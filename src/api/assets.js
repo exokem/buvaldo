@@ -128,4 +128,19 @@ const assets = Object.freeze(
 	}
 )
 
+const asset = (type, url, alt) =>
+{
+	return {
+		type: type.name,
+		url: url,
+		alt: alt
+	}
+}
+
+export const dropboxImage = ({url, alt}) => asset(assetType.dropbox, url, alt)
+
+export const localImage = ({url, alt}) => asset(assetType.local, url, alt)
+
+export const youtubeEmbed = ({url, alt}) => asset(assetType.youtube, url, alt)
+
 export default assets

@@ -29,6 +29,15 @@ const assetType = Object.freeze(
 			load: (url, alt, setLoadState) => (
 				createImage(url, alt, setLoadState)
 			)
+		},
+		youtube: {
+			name: 'youtube',
+			load: (url) => (
+				<iframe
+					src={url}
+					allowFullScreen
+				/>
+			)
 		}
 	}
 )
