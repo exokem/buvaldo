@@ -77,8 +77,8 @@ function Item({label, href, isMobile = true})
 function MenuItems({isMobile = true})
 {
 	return <>
-		<Item isMobile={isMobile} label='DIRECTORIAL' href='/films'/>
-		<Item isMobile={isMobile} label='EDITORIAL' href='/edits'/>
+		<Item isMobile={isMobile} label='DIRECTORIAL' href='/directorial'/>
+		<Item isMobile={isMobile} label='EDITORIAL' href='/editorial'/>
 		<Item isMobile={isMobile} label='ABOUT' href='/about'/>
 	</>
 }

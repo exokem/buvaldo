@@ -1,22 +1,3 @@
-import assets from './assets'
-
-const filmCategory = Object.freeze(
-	{
-		short: {
-			label: 'Short',
-			listTitle: 'Short Films'
-		},
-		narrative: {
-			label: 'Narrative',
-			listTitle: 'Narrative Work'
-		},
-		commercial: {
-			label: 'Commercial',
-			listTitle: 'Commercial Work'
-		}
-	}
-)
-
 const postProduction = Object.freeze(
 	{
 		hbo: {

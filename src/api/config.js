@@ -31,8 +31,8 @@ const config = Object.freeze(
 				</p>
 			</>,
 			featuredFilms: [
-				projects.films.loveBombBaby,
-				projects.films.playinAround,
+				projects.films.narrative.loveBombBaby,
+				projects.films.narrative.playinAround,
 			]
 		}
 	}
