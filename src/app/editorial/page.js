@@ -1,10 +1,10 @@
 import projects from "@api/projects"
-import {SimpleFilmPreview} from "@comp/display/FilmPreview"
 import Section, {SectionHeading} from "@comp/layout/Section"
 import Container from "@comp/layout/Container"
 import ItemGrid from "@comp/layout/ItemGrid"
 import background from './background.jpg'
 import BackgroundCover from "@comp/static/BackgroundCover"
+import {FilmThumbnail} from "@comp/display/FilmThumbnail"
 
 export default async function Page()
 {
@@ -19,19 +19,19 @@ export default async function Page()
 				<SectionHeading id={'hbo'}>HBO</SectionHeading>
 				<ItemGrid>
 					{Object.values(projects.postProduction.hbo).map(film => (
-						<SimpleFilmPreview key={film.id} film={film}/>
+						<FilmThumbnail key={film.id} film={film}/>
 					))}
 				</ItemGrid>
 				<SectionHeading id={'narrative'}>NARRATIVE</SectionHeading>
 				<ItemGrid>
 					{Object.values(projects.postProduction.narrative).map(film => (
-						<SimpleFilmPreview key={film.id} film={film}/>
+						<FilmThumbnail key={film.id} film={film}/>
 					))}
 				</ItemGrid>
 				<SectionHeading id={'commercial'}>COMMERCIAL</SectionHeading>
 				<ItemGrid>
 					{Object.values(projects.postProduction.commercial).map(film => (
-						<SimpleFilmPreview key={film.id} film={film}/>
+						<FilmThumbnail key={film.id} film={film}/>
 					))}
 				</ItemGrid>
 			</Container>

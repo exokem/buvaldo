@@ -1,11 +1,11 @@
 import projects from "@api/projects"
-import {SimpleFilmPreview} from "@comp/display/FilmPreview"
 import Section, {SectionHeading} from "@comp/layout/Section"
 import Container from "@comp/layout/Container"
 import {Skeleton} from "@nextui-org/react"
 import ItemGrid from "@comp/layout/ItemGrid"
 import background from './background.jpg'
 import BackgroundCover from "@comp/static/BackgroundCover"
+import {FilmThumbnail} from "@comp/display/FilmThumbnail"
 
 export default async function Page()
 {
@@ -20,19 +20,19 @@ export default async function Page()
 				<SectionHeading id={'narrative'}>NARRATIVE</SectionHeading>
 				<ItemGrid>
 					{Object.values(projects.films.narrative).map(film => (
-						<SimpleFilmPreview key={film.id} film={film}/>
+						<FilmThumbnail key={film.id} film={film}/>
 					))}
 				</ItemGrid>
 				<SectionHeading id={'student'}>STUDENT</SectionHeading>
 				<ItemGrid>
 					{Object.values(projects.films.student).map(film => (
-						<SimpleFilmPreview key={film.id} film={film}/>
+						<FilmThumbnail key={film.id} film={film}/>
 					))}
 				</ItemGrid>
 				<SectionHeading id={'commercial'}>COMMERCIAL</SectionHeading>
 				<ItemGrid>
 					{Object.values(projects.films.commercial).map(film => (
-						<SimpleFilmPreview key={film.id} film={film}/>
+						<FilmThumbnail key={film.id} film={film}/>
 					))}
 				</ItemGrid>
 			</Container>

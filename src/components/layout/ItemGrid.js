@@ -1,4 +1,4 @@
-import {SimpleFilmPreview} from "@comp/display/FilmPreview"
+import {FilmThumbnail} from "@comp/display/FilmThumbnail"
 
 export default function ItemGrid({className = '', children})
 {
