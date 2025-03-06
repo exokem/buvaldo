@@ -128,6 +128,7 @@ const films = Object.freeze(
 				cover: 'images.playinAroundCover',
 				thumbnail: 'images.playinAroundThumbnail',
 				durationSeconds: 603,
+				bryan: ['Director', 'Editor'],
 				credits: {}
 			},
 			loveBombBaby: {
@@ -140,6 +141,7 @@ const films = Object.freeze(
 				cover: 'images.loveBombBabyCover',
 				thumbnail: 'images.loveBombThumbnail',
 				durationSeconds: 603,
+				bryan: ['Director', 'Writer', 'Editor'],
 				credits: {}
 			},
 		},
@@ -153,6 +155,7 @@ const films = Object.freeze(
 				date: '2019',
 				thumbnail: 'images.posterThumbnail',
 				durationSeconds: 0,
+				bryan: ['Director', 'Editor'],
 				credits: {},
 				url: 'https://www.youtube.com/watch?v=uS_2iwAPDRk'
 			},
@@ -166,6 +169,7 @@ const films = Object.freeze(
 				date: '2019',
 				thumbnail: 'images.soLongThumbnail',
 				durationSeconds: 0,
+				bryan: ['Director', 'Writer', 'Editor'],
 				credits: {},
 				url: 'https://www.youtube.com/watch?v=2p1O0O32TSk',
 			},
@@ -178,6 +182,7 @@ const films = Object.freeze(
 				date: '2021',
 				thumbnail: 'images.pierCatharsisThumbnail',
 				durationSeconds: 0,
+				bryan: ['Director', 'Editor'],
 				credits: {},
 				url: 'https://www.youtube.com/watch?v=Bj-33tOL95I',
 			},
@@ -190,6 +195,7 @@ const films = Object.freeze(
 				date: '2020',
 				thumbnail: 'images.omicronSpymasterThumbnail',
 				durationSeconds: 0,
+				bryan: ['Director', 'Editor'],
 				credits: {},
 				url: 'https://www.youtube.com/watch?v=41eNpV6g0QI',
 			},
@@ -202,6 +208,7 @@ const films = Object.freeze(
 				date: '2018',
 				thumbnail: 'images.helloAgainThumbnail',
 				durationSeconds: 0,
+				bryan: ['Director', 'Writer', 'Editor'],
 				credits: {},
 				url: 'https://www.youtube.com/watch?v=74O2C8ktmcE',
 			}
@@ -216,6 +223,7 @@ const films = Object.freeze(
 				date: '2022',
 				thumbnail: 'images.pityPartyThumbnail',
 				durationSeconds: 0,
+				bryan: ['Director'],
 				credits: {},
 				url: 'https://www.youtube.com/watch?v=Gfwce4TkSP8',
 			}
