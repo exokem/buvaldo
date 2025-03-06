@@ -4,12 +4,32 @@ import projects from '@api/projects'
 import assets from '@api/assets'
 import assetType from '@api/assetType'
 
+const isIdInvalid = (id) =>
+{
+	if (id === undefined || id === null)
+	{
+		return true
+	}
+
+	if (id === '')
+	{
+		return true
+	}
+
+	return false
+}
+
+const assertIdIsValid = (sourceName, id) =>
+{
+	if (isIdInvalid(id))
+	{
+		throw Error(`Unable to load invalid identifier '${id}' from source '${sourceName}'`)
+	}
+}
+
 const load = (source, sourceName, id) =>
 {
-	if (id === undefined)
-	{
-		throw Error(`Unable to load undefined identifier from source '${sourceName}'`)
-	}
+	assertIdIsValid(sourceName, id)
 
 	console.log(`Attempting to load ${sourceName}:${id}`)
 
@@ -51,11 +71,28 @@ const loadImage = (id, setLoadState) =>
 	return type.load(entry.url, entry.alt, setLoadState)
 }
 
+const loadFilm = (id) =>
+{
+	assertIdIsValid('projects.films.*', id)
+
+	for (const [subsetName, filmSubset] of Object.entries(projects.films))
+	{
+		const value = load(filmSubset, `projects.films.${subsetName}`, id)
+
+		if (value !== undefined)
+		{
+			return value
+		}
+	}
+
+	throw Error(`Unable to load film with id '${id}'`)
+}
+
 const loader = Object.freeze(
 	{
 		asset: loadAsset,
 		config: (id) => load(config, 'config', id),
-		film: (id) => load(projects.films, 'projects.films', id),
+		film: loadFilm,
 		postProduction: (id) => load(projects.postProduction, 'projects.postProduction', id),
 		image: loadImage,
 	}

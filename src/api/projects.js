@@ -1,4 +1,4 @@
-const displayTypes = {
+export const displayTypes = {
 	// Popup modal
 	popup: 'popup',
 	// Dedicated page
