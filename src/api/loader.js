@@ -45,30 +45,34 @@ const load = (source, sourceName, id) =>
 	return obj
 }
 
-const loadAsset = (id) => load(assets, 'assets', id)
-const loadImage = (id, setLoadState) =>
+const loadAssetObj = (asset, properties = {}) =>
+{
+	if (asset.type === null || asset.type === undefined)
+	{
+		throw Error(`Unable to read entry type for asset ${asset.toString()}`)
+	}
+
+	const typeName = asset.type
+	const type = load(assetType, 'assetType', typeName)
+
+	return type.load(asset.url, asset.alt, properties)
+}
+
+const loadAsset = (id, setLoadState, properties) =>
 {
 	if (id === undefined || id === null || id === '')
 	{
 		return <></>
 	}
 
-	const entry = loadAsset(id)
+	const entry = load(assets, 'assets', id)
 
 	if (entry === null || entry === undefined)
 	{
-		throw Error(`Unable to read entry for image ${id}`)
+		throw Error(`Unable to read entry for asset ${id}`)
 	}
 
-	if (entry.type === null || entry.type === undefined)
-	{
-		throw Error(`Unable to read entry type for image ${id}`)
-	}
-
-	const typeName = entry.type
-	const type = load(assetType, 'assetType', typeName)
-
-	return type.load(entry.url, entry.alt, setLoadState)
+	return loadAssetObj(entry, {setLoadState, ...properties})
 }
 
 const loadFilm = (id) =>
@@ -90,11 +94,14 @@ const loadFilm = (id) =>
 
 const loader = Object.freeze(
 	{
-		asset: loadAsset,
 		config: (id) => load(config, 'config', id),
 		film: loadFilm,
 		postProduction: (id) => load(projects.postProduction, 'projects.postProduction', id),
-		image: loadImage,
+		image: loadAsset,
+		asset: loadAsset,
+		direct: {
+			asset: loadAssetObj
+		}
 	}
 )
 

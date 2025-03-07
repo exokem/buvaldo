@@ -5,6 +5,8 @@ export const displayTypes = {
 	popup: 'popup',
 	// Dedicated page
 	dedicated: 'dedicated',
+	// External link
+	external: 'external',
 }
 
 const postProduction = Object.freeze(
@@ -56,6 +58,10 @@ const postProduction = Object.freeze(
 				categories: ['HBO Max Video Hero'],
 				date: '2022',
 				thumbnail: 'images.edgeOfEarthThumbnail',
+				embed: youtubeEmbed({
+					url: 'https://www.youtube.com/embed/l0nYj16wh5s?si=S-RxZHxYXFOaysOE',
+					alt: ''
+				}),
 				displayType: displayTypes.popup
 			},
 			jordanGonzales: {
@@ -85,7 +91,7 @@ const postProduction = Object.freeze(
 				thumbnail: 'images.butterflyDreamsThumbnail',
 				bryan: ['Editor, On-Set DIT'],
 				embed: youtubeEmbed({
-					url: 'https://www.youtube.com/embed/NSMPPcNZosg?si=N02IdhRT3rh0kXkI',
+					url: 'https://www.youtube.com/embed/NSMPPcNZosg?si=Se9hKa0paYMUdtuu',
 					alt: ''
 				}),
 				displayType: displayTypes.popup
@@ -99,10 +105,10 @@ const postProduction = Object.freeze(
 				date: '2022',
 				thumbnail: 'images.scrambledEggsThumbnail',
 				bryan: ['Editor'],
-				embed: youtubeEmbed({
-					url: 'https://www.youtube.com/embed/NSMPPcNZosg?si=N02IdhRT3rh0kXkI',
-					alt: ''
-				}),
+				// embed: youtubeEmbed({
+				// 	url: '',
+				// 	alt: ''
+				// }),
 				displayType: displayTypes.popup
 			},
 			cloche: {
@@ -114,7 +120,10 @@ const postProduction = Object.freeze(
 				date: '2022',
 				thumbnail: 'images.clocheThumbnail',
 				bryan: ['Editor'],
-				url: 'https://www.youtube.com/watch?v=M5aKudxDckQ&t=3s',
+				embed: youtubeEmbed({
+					url: 'https://www.youtube.com/embed/M5aKudxDckQ?si=OspVULSZq7MJAmWX',
+					alt: ''
+				}),
 				displayType: displayTypes.popup
 			},
 		},
@@ -128,7 +137,10 @@ const postProduction = Object.freeze(
 				categories: ['Advertising Campaign'],
 				date: '2020-2021',
 				thumbnail: 'images.dianaFlorenceThumbnail',
-				url: 'https://www.youtube.com/watch?v=Ws7EbmiXohM',
+				embed: youtubeEmbed({
+					url: 'https://www.youtube.com/embed/Ws7EbmiXohM?si=jaZIUorrhvTAijOH',
+					alt: ''
+				}),
 				displayType: displayTypes.popup
 			},
 			stanLabs: {
@@ -139,7 +151,10 @@ const postProduction = Object.freeze(
 				categories: [],
 				date: '2020',
 				thumbnail: 'images.stanLabsThumbnail',
-				url: 'https://www.youtube.com/watch?v=C_BCKLYmKqA&t=1s',
+				embed: youtubeEmbed({
+					url: 'https://www.youtube.com/embed/C_BCKLYmKqA?si=pSf_v3B0au6zeCDP',
+					alt: ''
+				}),
 				displayType: displayTypes.popup
 			},
 		},
@@ -192,7 +207,10 @@ const films = Object.freeze(
 				durationSeconds: 0,
 				bryan: ['Director', 'Editor'],
 				credits: {},
-				url: 'https://www.youtube.com/watch?v=uS_2iwAPDRk',
+				embed: youtubeEmbed({
+					url: 'https://www.youtube.com/embed/uS_2iwAPDRk?si=PHUYmAW06Wrptaa4',
+					alt: ''
+				}),
 				displayType: displayTypes.popup
 			},
 			soLong: {
@@ -207,7 +225,10 @@ const films = Object.freeze(
 				durationSeconds: 0,
 				bryan: ['Director', 'Writer', 'Editor'],
 				credits: {},
-				url: 'https://www.youtube.com/watch?v=2p1O0O32TSk',
+				embed: youtubeEmbed({
+					url: 'https://www.youtube.com/embed/2p1O0O32TSk?si=eNehFbc9ZFavOBJ6',
+					alt: ''
+				}),
 				displayType: displayTypes.popup
 			},
 			pierCatharsis: {
@@ -221,7 +242,10 @@ const films = Object.freeze(
 				durationSeconds: 0,
 				bryan: ['Director', 'Editor'],
 				credits: {},
-				url: 'https://www.youtube.com/watch?v=Bj-33tOL95I',
+				embed: youtubeEmbed({
+					url: 'https://www.youtube.com/embed/Bj-33tOL95I?si=TOHeD8y5AhllcqBt',
+					alt: ''
+				}),
 				displayType: displayTypes.popup
 			},
 			omicronSpymaster: {
@@ -235,7 +259,10 @@ const films = Object.freeze(
 				durationSeconds: 0,
 				bryan: ['Director', 'Editor'],
 				credits: {},
-				url: 'https://www.youtube.com/watch?v=41eNpV6g0QI',
+				embed: youtubeEmbed({
+					url: 'https://www.youtube.com/embed/41eNpV6g0QI?si=PBMf0u11yH-WnTpL',
+					alt: ''
+				}),
 				displayType: displayTypes.popup
 			},
 			helloAgain: {
@@ -249,7 +276,10 @@ const films = Object.freeze(
 				durationSeconds: 0,
 				bryan: ['Director', 'Writer', 'Editor'],
 				credits: {},
-				url: 'https://www.youtube.com/watch?v=74O2C8ktmcE',
+				embed: youtubeEmbed({
+					url: 'https://www.youtube.com/embed/74O2C8ktmcE?si=fvNDbNzjT75vu1km',
+					alt: ''
+				}),
 				displayType: displayTypes.popup
 			}
 		},
@@ -265,7 +295,10 @@ const films = Object.freeze(
 				durationSeconds: 0,
 				bryan: ['Director'],
 				credits: {},
-				url: 'https://www.youtube.com/watch?v=Gfwce4TkSP8',
+				embed: youtubeEmbed({
+					url: 'https://www.youtube.com/embed/Gfwce4TkSP8?si=dwIM_a1ySOFVa92q',
+					alt: ''
+				}),
 				displayType: displayTypes.popup
 			}
 		},
