@@ -5,6 +5,7 @@ import loadState from "@api/loadState"
 import {Spinner, useDisclosure} from "@nextui-org/react"
 import load from "@api/loader"
 import {displayTypes as displayType} from "@api/projects"
+import FilmModal from "@comp/display/FilmModal"
 
 function FilmThumbnailImage({film, isLandscape, setState})
 {
@@ -27,6 +28,7 @@ function FilmThumbnailPopupInitiator({film, children})
 			onClick={disclosure.onOpen}
 		>
 			{children}
+			<FilmModal film={film} disclosure={disclosure} />
 		</div>
 	)
 }

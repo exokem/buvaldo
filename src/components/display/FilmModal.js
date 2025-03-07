@@ -1,5 +1,55 @@
-import {Modal, ModalBody, ModalContent, ModalFooter, ModalHeader} from "@nextui-org/react"
+import {Button, Modal, ModalBody, ModalContent, ModalFooter, ModalHeader} from "@nextui-org/react"
+import load from '@api/loader'
+import Asset from "@comp/dynamic/asset"
+import InsetSection from "@comp/layout/InsetSection"
+import {SectionHeading} from "@comp/layout/Section"
+import {inter, passionOne} from "@font"
+import MaterialIcon from "@comp/icon"
+import icons from "@api/icons"
 
+function FilmModalHeader({film, onClose})
+{
+	return (
+		<>
+			<h1
+				id={film.id}
+				className={`
+					font-bold ${inter.className}  
+					text-black font-bold text-2xl
+					content-center
+					text-nowrap
+					px-6
+					pt-3
+					w-min
+					h-full
+					self-center
+				`}
+			>
+				{film.title}
+			</h1>
+			<Button
+				onClick={onClose}
+				className={`
+					h-full
+					bg-transparent
+					hover:bg-amber-300
+					rounded-none
+					rounded-tr-xl
+					min-h-full
+					px-3
+				`}
+			>
+				<MaterialIcon
+					path={icons.x}
+					className={`
+						fill-black
+					`}
+					size={36}
+				/>
+			</Button>
+		</>
+	)
+}
 
 export default function FilmModal({film, disclosure})
 {
@@ -8,28 +58,73 @@ export default function FilmModal({film, disclosure})
 			isOpen={disclosure.isOpen}
 			onOpenChange={disclosure.onOpenChange}
 			hideCloseButton={true}
+			isDismissable={true}
 			backdrop='blur'
 			classNames={{
-				// body: "bg-lgray-h",
-				// backdrop: "",
-				// base: "border-[#292f46] bg-[#19172c] dark:bg-[#19172c] text-[#a8b0d3]",
-				// header: "bg-lgray-h",
+				// backdrop: "z-[200]",
+				wrapper: 'z-[100]',
+				base: `
+					min-w-[40vw] 
+					bg-amber-400
+					border-amber-400
+					min-h-[calc(calc(9/16)*40vw)]
+					overflow-visible
+				`,
+				header: `
+					bg-transparent
+					p-0
+					flex-row
+					h-16
+					place-content-between
+					mb-3
+				`,
+				body: `
+					bg-stone-800 
+					px-3 py-3
+					rounded-xl
+					mx-3 mb-3
+				`,
 				// footer: "bg-lgray-h",
-				// closeButton: "hover:bg-white/5 active:bg-white/10",
+				closeButton: "hover:bg-amber-400 active:bg-white/10",
 			}}
 		>
 			<ModalContent>
 				{(onClose) => (
 					<>
 						<ModalHeader>
-
+							<FilmModalHeader film={film} onClose={onClose} />
 						</ModalHeader>
 						<ModalBody>
-
+							<InsetSection className={`min-h-full aspect-[calc(16/9)] rounded-xl`}>
+								<Asset
+									asset={film.embed}
+									className={`w-full h-full`}
+								/>
+							</InsetSection>
+							<Button
+								className={`
+									absolute
+									-bottom-[0.75rem]
+									self-center
+									font-bold ${inter.className}  
+									bg-amber-400
+									drop-shadow-lg
+									hover:!opacity-100
+									hover:bg-amber-300
+									pl-3
+									text-black font-bold text-lg
+								`}
+							>
+								<MaterialIcon
+									path={icons.add}
+									className={`
+										fill-black
+									`}
+									size={24}
+								/>
+								Show Details
+							</Button>
 						</ModalBody>
-						<ModalFooter>
-
-						</ModalFooter>
 					</>
 				)}
 			</ModalContent>

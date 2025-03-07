@@ -43,7 +43,7 @@ export default function FilmThumbnail({film, isLandscape = true})
 				cursor-pointer
 				overflow-clip
 				bg-transparent
-				z-10
+				z-5
 				
 				hover:scale-110
 				hover:[filter:_blur(0)_!important;]
