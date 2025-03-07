@@ -17,61 +17,61 @@ const assets = Object.freeze(
 
 			clocheThumbnail: {
 				type: assetType.local.name,
-				url: '/post/cloche/thumbnail.png',
+				url: '/editorial/cloche/thumbnail.png',
 				alt: ''
 			},
 
 			butterflyDreamsThumbnail: {
 				type: assetType.local.name,
-				url: '/post/butterfly-dreams/thumbnail.jpeg',
+				url: '/editorial/butterfly-dreams/thumbnail.jpeg',
 				alt: ''
 			},
 
 			dianaFlorenceThumbnail: {
 				type: assetType.local.name,
-				url: '/post/diana-florence/thumbnail.png',
+				url: '/editorial/diana-florence/thumbnail.png',
 				alt: ''
 			},
 
 			palanteThumbnail: {
 				type: assetType.local.name,
-				url: '/post/palante-pa-mi/thumbnail.png',
+				url: '/editorial/palante-pa-mi/thumbnail.png',
 				alt: ''
 			},
 
 			maliaPylesThumbnail: {
 				type: assetType.local.name,
-				url: '/post/malia-pyles/thumbnail.png',
+				url: '/editorial/malia-pyles/thumbnail.png',
 				alt: ''
 			},
 
 			minxThumbnail: {
 				type: assetType.local.name,
-				url: '/post/minx/thumbnail.png',
+				url: '/editorial/minx/thumbnail.png',
 				alt: ''
 			},
 
 			scrambledEggsThumbnail: {
 				type: assetType.local.name,
-				url: '/post/scrambled-eggs/thumbnail.png',
+				url: '/editorial/scrambled-eggs/thumbnail.png',
 				alt: ''
 			},
 
 			stanLabsThumbnail: {
 				type: assetType.local.name,
-				url: '/post/stan-labs/thumbnail.png',
+				url: '/editorial/stan-labs/thumbnail.png',
 				alt: ''
 			},
 
 			edgeOfEarthThumbnail: {
 				type: assetType.local.name,
-				url: '/post/edge-of-earth/thumbnail.png',
+				url: '/editorial/edge-of-earth/thumbnail.png',
 				alt: ''
 			},
 
 			jordanGonzalesThumbnail: {
 				type: assetType.local.name,
-				url: '/post/jordan-gonzales/thumbnail.png',
+				url: '/editorial/jordan-gonzales/thumbnail.png',
 				alt: ''
 			},
 
@@ -79,49 +79,49 @@ const assets = Object.freeze(
 
 			loveBombThumbnail: {
 				type: assetType.local.name,
-				url: '/film/love-bomb/thumbnail.jpeg',
+				url: '/directorial/love-bomb/thumbnail.jpeg',
 				alt: ''
 			},
 
 			playinAroundThumbnail: {
 				type: assetType.local.name,
-				url: '/film/playin-around/thumbnail.jpeg',
+				url: '/directorial/playin-around/thumbnail.jpeg',
 				alt: ''
 			},
 
 			soLongThumbnail: {
 				type: assetType.local.name,
-				url: '/film/so-long/thumbnail.jpg',
+				url: '/directorial/so-long/thumbnail.jpg',
 				alt: ''
 			},
 
 			pierCatharsisThumbnail: {
 				type: assetType.local.name,
-				url: '/film/pier-catharsis/thumbnail.jpg',
+				url: '/directorial/pier-catharsis/thumbnail.jpg',
 				alt: ''
 			},
 
 			posterThumbnail: {
 				type: assetType.local.name,
-				url: '/film/poster/thumbnail.jpg',
+				url: '/directorial/poster/thumbnail.jpg',
 				alt: ''
 			},
 
 			pityPartyThumbnail: {
 				type: assetType.local.name,
-				url: '/film/pity-party/thumbnail.jpeg',
+				url: '/directorial/pity-party/thumbnail.jpeg',
 				alt: ''
 			},
 
 			helloAgainThumbnail: {
 				type: assetType.local.name,
-				url: '/film/hello-again/thumbnail.jpg',
+				url: '/directorial/hello-again/thumbnail.jpg',
 				alt: ''
 			},
 
 			omicronSpymasterThumbnail: {
 				type: assetType.local.name,
-				url: '/film/omicron-spymaster/thumbnail.jpg',
+				url: '/directorial/omicron-spymaster/thumbnail.jpg',
 				alt: ''
 			},
 		}
