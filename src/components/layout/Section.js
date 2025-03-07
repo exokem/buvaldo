@@ -1,7 +1,7 @@
 import {passionOne} from "@font"
 import Container from "@comp/layout/Container"
 
-export function SectionHeading({children, id})
+export function SectionHeading({children, id, className})
 {
 	return (
 		<div className='flex justify-center items-center py-9'>
@@ -15,6 +15,7 @@ export function SectionHeading({children, id})
 				self-center
 				rounded-l-lg
 				z-20
+				${className}
 			`}>{children}</h1>
 		</div>
 	)
