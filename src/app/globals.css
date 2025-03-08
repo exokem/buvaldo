@@ -30,6 +30,10 @@ body {
 		@apply bg-gradient-to-r from-amber-400 from-60% to-transparent
 	}
 
+	.shadow-gradient {
+		@apply bg-gradient-to-r from-stone-950 from-60% to-transparent
+	}
+
 	.highlight-gradient-alt {
 		@apply bg-gradient-to-r from-amber-100 from-60% to-transparent
 	}
