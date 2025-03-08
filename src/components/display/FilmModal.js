@@ -28,12 +28,21 @@ function FilmModalHeader({film, onClose})
 					content-center
 					text-nowrap
 					px-6
-					pt-3
 					w-min
 					h-full
 					self-center
+					flex flex-row
+					place-items-center
+					gap-3
 				`}
 			>
+				<MaterialIcon
+					path={icons.movie}
+					className={`
+						fill-black
+					`}
+					size={36}
+				/>
 				Preview
 			</h1>
 			<Button
@@ -41,7 +50,7 @@ function FilmModalHeader({film, onClose})
 				className={`
 					h-full
 					bg-transparent
-					hover:bg-amber-300
+					hover:bg-amber-200
 					rounded-none
 					rounded-tr-xl
 					min-h-full
@@ -83,18 +92,19 @@ export default function FilmModal({film, disclosure})
 					overflow-visible
 				`,
 				header: `
-					bg-transparent
+					bg-amber-300
+					rounded-t-xl
 					p-0
 					flex-row
 					h-16
 					place-content-between
-					mb-3
+					mb-1.5
 				`,
 				body: `
-					bg-stone-800 
+					bg-stone-950 
 					px-3 py-3
 					rounded-xl
-					mx-3 mb-3
+					mx-1 mb-1
 				`,
 				// footer: "bg-lgray-h",
 				closeButton: "hover:bg-amber-400 active:bg-white/10",
@@ -118,61 +128,131 @@ export default function FilmModal({film, disclosure})
 								gap-3
 								${inter.className}
 							`}>
-								<div className={`
-									flex flex-col
-									grow
-									p-3 gap-3
-									bg-stone-500
-								`}>
-									<Asset
-										asset={film.embed}
-										className={`
+								<Asset
+									asset={film.embed}
+									className={`
 										rounded-xl
 										drop-shadow-lg
 										aspect-[calc(16/9)] 
 										outline-none
-										${expandDetails ? `
-											h-[30%]
-										` : `
-											absolute
-											z-[100]
-											w-full h-full
-											top-0 left-0
-										`}
+										w-full h-full
 									`}
-									/>
-
-								</div>
+								/>
 								<div className={`
+									absolute top-0 left-0 
+									w-full h-full
+									bg-stone-950 bg-opacity-70
+									backdrop-blur
+									transition-opacity
+									${expandDetails ? 'opacity-100' : 'opacity-0 pointer-events-none'}
 									flex flex-col
-									grow
-									px-9
-									text-xl
-									text-stone-900
+									place-items-center
+									justify-center
+									py-9
 								`}>
-									<div className={`flex flex-col gap-3 py-9`}>
-										<h1 className={`
-											font-black text-4xl
-										`}>
-											<em>{film.title}</em>
-										</h1>
-										<p className={`text-2xl`}>
-											<b>{film.genre}</b> {film.categories !== undefined && film.categories.length !== 0 ? ` | ${film.categories.join(', ')}`: ''}
-										</p>
-										<p className={`text-2xl`}>{film.date}</p>
-									</div>
-									<Divider className={`bg-black h-0.5 rounded-lg`} />
+									<div className={`
+										w-[55%]
+										bg-stone-950 bg-opacity-50
+										backdrop-blur
+										text-stone-100
+										px-9
+										py-9
+										rounded-xl
+										relative
+									`}>
+										<div className={`flex flex-col gap-5 pb-9`}>
+											<h1 className={`
+												font-black text-4xl
+											`}>
+												<em>{film.title}</em>
+											</h1>
+											<p className={`text-2xl text-stone-400`}>
+												<b>{film.date}  </b>
+												<span> | </span>
+												<span>{film.genre}</span>
+												{film.categories !== undefined && film.categories.length !== 0 ? ` | `: ''}
+												<em>
+													{film.categories?.join(', ') ?? ''}
+												</em>
+											</p>
+										</div>
+										<Divider className={`bg-stone-50 h-0.5 rounded-lg`} />
 
-									<p className={`text-xl pt-9`}>
-										{film.description}
-									</p>
+										<p className={`text-2xl pt-9 text-stone-200`}>
+											{film.description}
+										</p>
+										<Button onClick={() => setExpandDetails(false)} className={`
+											absolute top-0 right-0
+											bg-transparent
+											min-w-0
+											!p-4
+											h-auto
+										`}>
+											<MaterialIcon
+												path={icons.x}
+												className={`
+													fill-stone-200
+												`}
+												size={24}
+											/>
+										</Button>
+									</div>
 								</div>
+								{/*<div className={`*/}
+								{/*	flex flex-col*/}
+								{/*	grow*/}
+								{/*	p-3 gap-3*/}
+								{/*	bg-stone-500*/}
+								{/*`}>*/}
+								{/*	<Asset*/}
+								{/*		asset={film.embed}*/}
+								{/*		className={`*/}
+								{/*		rounded-xl*/}
+								{/*		drop-shadow-lg*/}
+								{/*		aspect-[calc(16/9)] */}
+								{/*		outline-none*/}
+								{/*		${expandDetails ? `*/}
+								{/*			h-[30%]*/}
+								{/*		` : `*/}
+								{/*			absolute*/}
+								{/*			z-[100]*/}
+								{/*			w-full h-full*/}
+								{/*			top-0 left-0*/}
+								{/*		`}*/}
+								{/*	`}*/}
+								{/*	/>*/}
+
+								{/*</div>*/}
+								{/*<div className={`*/}
+								{/*	flex flex-col*/}
+								{/*	grow*/}
+								{/*	px-9*/}
+								{/*	text-xl*/}
+								{/*	text-stone-900*/}
+								{/*`}>*/}
+								{/*	<div className={`flex flex-col gap-3 py-9`}>*/}
+								{/*		<h1 className={`*/}
+								{/*			font-black text-4xl*/}
+								{/*		`}>*/}
+								{/*			<em>{film.title}</em>*/}
+								{/*		</h1>*/}
+								{/*		<p className={`text-2xl`}>*/}
+								{/*			<b>{film.genre}</b> {film.categories !== undefined && film.categories.length !== 0 ? ` | ${film.categories.join(', ')}`: ''}*/}
+								{/*		</p>*/}
+								{/*		<p className={`text-2xl`}>{film.date}</p>*/}
+								{/*	</div>*/}
+								{/*	<Divider className={`bg-black h-0.5 rounded-lg`} />*/}
+
+								{/*	<p className={`text-xl pt-9`}>*/}
+								{/*		{film.description}*/}
+								{/*	</p>*/}
+								{/*</div>*/}
 
 							</InsetSection>
 							<Button
 								className={`
 									absolute
-									-bottom-[0.75rem]
+									-bottom-[1rem]
 									self-center
 									font-bold ${inter.className}  
 									bg-amber-400
