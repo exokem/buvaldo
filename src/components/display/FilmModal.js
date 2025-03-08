@@ -8,11 +8,11 @@ import {
 	ModalHeader
 } from "@nextui-org/react"
 import load from '@api/loader'
-import Asset from "@comp/dynamic/asset"
+import Asset from "@comp/dynamic/Asset"
 import InsetSection from "@comp/layout/InsetSection"
 import {SectionHeading} from "@comp/layout/Section"
 import {inter, passionOne} from "@font"
-import MaterialIcon from "@comp/icon"
+import MaterialIcon from "@comp/Icon"
 import icons from "@api/icons"
 import {useState} from "react"
 
