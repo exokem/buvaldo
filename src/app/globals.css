@@ -49,6 +49,25 @@ body {
 	.full-height {
 		height: calc(100vh - var(--nav-height));
 	}
+
+	.bg-stripes {
+		background: repeating-linear-gradient(
+			45deg,
+			#fbbf24 0,
+			#fbbf24 2.5rem,
+			#1c1917 2.5rem,
+			#1c1917 5rem
+		);
+	}
+	.bg-stripes-alt {
+		background: repeating-linear-gradient(
+			45deg,
+			#fbbf24 3.5rem,
+			#fbbf24 6rem,
+			#1c1917 6rem,
+			#1c1917 8.5rem
+		);
+	}
 }
 
 /* Old below this line */
