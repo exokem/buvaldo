@@ -9,7 +9,7 @@ import FilmPreview from "@comp/display/FilmPreview"
 import {useFocus} from "@api/hooks/useFocus"
 import Section from "@comp/layout/Section"
 import load from "@api/loader"
-import {inter, passionOne} from "@font"
+import {handwriting, inter, passionOne} from "@font"
 import {Button, Divider, Link} from "@nextui-org/react"
 import MaterialIcon from "@comp/Icon"
 import icons from "@api/icons"
@@ -31,17 +31,18 @@ function ExploreButton({href, icon, children, className = ''})
 				hover:text-stone-950
 				!opacity-100
 				transition-colors duration-200
-				text-2xl
+				text-lg
 				font-semibold
 				h-auto
-				py-3 px-14
+				py-2 px-10
 				rounded-none
 				group
 				flex flex-row gap-3
 				${className}
+				${inter.className}
 			`}
 		>
-			<MaterialIcon path={icon} size={30} className={`fill-amber-400 group-hover:fill-stone-950 transition-colors duration-200`}/>
+			<MaterialIcon path={icon} size={24} className={`fill-amber-400 group-hover:fill-stone-950 transition-colors duration-200`}/>
 			{children}
 		</Button>
 	)
@@ -185,25 +186,14 @@ function AboutCover()
 					self-end
 					gap-9 py-12
 				">
-					<p className={`
-						highlight-gradient text-stone-900
-						w-min
-						text-nowrap
-						rounded-l-xl
-						px-3
-						py-2
-						text-2xl
-						font-bold
-						
-						${passionOne.className}
-					`}>
-						<span>Brazilian-American Filmmaker & NYU Tisch Graduate</span>
-					</p>
+
+
 					<h1 className={`
-						font-bold ${passionOne.className} 
+						font-bold ${handwriting.className} 
 						text-9xl
 						text-nowrap 
-						highlight-gradient text-stone-950
+						 text-amber-400
+						 drop-shadow-xl
 						w-min
 						px-5
 						pt-2
@@ -212,6 +202,26 @@ function AboutCover()
 					`}>
 						BRYAN UVALDO.
 					</h1>
+
+					<p className={`
+						text-nowrap
+						rounded-l-xl
+						px-3
+						py-2
+						text-medium
+						font-bold
+						border-3
+						border-amber-400
+						text-amber-400
+						backdrop-blur 
+						w-min 
+						rounded-xl
+						backdrop-brightness-75
+						
+						${inter.className}
+					`}>
+						<span>Brazilian-American Filmmaker & NYU Tisch Graduate</span>
+					</p>
 
 					<div className={`
 						flex flex-row 
@@ -224,13 +234,14 @@ function AboutCover()
 							bg-amber-400
 							border-3
 							border-amber-400
-							text-stone-950 font-bold
-							text-2xl
+							text-stone-950
+							text-lg font-bold
 							h-auto
 							px-4
 							py-3
 							transition-colors duration-200
 							rounded-l-xl
+							${inter.className}
 						`}>
 							EXPLORE
 						</div>
