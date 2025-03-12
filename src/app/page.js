@@ -257,7 +257,6 @@ function AboutCover()
 							rounded-bl-xl rounded-br-xl
 							md:rounded-bl-none md:rounded-r-xl
 							border-b-3 md:border-r-3
-							 
 						`}>
 							Bio
 						</ExploreButton>
