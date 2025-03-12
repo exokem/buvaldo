@@ -6,7 +6,12 @@ export default function BackgroundCover({src, alt=""})
 		<Image
 			src={src}
 			alt={alt}
-			className="top-0 left-0 right-0 fixed z-[-10]"
+			className={`
+				left-0 right-0 
+				fixed z-[-10]
+				
+				top-[var(--nav-height)]
+			`}
 		/>
 	)
 }
