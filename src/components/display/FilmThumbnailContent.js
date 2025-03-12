@@ -2,7 +2,7 @@
 
 import {useState} from "react"
 import loadState from "@api/loadState"
-import {Spinner, useDisclosure} from "@nextui-org/react"
+import {Spinner, useDisclosure} from '@heroui/react'
 import load from "@api/loader"
 import {displayTypes as displayType} from "@api/projects"
 import FilmModal from "@comp/display/FilmModal"

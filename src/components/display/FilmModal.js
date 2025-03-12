@@ -6,7 +6,7 @@ import {
 	ModalContent,
 	ModalFooter,
 	ModalHeader
-} from "@nextui-org/react"
+} from '@heroui/react'
 import load from '@api/loader'
 import Asset from "@comp/dynamic/Asset"
 import InsetSection from "@comp/layout/InsetSection"

@@ -5,7 +5,7 @@ import instagram from './instagram.svg'
 import youtube from './youtube.svg'
 import linkedin from './linkedin.svg'
 import Image from "next/image"
-import {Button, Link} from "@nextui-org/react"
+import {Button, Link} from '@heroui/react'
 
 function ImdbLogo()
 {

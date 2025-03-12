@@ -1,7 +1,7 @@
 import projects from "@api/projects"
 import Section, {SectionHeading} from "@comp/layout/Section"
 import Container from "@comp/layout/Container"
-import {Skeleton} from "@nextui-org/react"
+import {Skeleton} from '@heroui/react'
 import ItemGrid from "@comp/layout/ItemGrid"
 import background from './background.jpg'
 import BackgroundCover from "@comp/static/BackgroundCover"

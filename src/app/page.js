@@ -10,7 +10,7 @@ import {useFocus} from "@api/hooks/useFocus"
 import Section from "@comp/layout/Section"
 import load from "@api/loader"
 import {handwriting, inter, passionOne} from "@font"
-import {Button, Divider, Link} from "@nextui-org/react"
+import {Button, Divider, Link} from '@heroui/react'
 import MaterialIcon from "@comp/Icon"
 import icons from "@api/icons"
 
