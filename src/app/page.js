@@ -23,7 +23,7 @@ function ExploreButton({href, icon, children, className = ''})
 			className={`
 				bg-transparent
 				border-3
-				border-x-0
+				border-y-0 md:border-y-3 md:border-x-0
 				border-amber-400
 				text-amber-400
 				hover:bg-amber-400
@@ -185,13 +185,13 @@ function AboutCover()
 					h-min
 					self-end
 					gap-9 py-12
+					px-5 2xl:px-0
 				">
-
-
 					<h1 className={`
-						font-bold ${handwriting.className} 
-						text-9xl
-						text-nowrap 
+						font-bold ${handwriting.className}
+						text-[calc(2rem+10vw)] sm:text-[calc(1rem+10vw)] md:text-8xl lg:text-9xl 
+						
+						sm:text-nowrap 
 						 text-amber-400
 						 drop-shadow-xl
 						w-min
@@ -208,7 +208,7 @@ function AboutCover()
 						rounded-l-xl
 						px-3
 						py-2
-						text-medium
+						text-[calc(0.4rem+1vw)] sm:text-medium
 						font-bold
 						border-3
 						border-amber-400
@@ -224,7 +224,7 @@ function AboutCover()
 					</p>
 
 					<div className={`
-						flex flex-row 
+						flex flex-col md:flex-row 
 						backdrop-blur 
 						w-min 
 						rounded-xl
@@ -235,12 +235,14 @@ function AboutCover()
 							border-3
 							border-amber-400
 							text-stone-950
+							text-center
 							text-lg font-bold
 							h-auto
 							px-4
 							py-3
 							transition-colors duration-200
-							rounded-l-xl
+							rounded-tr-xl rounded-tl-xl md:rounded-tr-none
+							md:rounded-bl-xl
 							${inter.className}
 						`}>
 							EXPLORE
@@ -252,9 +254,10 @@ function AboutCover()
 							Editing
 						</ExploreButton>
 						<ExploreButton href={`/about`} icon={icons.user} className={`
-							rounded-l-none
-							border-r-3
-							rounded-r-xl
+							rounded-bl-xl rounded-br-xl
+							md:rounded-bl-none md:rounded-r-xl
+							border-b-3 md:border-r-3
+							 
 						`}>
 							Bio
 						</ExploreButton>
