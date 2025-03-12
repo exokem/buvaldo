@@ -23,7 +23,7 @@ const assets = Object.freeze(
 
 			butterflyDreamsThumbnail: {
 				type: assetType.local.name,
-				url: '/editorial/butterfly-dreams/thumbnail.jpeg',
+				url: '/editorial/butterfly-dreams/thumbnail.png',
 				alt: ''
 			},
 
@@ -75,53 +75,50 @@ const assets = Object.freeze(
 				alt: ''
 			},
 
-
-
 			loveBombThumbnail: {
 				type: assetType.local.name,
-				url: '/directorial/love-bomb/thumbnail.jpeg',
+				url: '/directorial/love-bomb/thumbnail.png',
 				alt: ''
 			},
-
 			playinAroundThumbnail: {
 				type: assetType.local.name,
-				url: '/directorial/playin-around/thumbnail.jpeg',
+				url: '/directorial/playin-around/thumbnail.png',
 				alt: ''
 			},
 
 			soLongThumbnail: {
 				type: assetType.local.name,
-				url: '/directorial/so-long/thumbnail.jpg',
+				url: '/directorial/so-long/thumbnail.png',
 				alt: ''
 			},
 
 			pierCatharsisThumbnail: {
 				type: assetType.local.name,
-				url: '/directorial/pier-catharsis/thumbnail.jpg',
+				url: '/directorial/pier-catharsis/thumbnail.png',
 				alt: ''
 			},
 
 			posterThumbnail: {
 				type: assetType.local.name,
-				url: '/directorial/poster/thumbnail.jpg',
+				url: '/directorial/poster/thumbnail.png',
 				alt: ''
 			},
 
 			pityPartyThumbnail: {
 				type: assetType.local.name,
-				url: '/directorial/pity-party/thumbnail.jpeg',
+				url: '/directorial/pity-party/thumbnail.png',
 				alt: ''
 			},
 
 			helloAgainThumbnail: {
 				type: assetType.local.name,
-				url: '/directorial/hello-again/thumbnail.jpg',
+				url: '/directorial/hello-again/thumbnail.png',
 				alt: ''
 			},
 
 			omicronSpymasterThumbnail: {
 				type: assetType.local.name,
-				url: '/directorial/omicron-spymaster/thumbnail.jpg',
+				url: '/directorial/omicron-spymaster/thumbnail.png',
 				alt: ''
 			},
 		}
