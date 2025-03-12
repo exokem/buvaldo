@@ -7,10 +7,10 @@ export default function BackgroundCover({src, alt=""})
 			src={src}
 			alt={alt}
 			className={`
-				left-0 right-0 
+				-translate-x-[calc(calc(100%-100vw)/2)]
 				fixed z-[-10]
 				
-				top-[var(--nav-height)]
+				top-[0]
 			`}
 		/>
 	)
