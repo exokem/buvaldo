@@ -32,13 +32,22 @@ const assetType = Object.freeze(
 		},
 		youtube: {
 			name: 'youtube',
-			load: (url, alt, {className = ''}) => (
-				<iframe
-					src={url}
-					className={`${className}`}
-					allowFullScreen
-				/>
-			)
+			load: (url, alt, {className = ''}) =>
+			{
+				if (url === '')
+				{
+					return (
+						<div className={`text-stone-50 text-4xl self-center justify-self-center mx-auto font-bold`}>COMING SOON</div>
+					)
+				}
+				return (
+					<iframe
+						src={url}
+						className={`${className}`}
+						allowFullScreen
+					/>
+				)
+			}
 		}
 	}
 )

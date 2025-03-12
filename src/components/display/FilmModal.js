@@ -163,7 +163,7 @@ function FilmModalBody({film, onClose})
 				bg-stone-400
 				bg-opacity-100
 				relative
-				flex flex-row
+				flex flex-row place-content-center
 				gap-3
 				${inter.className}
 			`}

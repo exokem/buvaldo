@@ -15,7 +15,7 @@ function FilmThumbnailImage({film, isLandscape, setState})
 
 const className = "w-full h-full absolute top-0 left-0 bottom-0 right-0"
 
-function FilmThumbnailPopupInitiator({film, children})
+export function FilmThumbnailPopupInitiator({film, children})
 {
 	const disclosure = useDisclosure()
 

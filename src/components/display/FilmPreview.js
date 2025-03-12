@@ -1,4 +1,5 @@
 import load from "@api/loader"
+import {FilmThumbnailPopupInitiator} from "@comp/display/FilmThumbnailContent"
 
 export default function FilmPreview({film, setFocusedFilm, focus})
 {
@@ -27,9 +28,10 @@ export default function FilmPreview({film, setFocusedFilm, focus})
 			onMouseEnter={() => focus.assignFocus(film)}
 			onMouseLeave={() => focus.unassignFocus(film)}
 		>
-			<a href={`/film/${film.id}`} className=" ">
+			<FilmThumbnailPopupInitiator film={film}>
 				{load.image(film.cover)}
-			</a>
+			</FilmThumbnailPopupInitiator>
+
 		</div>
 	)
 }

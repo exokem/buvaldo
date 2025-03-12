@@ -177,7 +177,12 @@ const films = Object.freeze(
 				bryan: ['Director', 'Editor'],
 				credits: {},
 				url: '',
-				displayType: displayTypes.dedicated
+				embed: youtubeEmbed({
+					url: '',
+					alt: ''
+				}),
+				displayType: displayTypes.popup
+				// displayType: displayTypes.dedicated
 			},
 			loveBombBaby: {
 				title: 'Love Bomb Baby',
@@ -192,7 +197,12 @@ const films = Object.freeze(
 				bryan: ['Director', 'Writer', 'Editor'],
 				credits: {},
 				url: '',
-				displayType: displayTypes.dedicated
+				embed: youtubeEmbed({
+					url: 'https://www.youtube.com/embed/DbYIgkQm-mI?si=UAJHVAo_B7K49OdU',
+					alt: ''
+				}),
+				displayType: displayTypes.popup
+				// displayType: displayTypes.dedicated
 			},
 		},
 		student: {
