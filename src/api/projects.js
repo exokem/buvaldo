@@ -48,6 +48,10 @@ const postProduction = Object.freeze(
 				categories: ['HBO Application'],
 				date: '2022',
 				thumbnail: 'images.minxThumbnail',
+				embed: youtubeEmbed({
+					url: 'https://www.youtube.com/embed/opts4FlU9fE?si=CU1uzzeZ3TVLohoc',
+					alt: ''
+				}),
 				displayType: displayTypes.popup
 			},
 			edgeOfEarth: {
