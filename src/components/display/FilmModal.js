@@ -6,7 +6,7 @@ import {
 	ModalContent,
 	ModalFooter,
 	ModalHeader
-} from "@nextui-org/react"
+} from '@heroui/react'
 import load from '@api/loader'
 import Asset from "@comp/dynamic/Asset"
 import InsetSection from "@comp/layout/InsetSection"
@@ -163,7 +163,7 @@ function FilmModalBody({film, onClose})
 				bg-stone-400
 				bg-opacity-100
 				relative
-				flex flex-row
+				flex flex-row place-content-center
 				gap-3
 				${inter.className}
 			`}

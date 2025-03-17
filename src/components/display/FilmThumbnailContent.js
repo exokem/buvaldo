@@ -2,7 +2,7 @@
 
 import {useState} from "react"
 import loadState from "@api/loadState"
-import {Spinner, useDisclosure} from "@nextui-org/react"
+import {Spinner, useDisclosure} from '@heroui/react'
 import load from "@api/loader"
 import {displayTypes as displayType} from "@api/projects"
 import FilmModal from "@comp/display/FilmModal"
@@ -15,7 +15,7 @@ function FilmThumbnailImage({film, isLandscape, setState})
 
 const className = "w-full h-full absolute top-0 left-0 bottom-0 right-0"
 
-function FilmThumbnailPopupInitiator({film, children})
+export function FilmThumbnailPopupInitiator({film, children})
 {
 	const disclosure = useDisclosure()
 

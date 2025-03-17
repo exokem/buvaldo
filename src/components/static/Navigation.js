@@ -2,7 +2,7 @@
 'use client'
 
 import React from "react"
-import {Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenuToggle, NavbarMenu, NavbarMenuItem, Link, Button} from "@nextui-org/react"
+import {Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenuToggle, NavbarMenu, NavbarMenuItem, Link, Button} from '@heroui/react'
 import {passionOne, inter} from '@font'
 
 import config from '@api/config'

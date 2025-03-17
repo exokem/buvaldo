@@ -9,8 +9,8 @@ import FilmPreview from "@comp/display/FilmPreview"
 import {useFocus} from "@api/hooks/useFocus"
 import Section from "@comp/layout/Section"
 import load from "@api/loader"
-import {inter, passionOne} from "@font"
-import {Button, Link} from "@nextui-org/react"
+import {handwriting, inter, passionOne} from "@font"
+import {Button, Divider, Link} from '@heroui/react'
 import MaterialIcon from "@comp/Icon"
 import icons from "@api/icons"
 
@@ -23,27 +23,155 @@ function ExploreButton({href, icon, children, className = ''})
 			className={`
 				bg-transparent
 				border-3
-				border-x-0
+				border-y-0 md:border-y-3 md:border-x-0
 				border-amber-400
 				text-amber-400
-				hover:bg-amber-300
-				hover:border-amber-300
+				hover:bg-amber-400
+				hover:border-amber-400
 				hover:text-stone-950
 				!opacity-100
 				transition-colors duration-200
-				text-2xl
+				text-lg
 				font-semibold
 				h-auto
-				py-3 px-14
+				py-2 px-10
 				rounded-none
 				group
 				flex flex-row gap-3
 				${className}
+				${inter.className}
 			`}
 		>
-			<MaterialIcon path={icon} size={30} className={`fill-amber-400 group-hover:fill-stone-950 transition-colors duration-200`}/>
+			<MaterialIcon path={icon} size={24} className={`fill-amber-400 group-hover:fill-stone-950 transition-colors duration-200`}/>
 			{children}
 		</Button>
+	)
+}
+
+function SlateTripart({label, icon, className=''})
+{
+	return (
+		<Button className={`
+			h-24
+			grow
+			flex flex-col
+			items-start
+			bg-transparent
+			text-stone-50
+			text-lg
+			font-semibold
+			rounded-none
+			${inter.className}
+			${className}
+			pt-4
+			px-4
+		`}>
+			<h2 className={`w-full place-content-start flex flex-row gap-2`}><MaterialIcon path={icon} size={24} className={`fill-stone-50 my-auto`}/>{label}</h2>
+			<div className="grow">
+
+			</div>
+		</Button>
+	)
+}
+
+function Slate()
+{
+	return (
+		<div className={`
+			w-min text-nowrap
+			bg-stone-900
+			text-stone-50
+			rounded-b-3xl
+			rounded-t-lg
+			relative
+			drop-shadow-xl
+			border-2
+				border-stone-950
+			${inter.className}
+		`}>
+			{/* Angled striped bar */}
+			<div className={`
+				bg-stripes-alt	
+				w-full
+				rounded-lg
+				drop-shadow-xl
+				border-2
+				border-stone-950
+				
+				-translate-y-4
+				h-14
+				origin-bottom-left
+				-rotate-[10deg]
+				absolute
+				-top-10
+			`}/>
+			{/* Horizontal striped bar */}
+			<div className={`
+				bg-stripes
+				w-full
+				rounded-lg
+				drop-shadow-xl
+				border-2
+				border-stone-950
+				h-14
+			`}/>
+			{/* Hinge */}
+			<div className={`
+				bg-stone-800 w-20 h-20
+				absolute
+				-top-10
+				rounded-xl
+				rounded-tr-[75%]
+				drop-shadow-lg
+				border-2
+				border-stone-950
+				p-2
+			`}>
+				<div className={`
+					rounded-full
+					bg-stone-500
+					w-4 h-4
+					border-2
+					border-stone-950
+					absolute top-2 left-2
+				`}/>
+				<div className={`
+					rounded-full
+					bg-stone-500
+					w-4 h-4
+					border-2
+				border-stone-950
+					absolute bottom-2 left-2
+				`}/>
+				<div className={`
+					rounded-full
+					bg-stone-500
+					w-4 h-4
+					border-2
+				border-stone-950
+					absolute bottom-2 right-2
+				`}/>
+			</div>
+			<div className={`flex flex-col p-10 pt-8 font-semibold`}>
+				<div className={`text-2xl flex flex-row gap-10`}>
+					<em>DIRECTOR</em> Bryan Uvaldo
+				</div>
+				<Divider className={`border-none bg-stone-50 h-[0.1rem] my-4 mb-6`}/>
+				<div className={`text-xl flex flex-row gap-10`}>
+					<em>PROD.</em> Brazilian-American Filmmaker & NYU Tisch Graduate
+				</div>
+				<Divider className={`border-none bg-stone-50 h-[0.1rem] mt-4`}/>
+				<div className={`
+					grid [grid-template-columns:_5fr_6fr_5fr]
+					place-content-evenly
+					w-full
+				`}>
+					<SlateTripart label={`Directing`} icon={icons.movie2} className={`flex-1`}/>
+					<SlateTripart label={`Editing`} icon={icons.film} className={`flex-2 border-x-[0.1rem] border-gray-50`}/>
+					<SlateTripart label={`Bio`} icon={icons.user} className={`flex-1`}/>
+				</div>
+			</div>
+		</div>
 	)
 }
 
@@ -57,12 +185,15 @@ function AboutCover()
 					h-min
 					self-end
 					gap-9 py-12
+					px-5 2xl:px-0
 				">
 					<h1 className={`
-						font-bold ${passionOne.className} 
-						text-9xl
-						text-nowrap text-amber-400
-						shadow-gradient
+						font-bold ${handwriting.className}
+						text-[calc(2rem+10vw)] sm:text-[calc(1rem+10vw)] md:text-8xl lg:text-9xl 
+						
+						sm:text-nowrap 
+						 text-amber-400
+						 drop-shadow-xl
 						w-min
 						px-5
 						pt-2
@@ -71,23 +202,29 @@ function AboutCover()
 					`}>
 						BRYAN UVALDO.
 					</h1>
+
 					<p className={`
-						shadow-gradient text-amber-400
-						text-opacity-75
-						w-min
 						text-nowrap
 						rounded-l-xl
 						px-3
 						py-2
-						text-4xl
+						text-[calc(0.4rem+1vw)] sm:text-medium
 						font-bold
+						border-3
+						border-amber-400
+						text-amber-400
+						backdrop-blur 
+						w-min 
+						rounded-xl
+						backdrop-brightness-75
 						
-						${passionOne.className}
+						${inter.className}
 					`}>
 						<span>Brazilian-American Filmmaker & NYU Tisch Graduate</span>
 					</p>
+
 					<div className={`
-						flex flex-row 
+						flex flex-col md:flex-row 
 						backdrop-blur 
 						w-min 
 						rounded-xl
@@ -95,16 +232,18 @@ function AboutCover()
 					`}>
 						<div className={`
 							bg-amber-400
-							hover:bg-amber-300
 							border-3
 							border-amber-400
-							text-stone-950 font-bold
-							text-2xl
+							text-stone-950
+							text-center
+							text-lg font-bold
 							h-auto
 							px-4
 							py-3
 							transition-colors duration-200
-							rounded-l-xl
+							rounded-tr-xl rounded-tl-xl md:rounded-tr-none
+							md:rounded-bl-xl
+							${inter.className}
 						`}>
 							EXPLORE
 						</div>
@@ -115,9 +254,9 @@ function AboutCover()
 							Editing
 						</ExploreButton>
 						<ExploreButton href={`/about`} icon={icons.user} className={`
-							rounded-l-none
-							border-r-3
-							rounded-r-xl
+							rounded-bl-xl rounded-br-xl
+							md:rounded-bl-none md:rounded-r-xl
+							border-b-3 md:border-r-3
 						`}>
 							Bio
 						</ExploreButton>
