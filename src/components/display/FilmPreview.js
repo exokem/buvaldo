@@ -28,7 +28,7 @@ export default function FilmPreview({film, setFocusedFilm, focus})
 			onMouseEnter={() => focus.assignFocus(film)}
 			onMouseLeave={() => focus.unassignFocus(film)}
 		>
-			<FilmThumbnailPopupInitiator film={film}>
+			<FilmThumbnailPopupInitiator film={film} focus={focus}>
 				{load.image(film.cover)}
 			</FilmThumbnailPopupInitiator>
 

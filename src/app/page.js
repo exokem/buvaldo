@@ -221,7 +221,6 @@ function AboutCover()
 						w-full lg:w-min 
 						rounded-xl
 						backdrop-brightness-75
-						hidden lg:flex
 						${inter.className}
 					`}>
 						<span>Brazilian-American Filmmaker & NYU Tisch Graduate</span>
@@ -280,10 +279,10 @@ function FeaturedFilms()
 	const focus = useFocus()
 
 	return (
-		<Section title='FEATURED FILMS' id='featured-films' className='bg-emphasis'>
+		<Section title='FEATURED FILMS' id='featured-films' className='bg-emphasis lg:full-height'>
 			<div className='
 				p-20 pt-12 gap-20
-				flex flex-row grow relative
+				flex flex-col lg:flex-row grow relative
 				place-content-center
 			'>
 				{films.map(film => <FilmPreview film={film} key={film.id} focus={focus}/>)}

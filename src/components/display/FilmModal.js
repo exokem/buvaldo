@@ -47,7 +47,7 @@ function FilmModalHeader({film, onClose})
 
 		{/* Close button */}
 		<Button
-			onClick={onClose}
+			onPress={onClose}
 			className={`
 				h-full
 				bg-transparent
@@ -210,7 +210,7 @@ function FilmModalBody({film, onClose})
 	</>
 }
 
-export default function FilmModal({film, disclosure})
+export default function FilmModal({film, focus, disclosure})
 {
 	return (
 		<Modal
@@ -253,10 +253,18 @@ export default function FilmModal({film, disclosure})
 				{(onClose) => (
 					<>
 						<ModalHeader>
-							<FilmModalHeader film={film} onClose={onClose} />
+							<FilmModalHeader film={film} onClose={() =>
+							{
+								focus.resetFocus()
+								onClose()
+							}} />
 						</ModalHeader>
 						<ModalBody>
-							<FilmModalBody film={film} onClose={onClose} />
+							<FilmModalBody film={film} onClose={() =>
+							{
+								focus.resetFocus()
+								onClose()
+							}} />
 						</ModalBody>
 					</>
 				)}

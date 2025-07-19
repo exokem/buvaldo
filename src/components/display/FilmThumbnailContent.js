@@ -15,7 +15,7 @@ function FilmThumbnailImage({film, isLandscape, setState})
 
 const className = "w-full h-full absolute top-0 left-0 bottom-0 right-0"
 
-export function FilmThumbnailPopupInitiator({film, children})
+export function FilmThumbnailPopupInitiator({film, focus, children})
 {
 	const disclosure = useDisclosure()
 
@@ -28,7 +28,7 @@ export function FilmThumbnailPopupInitiator({film, children})
 			onClick={disclosure.onOpen}
 		>
 			{children}
-			<FilmModal film={film} disclosure={disclosure} />
+			<FilmModal film={film} focus={focus} disclosure={disclosure} />
 		</div>
 	)
 }
