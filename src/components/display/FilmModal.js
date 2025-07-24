@@ -255,14 +255,14 @@ export default function FilmModal({film, focus, disclosure})
 						<ModalHeader>
 							<FilmModalHeader film={film} onClose={() =>
 							{
-								focus.resetFocus()
+								focus?.resetFocus()
 								onClose()
 							}} />
 						</ModalHeader>
 						<ModalBody>
 							<FilmModalBody film={film} onClose={() =>
 							{
-								focus.resetFocus()
+								focus?.resetFocus()
 								onClose()
 							}} />
 						</ModalBody>
