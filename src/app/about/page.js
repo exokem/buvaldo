@@ -80,7 +80,7 @@ export default function About()
 {
 	return (
 		<>
-			<BackgroundCover src={cover}/>
+			<BackgroundCover src={cover} className={'-translate-x-[calc(calc(100%-100vw)/3)]'}/>
 			<Container className={`
 				full-height 
 				place-content-center md:place-content-end
@@ -96,7 +96,7 @@ export default function About()
 					p-5
 					rounded-xl
 					bg-stone-50
-					bg-opacity-70
+					bg-opacity-90
 					mt-[25rem] md:mt-0
 				`}>
 					<p className={``}>
@@ -143,8 +143,8 @@ export default function About()
 							<Image src={instagram} alt={``} className={`h-[2.5rem]`}/>
 						</LogoButton>
 					</div>
+					<div className={` flex lg:hidden h-24`}/>
 				</div>
-				<div className={`h-24`}/>
 			</Container>
 		</>
 	)
