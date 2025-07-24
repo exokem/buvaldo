@@ -4,7 +4,10 @@ export default function ItemGrid({className = '', children})
 {
 	return (
 		<div className={`
-			grid
+			flex flex-col
+			px-5
+			lg:px-0
+			lg:grid
 			grid-cols-3
 			auto-rows-min
 			
