@@ -6,8 +6,8 @@ import {Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenuToggle, Navbar
 import {passionOne, inter} from '@font'
 
 import config from '@api/config'
-import icons from "@api/icons";
-import {ExploreButton} from "@comp/exploreButton";
+import icons from "@api/icons"
+import {ExploreButton} from "@comp/exploreButton"
 
 function Title()
 {

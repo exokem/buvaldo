@@ -13,7 +13,7 @@ import {handwriting, inter, passionOne} from "@font"
 import {Button, Divider, Link} from '@heroui/react'
 import MaterialIcon from "@comp/Icon"
 import icons from "@api/icons"
-import {ExploreButton} from "@comp/exploreButton";
+import {ExploreButton} from "@comp/exploreButton"
 
 function SlateTripart({label, icon, className=''})
 {
