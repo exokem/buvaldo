@@ -50,6 +50,10 @@ body {
 		height: calc(100vh - var(--nav-height));
 	}
 
+	.min-full-height {
+		min-height: calc(100vh - var(--nav-height));
+	}
+
 	.bg-stripes {
 		background: repeating-linear-gradient(
 			45deg,

@@ -14,10 +14,10 @@ export default function FilmPreview({film, setFocusedFilm, focus})
 				bg-black
 				z-10
 				
-				hover:rotate-3
-				hover:scale-110
-				hover:[filter:_blur(0)_!important;]
-				hover:z-[60] 
+				lg:hover:rotate-3
+				lg:hover:scale-110
+				lg:hover:[filter:_blur(0)_!important;]
+				lg:hover:z-[60] 
 				
 				rounded-lg
 				drop-shadow-lg
@@ -28,7 +28,7 @@ export default function FilmPreview({film, setFocusedFilm, focus})
 			onMouseEnter={() => focus.assignFocus(film)}
 			onMouseLeave={() => focus.unassignFocus(film)}
 		>
-			<FilmThumbnailPopupInitiator film={film}>
+			<FilmThumbnailPopupInitiator film={film} focus={focus}>
 				{load.image(film.cover)}
 			</FilmThumbnailPopupInitiator>
 

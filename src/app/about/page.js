@@ -80,7 +80,7 @@ export default function About()
 {
 	return (
 		<>
-			<BackgroundCover src={cover}/>
+			<BackgroundCover src={cover} className={'-translate-x-[calc(calc(100%-100vw)/3)]'}/>
 			<Container className={`
 				full-height 
 				place-content-center md:place-content-end
@@ -96,7 +96,7 @@ export default function About()
 					p-5
 					rounded-xl
 					bg-stone-50
-					bg-opacity-70
+					bg-opacity-90
 					mt-[25rem] md:mt-0
 				`}>
 					<p className={``}>
@@ -122,29 +122,29 @@ export default function About()
 						gap-3
 					`}>
 						<LogoButton
-							className={`min-w-[3.625rem]`}
+							className={`min-w-[3.625rem] w-[3.625rem] h-[2.5rem]`}
 							href={`https://www.youtube.com/channel/UCNDFgziSeSvF3CjxJxo7esg`}>
 							<Image src={youtube} alt={``} className={`w-full h-[2.5rem]`}/>
 						</LogoButton>
 						<LogoButton
-							className={`min-w-[5rem]`}
+							className={`min-w-[5rem] w-[5rem] h-[2.5rem]`}
 							href={`https://www.imdb.com/name/nm12071705/`}>
 							<ImdbLogo/>
 						</LogoButton>
 						<LogoButton
-							className={`min-w-[2.5rem] rounded-sm bg-transparent`}
+							className={`min-w-[2.5rem] w-[2.5rem] h-[2.5rem] rounded-sm bg-transparent`}
 							href={`https://www.linkedin.com/in/bryan-uvaldo-59827a1b9/`}>
 							<Image src={linkedin} alt={``} className={`h-[2.5rem]`}/>
 							{/*<LinkedInLogo/>*/}
 						</LogoButton>
 						<LogoButton
-							className={`min-w-[2.5rem] rounded-sm bg-transparent`}
+							className={`min-w-[2.5rem] w-[2.5rem] h-[2.5rem] rounded-sm bg-transparent`}
 							href={`https://www.instagram.com/buvaldo218/`}>
 							<Image src={instagram} alt={``} className={`h-[2.5rem]`}/>
 						</LogoButton>
 					</div>
+					<div className={` flex lg:hidden h-24`}/>
 				</div>
-
 			</Container>
 		</>
 	)

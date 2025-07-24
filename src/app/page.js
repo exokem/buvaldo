@@ -13,40 +13,7 @@ import {handwriting, inter, passionOne} from "@font"
 import {Button, Divider, Link} from '@heroui/react'
 import MaterialIcon from "@comp/Icon"
 import icons from "@api/icons"
-
-function ExploreButton({href, icon, children, className = ''})
-{
-	return (
-		<Button
-			as={Link}
-			href={href}
-			className={`
-				bg-transparent
-				border-3
-				border-y-0 md:border-y-3 md:border-x-0
-				border-amber-400
-				text-amber-400
-				hover:bg-amber-400
-				hover:border-amber-400
-				hover:text-stone-950
-				!opacity-100
-				transition-colors duration-200
-				text-lg
-				font-semibold
-				h-auto
-				py-2 px-10
-				rounded-none
-				group
-				flex flex-row gap-3
-				${className}
-				${inter.className}
-			`}
-		>
-			<MaterialIcon path={icon} size={24} className={`fill-amber-400 group-hover:fill-stone-950 transition-colors duration-200`}/>
-			{children}
-		</Button>
-	)
-}
+import {ExploreButton} from "@comp/exploreButton"
 
 function SlateTripart({label, icon, className=''})
 {
@@ -208,16 +175,16 @@ function AboutCover()
 						rounded-l-xl
 						px-3
 						py-2
-						text-[calc(0.4rem+1vw)] sm:text-medium
+						text-[calc(0.6rem+1vw)] sm:text-medium
+						text-center lg:text-left
 						font-bold
 						border-3
 						border-amber-400
 						text-amber-400
 						backdrop-blur 
-						w-min 
+						w-full lg:w-min 
 						rounded-xl
 						backdrop-brightness-75
-						
 						${inter.className}
 					`}>
 						<span>Brazilian-American Filmmaker & NYU Tisch Graduate</span>
@@ -225,10 +192,13 @@ function AboutCover()
 
 					<div className={`
 						flex flex-col md:flex-row 
-						backdrop-blur 
-						w-min 
+						w-full lg:w-min 
 						rounded-xl
-						backdrop-brightness-75
+						
+							overflow-clip
+						lg:border-3 lg:border-amber-400
+						mb-7 lg:mb-0
+						gap-3 lg:gap-0
 					`}>
 						<div className={`
 							bg-amber-400
@@ -236,13 +206,13 @@ function AboutCover()
 							border-amber-400
 							text-stone-950
 							text-center
+							hidden lg:flex
 							text-lg font-bold
 							h-auto
 							px-4
 							py-3
 							transition-colors duration-200
-							rounded-tr-xl rounded-tl-xl md:rounded-tr-none
-							md:rounded-bl-xl
+							rounded-none
 							${inter.className}
 						`}>
 							EXPLORE
@@ -254,9 +224,6 @@ function AboutCover()
 							Editing
 						</ExploreButton>
 						<ExploreButton href={`/about`} icon={icons.user} className={`
-							rounded-bl-xl rounded-br-xl
-							md:rounded-bl-none md:rounded-r-xl
-							border-b-3 md:border-r-3
 						`}>
 							Bio
 						</ExploreButton>
@@ -276,10 +243,10 @@ function FeaturedFilms()
 	const focus = useFocus()
 
 	return (
-		<Section title='FEATURED FILMS' id='featured-films' className='bg-emphasis'>
+		<Section title='FEATURED FILMS' id='featured-films' className='bg-emphasis lg:full-height'>
 			<div className='
 				p-20 pt-12 gap-20
-				flex flex-row grow relative
+				flex flex-col lg:flex-row grow relative
 				place-content-center
 			'>
 				{films.map(film => <FilmPreview film={film} key={film.id} focus={focus}/>)}
@@ -296,6 +263,7 @@ export default function Page()
 			<AboutCover/>
 			<FeaturedFilms/>
 			<BackgroundCover src={cover}/>
+			<div className={`h-24 bg-emphasis w-full`}/>
 		</>
 	)
 }

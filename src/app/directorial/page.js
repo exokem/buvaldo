@@ -48,6 +48,7 @@ export default async function Page()
 				bg-overlay/30 
 				-z-10
 			`}/>
+			<div className={`h-24`}/>
 		</>
 	)
 }

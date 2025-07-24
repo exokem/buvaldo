@@ -6,6 +6,8 @@ import {Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenuToggle, Navbar
 import {passionOne, inter} from '@font'
 
 import config from '@api/config'
+import icons from "@api/icons"
+import {ExploreButton} from "@comp/exploreButton"
 
 function Title()
 {
@@ -40,6 +42,7 @@ function Item({label, href, isMobile = true})
 			className={`
 				${inter.className} 
 				text-black font-bold text-xl
+				hidden lg:flex
 				h-[80%]
 				group
 			`}
@@ -92,7 +95,7 @@ export default function Navigation()
 			<Title/>
 		</NavbarContent>
 
-		<NavbarContent className="hidden md:flex gap-6" justify="end">
+		<NavbarContent className="flex flex-col lg:flex-row gap-6" justify="end">
 			<MenuItems isMobile={false}/>
 		</NavbarContent>
 
@@ -102,8 +105,22 @@ export default function Navigation()
 				className="md:hidden text-black aspect-square w-auto"
 			/>
 		</NavbarContent>
-		<NavbarMenu>
-			<MenuItems/>
+		<NavbarMenu className={'bg-emphasis flex flex-col place-content-center gap-10'}>
+			<NavbarMenuItem>
+				<ExploreButton href={`/directorial`} icon={icons.movie2} className={'py-10'}>
+					Directing
+				</ExploreButton>
+			</NavbarMenuItem>
+			<NavbarMenuItem>
+				<ExploreButton href={`/editorial`} icon={icons.film} className={'py-10'}>
+					Editing
+				</ExploreButton>
+			</NavbarMenuItem>
+			<NavbarMenuItem>
+				<ExploreButton href={`/about`} icon={icons.user} className={'py-10'}>
+					About
+				</ExploreButton>
+			</NavbarMenuItem>
 		</NavbarMenu>
 	</Navbar>
 }

@@ -24,7 +24,7 @@ export function SectionHeading({children, id, className})
 export default function Section({title, id, className = '', children = null})
 {
 	return (
-		<div className={`full-height ${className}`}>
+		<div className={`${className}`}>
 			<Container className="
 				h-full
 				flex flex-col

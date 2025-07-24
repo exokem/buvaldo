@@ -1,6 +1,6 @@
 import Image from "next/image"
 
-export default function BackgroundCover({src, alt=""})
+export default function BackgroundCover({src, alt="", className = ""})
 {
 	return (
 		<Image
@@ -16,6 +16,7 @@ export default function BackgroundCover({src, alt=""})
 				fixed z-[-10]
 				
 				top-[0]
+				${className}
 			`}
 		/>
 	)

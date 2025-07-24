@@ -23,11 +23,17 @@ export function useFocus()
 		}
 	}
 
+	const resetFocus = () =>
+	{
+		setFocusedItem(null)
+	}
+
 	return {
 		getFocusedItem: () => focusedItem,
 		isItemFocused,
 		isOtherItemFocused,
 		assignFocus,
 		unassignFocus,
+		resetFocus,
 	}
 }
