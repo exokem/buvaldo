@@ -299,6 +299,7 @@ export default function Page()
 			<AboutCover/>
 			<FeaturedFilms/>
 			<BackgroundCover src={cover}/>
+			<div className={`h-24 bg-amber-400 w-full`}/>
 		</>
 	)
 }

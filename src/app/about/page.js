@@ -144,7 +144,7 @@ export default function About()
 						</LogoButton>
 					</div>
 				</div>
-
+				<div className={`h-24`}/>
 			</Container>
 		</>
 	)
