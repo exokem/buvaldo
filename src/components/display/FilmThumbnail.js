@@ -13,7 +13,7 @@ function Overlay({film})
 				px-4
 				pb-3
 				left-0 right-0
-				opacity-0
+				lg:opacity-0
 				group-hover:opacity-100
 				transition-all
 				text-xl
@@ -45,8 +45,8 @@ export default function FilmThumbnail({film, isLandscape = true})
 				bg-transparent
 				z-5
 				
-				hover:scale-110
-				hover:[filter:_blur(0)_!important;]
+				lg:hover:scale-110
+				lg:hover:[filter:_blur(0)_!important;]
 				hover:z-[60] 
 				
 				rounded-lg
