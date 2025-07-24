@@ -74,20 +74,21 @@ function FilmDetailsOverlay({film, expandDetails, setExpandDetails})
 	return <>
 		{/* Blur overlay */}
 		<div className={`
+			hidden lg:flex
 			absolute top-0 left-0 
 			w-full h-full
 			bg-stone-950 bg-opacity-70
 			backdrop-blur
 			transition-opacity
 			${expandDetails ? 'opacity-100' : 'opacity-0 pointer-events-none'}
-			flex flex-col
+			flex-col
 			place-items-center
 			justify-center
 			py-9
 		`}>
 			{/* Centered details container */}
 			<div className={`
-				w-[55%]
+				w-full lg:w-[55%]
 				bg-stone-950 bg-opacity-50
 				backdrop-blur
 				text-stone-100
@@ -125,12 +126,12 @@ function FilmDetails({film})
 {
 	return <>
 		{/*	Title */}
-		<h1 className={`font-black text-4xl`}>
+		<h1 className={`text-stone-200 font-black text-xl lg:text-4xl`}>
 			<em>{film.title}</em>
 		</h1>
 
 		{/* Details */}
-		<p className={`text-2xl text-stone-400`}>
+		<p className={`text-md lg:text-2xl text-stone-400`}>
 			<b>{film.date} </b>
 			<span> | </span>
 			<span>{film.genre}</span>
@@ -141,10 +142,10 @@ function FilmDetails({film})
 		</p>
 
 		{/* Separator */}
-		<Divider className={`bg-stone-50 h-0.5 rounded-lg my-4`} />
+		<Divider className={`bg-stone-50 h-0.5 rounded-lg my-2 lg:my-4`} />
 
 		{/* Description */}
-		<p className={`text-2xl text-stone-200`}>
+		<p className={`text-xl lg:text-2xl text-stone-200`}>
 			{film.description}
 		</p>
 	</>
@@ -185,6 +186,7 @@ function FilmModalBody({film, onClose})
 		{/* Details toggle button */}
 		<Button
 			className={`
+				hidden lg:flex
 				absolute
 				-bottom-[1rem]
 				self-center
@@ -228,6 +230,7 @@ export default function FilmModal({film, focus, disclosure})
 					bg-amber-400
 					border-amber-400
 					min-h-[calc(calc(9/16)*40vw)]
+					self-center
 					overflow-visible
 				`,
 				header: `
@@ -265,6 +268,9 @@ export default function FilmModal({film, focus, disclosure})
 								focus?.resetFocus()
 								onClose()
 							}} />
+							<div className={'flex lg:hidden flex-col gap-3'}>
+								<FilmDetails film={film}/>
+							</div>
 						</ModalBody>
 					</>
 				)}
