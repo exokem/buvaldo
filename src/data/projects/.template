@@ -1,0 +1,34 @@
+
+id = "$id"
+
+[metadata]
+title = "$title"
+description = """
+$description
+"""
+genre = "$genre"
+year = "$year"
+type = "$type"
+section = "$section"
+categories = [$categories]
+
+[metadata.duration]
+#hours = 0
+#minutes = 0
+seconds = $seconds
+
+[metadata.credits]
+bryan = [$roles]
+
+[display]
+format = "$format"
+
+[display.landscape]
+src = "$landscape-src"
+
+[display.portrait]
+src = "$portrait-src"
+
+[display.embed]
+type = "$embed-type"
+src = "$embed-src"

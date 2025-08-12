@@ -1,0 +1,34 @@
+
+id = "carolina-rial-pity-party"
+
+[metadata]
+title = "Carolina Rial's Pity Party"
+description = """
+Lively and fun music video made for Carolina Rial’s song Pity Party. Made for NYU Short Commercial Form in 2022.
+"""
+genre = "Music Video"
+year = "2022"
+type = "directorial"
+section = "commercial"
+categories = []
+
+[metadata.duration]
+#hours = 0
+#minutes = 0
+seconds = 0
+
+[metadata.credits]
+bryan = ["Director"]
+
+[display]
+format = "popup"
+
+[display.landscape]
+src = "/directorial/pity-party/thumbnail.png"
+
+[display.portrait]
+src = ""
+
+[display.embed]
+type = "youtube"
+src = "https://www.youtube.com/embed/Gfwce4TkSP8?si=dwIM_a1ySOFVa92q"

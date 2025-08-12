@@ -1,0 +1,34 @@
+
+id = "so-long"
+
+[metadata]
+title = "So Long"
+description = """
+Struggling with school, a student is forced to accept help from his high school teacher. This is my love letter to all my teachers I've had over the years. The short film submitted with my NYU Application in 2019.
+"""
+genre = "Coming of Age"
+year = "2019"
+type = "directorial"
+section = "student"
+categories = ["NYU Application"]
+
+[metadata.duration]
+#hours = 0
+#minutes = 0
+seconds = 0
+
+[metadata.credits]
+bryan = ["Director", "Writer", "Editor"]
+
+[display]
+format = "popup"
+
+[display.landscape]
+src = "/directorial/so-long/thumbnail.png"
+
+[display.portrait]
+src = ""
+
+[display.embed]
+type = "youtube"
+src = "https://www.youtube.com/embed/2p1O0O32TSk?si=eNehFbc9ZFavOBJ6"

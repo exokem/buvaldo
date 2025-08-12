@@ -1,0 +1,34 @@
+
+id = "scrambled-eggs"
+
+[metadata]
+title = "Scrambled Eggs"
+description = """
+Stefanie, who just lost her son, is secretly pregnant in a world where one family can only conceive one child per life, and she has to face her husband, who is a birth control officer, and his new protege. A 20 minute thesis film made at NYU Tisch by director Xueyang Niu.
+"""
+genre = "Drama"
+year = "2022"
+type = "editorial"
+section = "narrative"
+categories = ["NYU Thesis Short"]
+
+[metadata.duration]
+#hours = 0
+#minutes = 0
+seconds = 0
+
+[metadata.credits]
+bryan = ["Editor"]
+
+[display]
+format = "popup"
+
+[display.landscape]
+src = "/editorial/scrambled-eggs/thumbnail.png"
+
+[display.portrait]
+src = ""
+
+#[display.embed]
+#type = ""
+#src = ""

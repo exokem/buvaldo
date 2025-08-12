@@ -1,0 +1,34 @@
+
+id = "catharsis-at-the-pier"
+
+[metadata]
+title = "Catharsis at the Pier"
+description = """
+A one-shot film of a student filmmaker failing to make a one-shot film; ala Symbiopsychotaxiplasm: Take One (1968). Film made in NYU Sight & Sound with the challenge of making it in only one shot.
+"""
+genre = "Satire"
+year = "2021"
+type = "directorial"
+section = "student"
+categories = ["NYU Short"]
+
+[metadata.duration]
+#hours = 0
+#minutes = 0
+seconds = 0
+
+[metadata.credits]
+bryan = ["Director", "Editor"]
+
+[display]
+format = "popup"
+
+[display.landscape]
+src = "/directorial/pier-catharsis/thumbnail.png"
+
+[display.portrait]
+src = ""
+
+[display.embed]
+type = "youtube"
+src = "https://www.youtube.com/embed/Bj-33tOL95I?si=TOHeD8y5AhllcqBt"

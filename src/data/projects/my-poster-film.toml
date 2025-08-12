@@ -1,0 +1,34 @@
+
+id = "my-poster-film"
+
+[metadata]
+title = "My Poster Film"
+description = """
+An inside look into Bryan's first job where he was tasked with changing out the movie posters at his local movie theater. The "Yourselfie" part of his accepted NYU Application in 2019.
+"""
+genre = "Personal Narrative"
+year = "2019"
+type = "directorial"
+section = "student"
+categories = ["NYU Application"]
+
+[metadata.duration]
+#hours = 0
+#minutes = 0
+seconds = 0
+
+[metadata.credits]
+bryan = ["Director", "Editor"]
+
+[display]
+format = "popup"
+
+[display.landscape]
+src = "/directorial/poster/thumbnail.png"
+
+[display.portrait]
+src = ""
+
+[display.embed]
+type = "youtube"
+src = "https://www.youtube.com/embed/uS_2iwAPDRk?si=PHUYmAW06Wrptaa4"

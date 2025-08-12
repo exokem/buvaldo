@@ -1,0 +1,34 @@
+
+id = "cloche"
+
+[metadata]
+title = "Cloche"
+description = """
+A college girl attends her popular friend’s potluck party in hopes of being accepted by the social group, but her inner self in animation joins to ruin the plan. A 10 minute short thesis film written and directed by Diana Miao for Parsons School of Design.
+"""
+genre = "Comedy"
+year = "2022"
+type = "editorial"
+section = "narrative"
+categories = ["Thesis Short"]
+
+[metadata.duration]
+#hours = 0
+#minutes = 0
+seconds = 0
+
+[metadata.credits]
+bryan = ["Editor"]
+
+[display]
+format = "popup"
+
+[display.landscape]
+src = "/editorial/cloche/thumbnail.png"
+
+[display.portrait]
+src = ""
+
+[display.embed]
+type = "youtube"
+src = "https://www.youtube.com/embed/M5aKudxDckQ?si=OspVULSZq7MJAmWX"

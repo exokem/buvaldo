@@ -1,0 +1,34 @@
+
+id = "playin-around"
+
+[metadata]
+title = "Playin' Around"
+description = """
+ Determined to buy the perfect gift for her little brother, a young woman must fight her way through crazed customers at a toy store turned madhouse.
+"""
+genre = "Action Comedy"
+year = "2024"
+type = "directorial"
+section = "narrative"
+categories = ["Short", "NYU Thesis"]
+
+[metadata.duration]
+#hours = 0
+#minutes = 0
+seconds = 603
+
+[metadata.credits]
+bryan = ["Director", "Editor"]
+
+[display]
+format = "popup"
+
+[display.landscape]
+src = "/directorial/playin-around/thumbnail.png"
+
+[display.portrait]
+src = "https://www.dropbox.com/scl/fi/rkdfqsto0igim6lwzqje5/playin-around.png?rlkey=lydhl3yfeya173f89rb8obur4&dl=0"
+
+[display.embed]
+type = "youtube"
+src = ""

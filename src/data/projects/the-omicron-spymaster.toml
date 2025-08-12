@@ -1,0 +1,34 @@
+
+id = "the-omicron-spymaster"
+
+[metadata]
+title = "The Omicron Spymaster"
+description = """
+What if a cocky spy trainee fails his first test? What would he do to recover from such a blunder? Film made in NYU Frame & Sequence in 2020.
+"""
+genre = "Spy Comedy"
+year = "2020"
+type = "directorial"
+section = "student"
+categories = ["NYU Short"]
+
+[metadata.duration]
+#hours = 0
+#minutes = 0
+seconds = 0
+
+[metadata.credits]
+bryan = ["Director", "Editor"]
+
+[display]
+format = "popup"
+
+[display.landscape]
+src = "/directorial/omicron-spymaster/thumbnail.png"
+
+[display.portrait]
+src = ""
+
+[display.embed]
+type = "youtube"
+src = "https://www.youtube.com/embed/41eNpV6g0QI?si=PBMf0u11yH-WnTpL"

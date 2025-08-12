@@ -1,0 +1,34 @@
+
+id = "love-bomb-baby"
+
+[metadata]
+title = "Love Bomb Baby"
+description = """
+After catching her cheating girlfriend, a fiery, drunk woman beats up an entire Halloween college party--all while prioritizing which booze is in her hand.
+"""
+genre = "Action Comedy"
+year = "2023"
+type = "directorial"
+section = "narrative"
+categories = ["Short"]
+
+[metadata.duration]
+#hours = 0
+#minutes = 0
+seconds = 603
+
+[metadata.credits]
+bryan = ["Director", "Writer", "Editor"]
+
+[display]
+format = "popup"
+
+[display.landscape]
+src = "/directorial/love-bomb/thumbnail.png"
+
+[display.portrait]
+src = "https://www.dropbox.com/scl/fi/da8rhbznwiapgcnn2gg9j/love-bomb-baby.png?rlkey=mpzxs4bbt8apz82j4o069ujpm&dl=0"
+
+[display.embed]
+type = "youtube"
+src = "https://www.youtube.com/embed/DbYIgkQm-mI?si=UAJHVAo_B7K49OdU"

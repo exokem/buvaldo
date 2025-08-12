@@ -1,0 +1,34 @@
+
+id = "palante-pa-mi"
+
+[metadata]
+title = "Maia Reficco Pa'lante Pa' Mi HBO Max Promo"
+description = """
+Co-Creator, Roberto Aguirre-Sacasa, and actress, Maia Reficco, discuss their latin roots and how their heritage has shaped who they are and what they bring to the show. Part of the Pretty Little Liars: Original Sin Campaign through Palante Max.
+"""
+genre = "Promotional"
+year = "2022"
+type = "editorial"
+section = "hbo"
+categories = ["Pretty Little Liars: Original Sin"]
+
+[metadata.duration]
+#hours = 0
+#minutes = 0
+seconds = 0
+
+[metadata.credits]
+bryan = []
+
+[display]
+format = "popup"
+
+[display.landscape]
+src = "/editorial/palante-pa-mi/thumbnail.png"
+
+[display.portrait]
+src = ""
+
+[display.embed]
+type = "youtube"
+src = "https://www.youtube.com/embed/r0cMIRx3JiA?si=lntiOLd-Mwnrgz9c"

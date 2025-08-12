@@ -1,0 +1,34 @@
+
+id = "diana-florence"
+
+[metadata]
+title = "Diana Florence: Why it Matters"
+description = """
+One of multiple short promos made for Diana Florence's Why It Matters campaign as part of her run for Manhattan District Attorney in 2021.
+"""
+genre = "Advertisement"
+year = "2020-2021"
+type = "editorial"
+section = "commercial"
+categories = ["Advertising Campaign"]
+
+[metadata.duration]
+#hours = 0
+#minutes = 0
+seconds = 0
+
+[metadata.credits]
+bryan = []
+
+[display]
+format = "popup"
+
+[display.landscape]
+src = "/editorial/diana-florence/thumbnail.png"
+
+[display.portrait]
+src = ""
+
+[display.embed]
+type = "youtube"
+src = "https://www.youtube.com/embed/Ws7EbmiXohM?si=jaZIUorrhvTAijOH"

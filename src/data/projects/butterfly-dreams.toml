@@ -1,0 +1,34 @@
+
+id = "butterfly-dreams"
+
+[metadata]
+title = "Chasing Butterfly Dreams"
+description = """
+On the last day of summer, three people—a 10th grader seeking his first kiss, a college freshman chasing one wild experience, and a football star struggling with his fears—navigate friendship, love, and growing up, all while their paths collide.
+"""
+genre = "Coming of Age"
+year = "2025"
+type = "editorial"
+section = "narrative"
+categories = ["Feature Film"]
+
+[metadata.duration]
+#hours = 0
+#minutes = 0
+seconds = 0
+
+[metadata.credits]
+bryan = ["Editor, On-Set DIT"]
+
+[display]
+format = "popup"
+
+[display.landscape]
+src = "/editorial/butterfly-dreams/thumbnail.png"
+
+[display.portrait]
+src = ""
+
+[display.embed]
+type = "youtube"
+src = "https://www.youtube.com/embed/NSMPPcNZosg?si=Se9hKa0paYMUdtuu"
