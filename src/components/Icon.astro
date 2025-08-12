@@ -1,0 +1,13 @@
+---
+interface Props {
+	id?: string
+}
+
+const {
+	id = ''
+} = Astro.props
+---
+
+<span id={id} class:list={["material-symbols-rounded", "icon"]}>
+	<slot/>
+</span>
