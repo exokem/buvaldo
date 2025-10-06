@@ -1,0 +1,42 @@
+---
+interface Props {
+	src: string,
+	alt: string,
+}
+
+const {
+	src,
+	alt,
+} = Astro.props
+---
+<img src={src} alt={alt} class="cover"/>
+
+<style lang="css">
+	img.cover {
+		transition-property: opacity;
+		transition-duration: 0.75s;
+		transition-timing-function: ease-in-out;
+
+		@starting-style {
+			opacity: 0;
+		}
+
+		&:before {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: black;
+		}
+	}
+</style>
+
+<style lang="scss">
+	img.cover {
+		position: fixed;
+		top: 0;
+		z-index: -1;
+	}
+</style>
