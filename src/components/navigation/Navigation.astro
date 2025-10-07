@@ -38,6 +38,13 @@ import Drawer from "./Drawer.astro";
             backdrop-filter: blur(24px);
 
 		}
+
+		transition-property: transform;
+		transition-duration: 450ms;
+
+		@starting-style {
+			transform: translateY(calc(-1 * var(--nav-height)));
+		}
 	}
 
 	header {
