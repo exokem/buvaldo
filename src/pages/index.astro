@@ -13,27 +13,33 @@ import Icon from "../components/Icon.astro";
             <h2>
                 Brazilian-American Filmmaker <br/> <span>& NYU Tisch Graduate</span>
             </h2>
-            <div class="shortcuts">
-                <a href="/directorial">
-                    <Icon>movie</Icon>
-                    Directing
-                </a>
-                <a href="/editorial">
-                    <Icon>theaters</Icon>
-                    Editing
-                </a>
-                <a href="/about">
-                    <Icon>person</Icon>
-                    About
-                </a>
-            </div>
+            <ul class="shortcuts">
+                <li>
+                    <a href="/directorial">
+                        <Icon>movie</Icon>
+                        Directing
+                    </a>
+                </li>
+                <li>
+                    <a href="/editorial">
+                        <Icon>theaters</Icon>
+                        Editing
+                    </a>
+                </li>
+                <li>
+                    <a href="/about">
+                        <Icon>person</Icon>
+                        About
+                    </a>
+                </li>
+            </ul>
         </section>
     </div>
 </PageLayout>
 
 <style lang="css">
     section {
-        h1, h2, a {
+        h1, h2, li {
 
             opacity: 1;
             transform: none;
@@ -49,7 +55,7 @@ import Icon from "../components/Icon.astro";
             transition-delay: 50ms;
         }
 
-        a {
+        li {
             &:first-child {
                 transition-delay: 100ms;
             }
@@ -125,7 +131,7 @@ import Icon from "../components/Icon.astro";
             }
         }
 
-        div.shortcuts {
+        ul.shortcuts {
             display: flex;
 
             a {
