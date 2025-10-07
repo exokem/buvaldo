@@ -1,13 +1,15 @@
 ---
 interface Props {
 	src: string,
+	blur?: boolean
 }
 
 const {
 	src,
+	blur = false
 } = Astro.props
 ---
-<div class="cover" style={`--src: url(${src})`}/>
+<div class:list={["cover", blur ? "blurred" : ""]} style={`--src: url(${src})`}/>
 
 <style lang="css">
 	div.cover {
@@ -30,12 +32,8 @@ const {
 		background-size: cover;
 		filter: saturate(125%);
 	}
-</style>
 
-<style lang="scss">
-	img.cover {
-		position: fixed;
-		top: 0;
-		z-index: -1;
-	}
+    .blurred {
+        filter: blur(4px) brightness(50%) saturate(125%) !important;
+    }
 </style>
