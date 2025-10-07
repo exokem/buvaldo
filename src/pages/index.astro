@@ -31,6 +31,38 @@ import Icon from "../components/Icon.astro";
     </div>
 </PageLayout>
 
+<style lang="css">
+    section {
+        h1, h2, a {
+
+            opacity: 1;
+            transform: none;
+            transition-property: opacity, transform;
+            transition-duration: 450ms;
+            @starting-style {
+                opacity: 0;
+                transform: translateY(2rem);
+            }
+        }
+
+        h2 {
+            transition-delay: 50ms;
+        }
+
+        a {
+            &:first-child {
+                transition-delay: 100ms;
+            }
+            &:nth-child(2) {
+                transition-delay: 150ms;
+            }
+            &:last-child {
+                transition-delay: 200ms;
+            }
+        }
+    }
+</style>
+
 <style lang="scss">
     div.title {
         display: flex;
@@ -57,10 +89,6 @@ import Icon from "../components/Icon.astro";
             @media (min-width: 1280px) {
                 width: 1280px;
             }
-        }
-
-
-        h1, h2 {
         }
 
         h1 {
@@ -109,7 +137,7 @@ import Icon from "../components/Icon.astro";
                 align-items: center;
                 gap: 0.5em;
 
-                transition-property: scale, opacity, background-color, color;
+                transition-property: scale, opacity, background-color, color, transform;
                 transition-duration: 250ms;
 
                 justify-content: center;
