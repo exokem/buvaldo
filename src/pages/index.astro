@@ -1,18 +1,18 @@
 ---
 
 import PageLayout from "../layouts/PageLayout.astro";
+import BackgroundCover from "../components/BackgroundCover.astro";
 ---
 
 <PageLayout title='Bryan Uvaldo'>
-	<p>hi</p>
-	<p>hi</p>
-	<p>hi</p>
-	<p>hi</p>
-	<p>hi</p>
-	<p>hi</p>
-	<p>hi</p>
-	<p>hi</p>
-	<p>hi</p>
-	<p>hi</p>
-	<p>hi</p>
+    <BackgroundCover src="/cover.jpg" alt="Bryan Uvaldo"/>
+    <div>
+        <h1>Bryan Uvaldo</h1>
+    </div>
 </PageLayout>
+
+<style lang="scss">
+    h1 {
+        text-transform: uppercase;
+    }
+</style>

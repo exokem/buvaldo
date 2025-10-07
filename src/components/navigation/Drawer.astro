@@ -1,0 +1,50 @@
+---
+
+---
+<ul id="drawer">
+	<slot/>
+</ul>
+
+<style lang="scss">
+	#drawer {
+		overflow: hidden;
+		transition-property: height, max-height, opacity;
+		transition-duration: 250ms;
+		transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+		backdrop-filter: blur(24px);
+		background-color: #0000007D;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		gap: 3rem;
+		padding: 0 2.5rem;
+		width: 100%;
+
+		position: fixed;
+		top: var(--nav-height);
+
+		height: 0;
+		max-height: 0;
+		opacity: 0;
+
+		@media(min-width: 1024px) {
+			display: none;
+		}
+	}
+</style>
+
+<style is:global lang="scss">
+	:has(:checked) {
+		ul#drawer {
+			$h: calc(100vh - var(--nav-height));
+			height: calc(100vh - var(--nav-height));
+			max-height: calc(100vh - var(--nav-height));
+			opacity: 1;
+		}
+	}
+
+	ul#drawer > li.item {
+		display: flex;
+		position: relative;
+	}
+</style>

@@ -1,6 +1,7 @@
 ---
 import "../styles/global.css";
-import Navigation from "../components/Navigation.astro"
+import Navigation from "../components/navigation/Navigation.astro"
+import Item from "../components/navigation/Item.astro";
 
 interface Props
 {
@@ -17,13 +18,18 @@ const {title} = Astro.props
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Passion+One:wght@400;700;900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Passion+One:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded" rel="stylesheet" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
 </head>
 <body>
-	<Navigation />
+	<Navigation>
+        <Item href="/directorial" icon="movie">Directorial</Item>
+        <Item href="/editorial" icon="theaters">Editorial</Item>
+        <Item href="/about" icon="person">About</Item>
+	</Navigation>
 	<main>
 		<slot/>
 	</main>

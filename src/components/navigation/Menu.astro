@@ -1,0 +1,59 @@
+---
+
+import Icon from "../Icon.astro";
+---
+
+<li class="mobile-menu">
+    <label id="menu-button">
+		<Icon class="close">close</Icon>
+		<Icon class="open">menu</Icon>
+        <input type="checkbox" hidden/>
+    </label>
+</li>
+
+<style lang="scss" is:global>
+	li.mobile-menu {
+		display: flex;
+		@media(min-width: 1024px) {
+			display: none;
+		}
+		label {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			cursor: pointer;
+			position: relative;
+			user-select: none;
+			height: 100%;
+			width: 5rem;
+
+			.close, .open {
+				position: absolute;
+				aspect-ratio: 1;
+				font-size: 2.5rem;
+				transition-property: opacity, transform;
+				transition-duration: 0.2s;
+			}
+
+			.close {
+				opacity: 0 !important;
+				transform: rotate(90deg);
+			}
+			.open {
+				opacity: 1 !important;
+				transform: none;
+			}
+
+			&:has(:checked) {
+				.close {
+					opacity: 1 !important;
+					transform: none;
+				}
+				.open {
+					opacity: 0 !important;
+					transform: rotate(90deg);
+				}
+			}
+		}
+	}
+</style>

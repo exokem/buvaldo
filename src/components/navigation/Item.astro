@@ -1,0 +1,119 @@
+---
+import Icon from "../Icon.astro";
+interface Props {
+	href: string
+	icon: string
+}
+
+const {
+	href,
+	icon,
+} = Astro.props;
+---
+<li class="item">
+	<a href={href}>
+		<span>
+		<Icon>
+			{icon}
+		</Icon>
+			<slot/>
+		</span>
+	</a>
+</li>
+
+<style lang="scss">
+	.item {
+		font-weight: 700;
+		font-family: "Inter", sans-serif;
+		font-size: 1.25rem;
+		line-height: 1.75rem;
+		text-transform: uppercase;
+
+		span {
+			position: relative;
+			padding: 0.5rem 0.75rem;
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			gap: 0.25em;
+		}
+
+		@media(max-width: 1024px) {
+			display: none;
+		}
+	}
+</style>
+
+<style is:global lang="scss">
+	nav > header {
+		ul#drawer > li.item {
+
+			flex-basis: min-content;
+			/*flex-grow: 0;*/
+			/*flex-shrink: 1;*/
+			a {
+				cursor: pointer;
+				border: 3px solid var(--accent);
+				padding: 1.5em;
+				color: var(--accent);
+				border-radius: 0.75rem;
+				display: flex;
+				justify-content: center;
+
+				background-color: #0000007D;
+				width: 100%;
+
+				transition-property: scale;
+				transition-duration: 250ms;
+				&:active {
+					scale: 0.9;
+				}
+			}
+		}
+
+		ul#top > li.item {
+			span.icon {
+				padding: 0;
+			}
+
+			& > a {
+				height: var(--nav-height);
+				transition-duration: 250ms;
+				transition-property: opacity;
+				transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				padding: 0 0.5em;
+
+				&:hover {
+					opacity: 0.8;
+				}
+
+				span {
+					&::before {
+						content: "";
+						position: absolute;
+						transition-property: width, left;
+						transition-duration: 300ms;
+						height: 100%;
+						top: 50%;
+						left: 0;
+						width: 0;
+						transform: translate(-50%, -50%);
+						opacity: 0.4;
+						z-index: -1;
+						background-image: linear-gradient(to right, #fde047 70%, transparent)
+					}
+
+					&:hover {
+						&::before {
+							width: 100%;
+							left: 50%;
+						}
+					}
+				}
+			}
+		}
+	}
+</style>

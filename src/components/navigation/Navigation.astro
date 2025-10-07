@@ -1,0 +1,73 @@
+---
+import Icon from "../Icon.astro";
+import Brand from "./Brand.astro";
+import Item from "./Item.astro";
+import Menu from "./Menu.astro";
+import Drawer from "./Drawer.astro";
+
+---
+<nav class="highlight-gradient">
+	<header class="limited">
+		<ul id="top">
+			<Brand/>
+			<li class="spacer"/>
+			<slot/>
+			<Menu/>
+		</ul>
+		<Drawer>
+			<slot/>
+		</Drawer>
+	</header>
+</nav>
+
+<style>
+	nav {
+		position: sticky;
+		top: 0;
+		display: flex;
+		flex-direction: row;
+		width: 100vw;
+		z-index: 9000;
+        height: var(--nav-height);
+		&:after {
+			content: "";
+			position: absolute;
+			z-index: -1;
+			width: 100%;
+			height: 100%;
+            backdrop-filter: blur(24px);
+
+		}
+	}
+
+	header {
+		height: var(--nav-height);
+		flex-grow: 1;
+		margin: auto;
+
+		ul#top {
+			display: flex;
+			flex-direction: row;
+
+			height: var(--nav-height);
+
+			li.spacer {
+				flex-grow: 1;
+
+            }
+
+            @media(max-width: 1024px) {
+                justify-content: space-between;
+
+				li.spacer {
+                    display: none;
+				}
+            }
+
+			@media(min-width: 1024px) {
+                padding: 0 0.25rem;
+                gap: 1.5rem;
+            }
+		}
+	}
+</style>
