@@ -76,6 +76,15 @@ const {
 				padding: 0;
 			}
 
+			&:hover {
+				a > span {
+					&::before {
+						width: 100%;
+						left: 50%;
+					}
+				}
+			}
+
 			& > a {
 				height: var(--nav-height);
 				transition-duration: 250ms;
@@ -104,13 +113,6 @@ const {
 						opacity: 0.4;
 						z-index: -1;
 						background-image: linear-gradient(to right, #fde047 70%, transparent)
-					}
-
-					&:hover {
-						&::before {
-							width: 100%;
-							left: 50%;
-						}
 					}
 				}
 			}
