@@ -57,11 +57,18 @@ const filtered = items.filter(i => i.metadata.section === section)
 		}
 
 		div.projects {
-			width: 100%;
 			gap: 2rem;
 
 			display: grid;
-			grid-template-columns: repeat(3, 1fr);
+
+			@media(min-width: 920px) {
+				grid-template-columns: repeat(2, 1fr);
+			}
+
+			@media(min-width: 1280px) {
+				grid-template-columns: repeat(3, 1fr);
+				width: 100%;
+			}
 		}
 	}
 </style>
