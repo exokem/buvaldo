@@ -6,7 +6,25 @@ import ProjectSection from "../../components/projects/ProjectSection.astro";
 
 <PageLayout title='Directorial Work'>
     <BackgroundCover src="/directorial-cover.jpg" blur/>
+    <div class="title">
+        <h1 class="heading-title">Directorial Work</h1>
+    </div>
     <ProjectSection type="directorial" section="narrative"/>
     <ProjectSection type="directorial" section="student"/>
     <ProjectSection type="directorial" section="commercial"/>
 </PageLayout>
+<style>
+    div.title {
+        max-width: 1280px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        padding: 5rem 0;
+
+        h1 {
+            font-size: 4rem;
+            line-height: 4rem;
+        }
+    }
+</style>
