@@ -25,7 +25,7 @@ if (type === "editorial") {
 const filtered = items.filter(i => i.metadata.section === section)
 ---
 <section class="section" id={section}>
-	<h2 class="title highlight-gradient">{section}</h2>
+	<h2 class="heading-title highlight-gradient">{section}</h2>
 	<div class="projects">
 		{filtered.map(item => (
 			<ProjectCard project={item}/>
@@ -43,18 +43,6 @@ const filtered = items.filter(i => i.metadata.section === section)
 		flex-direction: column;
 		align-items: center;
 		gap: 2rem;
-
-		h2.title {
-			font-family: "Passion One", sans-serif;
-			text-transform: uppercase;
-			font-weight: 700;
-			font-size: 3.75rem;
-			line-height: 3.75rem;
-			text-wrap: nowrap;
-			width: min-content;
-			padding: 0 0.75rem;
-			border-radius: 0.5rem 0 0 0.5rem;
-		}
 
 		div.projects {
 			gap: 2rem;

@@ -31,4 +31,20 @@ html {
     .highlight-gradient-onhover {
         @apply group-hover:bg-gradient-to-r group-hover:from-yellow-300 group-hover:from-70% group-hover:to-transparent
     }
+
+    .heading-title {
+        @apply bg-gradient-to-r from-amber-400 from-60% to-transparent
+    }
+}
+
+.heading-title {
+    font-family: "Passion One", sans-serif;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 3.75rem;
+    line-height: 3.75rem;
+    text-wrap: nowrap;
+    width: min-content;
+    padding: 0 0.75rem;
+    border-radius: 0.5rem 0 0 0.5rem;
 }
