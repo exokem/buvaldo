@@ -1,0 +1,67 @@
+---
+import {getDirectorialProjects, getEditorialProjects} from "../../content.config";
+import type {Project} from "../../content.config";
+import ProjectCard from "./ProjectCard.astro";
+
+interface Props {
+	type: string
+	section: string
+}
+
+const {
+	type,
+	section,
+} = Astro.props
+
+
+let items: Project[] = [];
+
+if (type === "editorial") {
+	items = await getEditorialProjects();
+} else if (type === "directorial") {
+	items = await getDirectorialProjects();
+}
+
+const filtered = items.filter(i => i.metadata.section === section)
+---
+<section class="section" id={section}>
+	<h2 class="title highlight-gradient">{section}</h2>
+	<div class="projects">
+		{filtered.map(item => (
+			<ProjectCard project={item}/>
+		))}
+	</div>
+</section>
+
+<style lang="scss">
+	section.section {
+		max-width: 1280px;
+		margin: 0 auto;
+		padding: 2rem 1rem;
+
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 2rem;
+
+		h2.title {
+			font-family: "Passion One", sans-serif;
+			text-transform: uppercase;
+			font-weight: 700;
+			font-size: 3.75rem;
+			line-height: 3.75rem;
+			text-wrap: nowrap;
+			width: min-content;
+			padding: 0 0.75rem;
+			border-radius: 0.5rem 0 0 0.5rem;
+		}
+
+		div.projects {
+			width: 100%;
+			gap: 2rem;
+
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+		}
+	}
+</style>
