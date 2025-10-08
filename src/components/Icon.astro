@@ -2,14 +2,24 @@
 interface Props {
 	id?: string,
 	class?: string,
+	size?: string,
 }
 
 const {
 	id = '',
 	class: className = '',
+	size
 } = Astro.props
 ---
 
-<span id={id} class:list={["material-symbols-rounded", "icon", className]}>
+<span id={id} class:list={["material-symbols-rounded", "icon", className]} style={size !== undefined ? `--size: ${size};` : ""}>
 	<slot/>
 </span>
+
+<style>
+	span {
+		user-select: none;
+        --size: 1.5rem;
+		font-size: var(--size);
+	}
+</style>
