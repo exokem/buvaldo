@@ -29,6 +29,6 @@ src = "/directorial/playin-around/thumbnail.png"
 [display.portrait]
 src = "https://www.dropbox.com/scl/fi/rkdfqsto0igim6lwzqje5/playin-around.png?rlkey=lydhl3yfeya173f89rb8obur4&dl=0"
 
-[display.embed]
-type = "youtube"
-src = ""
+#[display.embed]
+#type = "youtube"
+#src = ""
