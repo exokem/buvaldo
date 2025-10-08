@@ -1,0 +1,86 @@
+---
+import type {Project} from "../../content.config";
+
+interface Props {
+	project: Project
+}
+
+const {
+	project,
+} = Astro.props
+---
+
+<article>
+    <img src={project.display.landscape.src} alt={project.display.landscape.alt} />
+    <h3>{project.metadata.title}</h3>
+	<p>{project.metadata.genre} | {project.metadata.categories[0]}</p>
+	<!--<input type="checkbox" id={project.id} />-->
+
+	<!--<label for={project.id}>{project.id}</label>-->
+	<!--<label for={project.id}>{project.id}</label>-->
+</article>
+
+<style lang="scss">
+	article {
+		position: relative;
+
+		--width: 390px;
+
+		min-width: var(--width);
+		width: var(--width);
+		max-width: var(--width);
+
+		aspect-ratio: 16 / 9;
+		/*padding: 2.25rem;*/
+		border-radius: 0.5rem;
+		overflow: hidden;
+		display: flex;
+		flex-direction: column;
+		justify-content: end;
+
+		img {
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+
+		h3, p {
+			z-index: 2;
+			color: white;
+			font-family: "Inter", sans-serif;
+			background-color: #0000007D;
+			padding: 0.75rem;
+		}
+
+		h3 {
+			font-style: italic;
+			background-color: #0000007D;
+			padding-bottom: 0.25rem;
+			font-size: 1.2rem;
+			line-height: 1.2rem;
+			text-overflow: ellipsis;
+			overflow: hidden;
+			text-wrap: nowrap;
+		}
+
+		p {
+			font-size: 0.9rem;
+			line-height: 0.9rem;
+			padding-top: 0.25rem;
+			color: #AAA;
+		}
+
+		label, input {
+			z-index: 2;
+		}
+
+		@media(min-width: 1024px) {
+			transition-property: scale;
+			transition-duration: 250ms;
+			cursor: pointer;
+			&:hover {
+				scale: 110%;
+			}
+		}
+	}
+</style>
