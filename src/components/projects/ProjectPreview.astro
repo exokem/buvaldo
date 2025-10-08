@@ -11,10 +11,11 @@ const {
 	project,
     class: className,
 } = Astro.props
+
+const checkId = `${project.id}-details-switch`
 ---
 <div class:list={["preview", className]} id={`${project.id}-popup-container`}>
 	<slot name="background-label"/>
-    <!--<label for={checkId} class="outside"/>-->
     <article class="preview" id={`${project.id}-preview`}>
         <div class="titlebar">
             <h3>
@@ -22,9 +23,6 @@ const {
                 <span>Preview - {project.metadata.title}</span>
             </h3>
 			<slot name="close-label"/>
-            <!--<label for={checkId} class="close">-->
-            <!--    <Icon size="2rem">close</Icon>-->
-            <!--</label>-->
         </div>
         <div class="content">
 			{project.display.embed && (
@@ -36,10 +34,70 @@ const {
                     </div>
 			)}
         </div>
+        <input type="checkbox" id={checkId} class="details-switch" hidden/>
+        <label for={checkId} class="details-label">
+            <span class="show sym">visibility</span>
+            <span class="hide sym">visibility_off</span>
+            <span class="show label">Show Details</span>
+            <span class="hide label">Hide Details</span>
+        </label>
     </article>
 </div>
 
 <style lang="scss">
+    label.details-label {
+        position: absolute;
+        z-index: 999;
+        background-color: var(--accent);
+        padding: 0.75rem;
+        border-radius: 0.5rem;
+        cursor: pointer;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 0.75rem;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        transition-property: background-color;
+        transition-duration: 250ms;
+
+        &:hover {
+            background-color: #fccc50;
+        }
+
+        span {
+            line-height: 1.25rem;
+            user-select: none;
+        }
+
+        span.sym {
+            font-size: 1.5rem;
+        }
+
+        span.label {
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+
+        span.show {
+            display: none;
+        }
+
+        span.hide {
+            display: inline-block;
+        }
+    }
+
+    input.details-switch:checked + label.details-label {
+        span.hide {
+            display: none;
+        }
+
+        span.show {
+            display: inline-block;
+        }
+    }
+
 	div.preview {
 		display: flex;
 		z-index: 999;
@@ -63,12 +121,13 @@ const {
 		}
 
 		article.preview {
+            position: relative;
 			transition-property: scale;
 			transition-duration: 250ms;
 			z-index: 10;
 			scale: 0.5;
 			border-radius: 0.5rem;
-			overflow: clip;
+			/*overflow: clip;*/
 			background-color: var(--accent);
 
 			max-width: 1280px; margin: auto auto;
@@ -87,6 +146,8 @@ const {
 
 			div.titlebar {
 				background: var(--accent);
+                border-radius: 0.5rem 0.5rem 0 0;
+                overflow: clip;
 
 				display: flex;
 				flex-direction: row;

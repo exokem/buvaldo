@@ -48,3 +48,16 @@ html {
     padding: 0 0.75rem;
     border-radius: 0.5rem 0 0 0.5rem;
 }
+
+.sym {
+    font-family: 'Material Symbols Rounded';
+    font-weight: normal;
+    font-style: normal;
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+}
