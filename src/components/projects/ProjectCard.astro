@@ -1,5 +1,6 @@
 ---
 import type {Project} from "../../content.config";
+import Icon from "../Icon.astro";
 
 interface Props {
 	project: Project
@@ -8,20 +9,160 @@ interface Props {
 const {
 	project,
 } = Astro.props
+
+const checkId = `${project.id}-switch`
 ---
 
-<article>
-    <img src={project.display.landscape.src} alt={project.display.landscape.alt} />
-    <h3>{project.metadata.title}</h3>
-	<p>{project.metadata.genre} | {project.metadata.categories[0]}</p>
-	<!--<input type="checkbox" id={project.id} />-->
+<input type="checkbox" id={checkId} hidden/>
 
-	<!--<label for={project.id}>{project.id}</label>-->
-	<!--<label for={project.id}>{project.id}</label>-->
+<div class="preview" id={`${project.id}-popup-container`}>
+	<label for={checkId} class="outside"/>
+	<article class="preview" id={`${project.id}-preview`}>
+		<div class="titlebar">
+            <h3>
+                <Icon size="2rem">movie</Icon>
+                Preview - {project.metadata.title}
+            </h3>
+			<label for={checkId} class="close">
+				<Icon size="2rem">close</Icon>
+			</label>
+		</div>
+		<div class="content">
+			{project.display.embed && (
+				<iframe src={project.display.embed.src} allowfullscreen/>
+			)}
+		</div>
+	</article>
+</div>
+
+<article id={project.id} class="thumbnail">
+    <img src={project.display.landscape.src} alt={project.display.landscape.alt} />
+
+
+    <h3 class="title">{project.metadata.title}</h3>
+    <p class="subtitle">{project.metadata.genre} | {project.metadata.categories[0]}</p>
+
+    <label class="thumbnail" for={checkId}>
+    </label>
 </article>
 
 <style lang="scss">
-	article {
+	div.preview {
+		display: flex;
+		z-index: 999;
+		transition-property: opacity;
+		transition-duration: 250ms;
+
+		position: fixed;
+		pointer-events: none;
+		opacity: 0;
+		top: var(--nav-height);
+		left: 0;
+		width: 100%;
+		height: calc(100% - var(--nav-height));
+		background-color: #0000007D;
+
+		label.outside {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+		}
+
+		article.preview {
+			transition-property: scale;
+			transition-duration: 250ms;
+			z-index: 10;
+			scale: 0.5;
+			border-radius: 0.5rem;
+			overflow: clip;
+			background-color: var(--accent);
+
+			max-width: 1280px; margin: auto auto;
+
+			@media(min-width: 1024px) {
+				width: 900px;
+			}
+
+			@media(min-width: 1280px) {
+				width: 1100px;
+			}
+
+			div.titlebar {
+				background: var(--accent);
+
+				display: flex;
+				flex-direction: row;
+				justify-content: space-between;
+
+				h3 {
+					padding: 1rem;
+					font-family: "Inter", sans-serif;
+					font-size: 1.5rem;
+					line-height: 1.5rem;
+					font-weight: 700;
+					color: black;
+					display: flex;
+					flex-direction: row;
+					align-items: center;
+					gap: 0.75rem;
+
+					text-overflow: ellipsis;
+					overflow: hidden;
+					text-wrap: nowrap;
+				}
+
+				label.close {
+
+					height: 4rem;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					padding: 0 1.5rem;
+					cursor: pointer;
+					transition-property: background-color;
+					transition-duration: 250ms;
+					&:hover {
+						background-color: #ffffff33;
+					}
+				}
+			}
+
+			div.content {
+				aspect-ratio: 16 / 9;
+				background-color: black;
+				border-radius: 0.5rem;
+				border: 3px solid var(--accent);
+				overflow: clip;
+				padding: 0.5rem;
+
+				iframe {
+					width: 100%;
+					height: 100%;
+					display: none;
+				}
+			}
+		}
+	}
+
+	input:checked {
+		& + div.preview {
+			opacity: 1;
+			pointer-events: auto;
+			article.preview {
+				scale: 1;
+
+				iframe {
+					display: flex;
+				}
+			}
+		}
+
+		& ~ article {
+
+		}
+	}
+
+	article.thumbnail {
 		position: relative;
 
 		--width: 390px;
@@ -44,17 +185,17 @@ const {
 			left: 0;
 		}
 
-		h3, p {
+		h3.title, p.subtitle {
 			z-index: 2;
 			color: white;
 			font-family: "Inter", sans-serif;
 			background-color: #0000007D;
 			padding: 0.75rem;
+			cursor: pointer;
 		}
 
-		h3 {
+		h3.title {
 			font-style: italic;
-			background-color: #0000007D;
 			padding-bottom: 0.25rem;
 			font-size: 1.2rem;
 			line-height: 1.2rem;
@@ -63,21 +204,30 @@ const {
 			text-wrap: nowrap;
 		}
 
-		p {
+		p.subtitle {
 			font-size: 0.9rem;
 			line-height: 0.9rem;
 			padding-top: 0.25rem;
 			color: #AAA;
 		}
 
-		label, input {
-			z-index: 2;
+		label.thumbnail {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			color: transparent;
 		}
 
 		@media(min-width: 1024px) {
 			transition-property: scale;
 			transition-duration: 250ms;
-			cursor: pointer;
+
+			label.thumbnail {
+				cursor: pointer;
+			}
+
 			&:hover {
 				scale: 110%;
 			}
