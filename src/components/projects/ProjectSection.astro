@@ -23,17 +23,22 @@ if (type === "editorial") {
 }
 
 const filtered = items.filter(i => i.metadata.section === section)
+const placeholders = Math.ceil(3 - (filtered.length % 3))
+const total = filtered.length + placeholders
 ---
 <section class="section" id={section}>
 	<h2 class="heading-title">{section}</h2>
-	<div class="projects">
+	<div class="projects" data-even={filtered.length % 2 === 0}>
 		{filtered.map(item => (
 			<ProjectCard project={item}/>
+		))}
+		{Array.from({length: placeholders}, (_, i) => (
+			<div class="empty-project"/>
 		))}
 	</div>
 </section>
 
-<style lang="scss">
+<style>
 	section.section {
 		max-width: 1280px;
 		margin: 0 auto;
@@ -54,13 +59,30 @@ const filtered = items.filter(i => i.metadata.section === section)
 
 			display: grid;
 
+			div.empty-project {
+                background: #00000033;
+                border-radius: 0.5rem;
+				border: 1px solid black;
+				display: none;
+			}
+
 			@media(min-width: 920px) {
 				grid-template-columns: repeat(2, 1fr);
+
+				&[data-even="false"] {
+                    div.empty-project:last-child {
+                        display: flex;
+                    }
+				}
 			}
 
 			@media(min-width: 1280px) {
 				grid-template-columns: repeat(3, 1fr);
 				width: 100%;
+
+                div.empty-project {
+                    display: flex;
+                }
 			}
 		}
 	}
