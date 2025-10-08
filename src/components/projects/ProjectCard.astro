@@ -13,7 +13,7 @@ const {
 const checkId = `${project.id}-switch`
 ---
 
-<input type="checkbox" id={checkId} hidden/>
+<input type="checkbox" id={checkId} hidden data-project={project.id}/>
 
 <div class="preview" id={`${project.id}-popup-container`}>
 	<label for={checkId} class="outside"/>
@@ -29,7 +29,7 @@ const checkId = `${project.id}-switch`
 		</div>
 		<div class="content">
 			{project.display.embed && (
-				<iframe src={project.display.embed.src} allowfullscreen/>
+				<iframe src={project.display.embed.src} allowfullscreen data-project={project.id}/>
 			)}
 		</div>
 	</article>
@@ -61,6 +61,7 @@ const checkId = `${project.id}-switch`
 		width: 100%;
 		height: calc(100% - var(--nav-height));
 		background-color: #0000007D;
+		backdrop-filter: blur(10px);
 
 		label.outside {
 			position: absolute;
@@ -128,17 +129,31 @@ const checkId = `${project.id}-switch`
 			}
 
 			div.content {
-				aspect-ratio: 16 / 9;
 				background-color: black;
 				border-radius: 0.5rem;
 				border: 3px solid var(--accent);
 				overflow: clip;
 				padding: 0.5rem;
 
+				min-height: 250px;
+
+				@media(min-width: 1024px) {
+					min-height: 495px;
+				}
+
+				@media(min-width: 1280px) {
+					min-height: 607px;
+				}
+
 				iframe {
-					width: 100%;
-					height: 100%;
+					aspect-ratio: 16 / 9;
 					display: none;
+					width: 100%;
+					border: none;
+
+					&:focus {
+						outline: none;
+					}
 				}
 			}
 		}
@@ -234,3 +249,20 @@ const checkId = `${project.id}-switch`
 		}
 	}
 </style>
+
+<script>
+	const inputs = document
+		.querySelectorAll<HTMLInputElement>('input[data-project]')
+
+	inputs.forEach(input => {
+		input.addEventListener('change', (e) => {
+			const key = input.dataset["project"]
+			const embed = document.querySelector<HTMLInputElement>(`iframe[data-project=${key}]`);
+
+			if (embed && !input.checked) {
+				// noinspection SillyAssignmentJS
+				embed.src = embed.src
+			}
+		})
+	})
+</script>
