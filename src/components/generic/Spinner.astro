@@ -1,0 +1,43 @@
+---
+
+---
+<div class="spinner"/>
+
+<style lang="scss">
+    div.spinner {
+        @keyframes spin {
+            0%   { transform: rotate(0deg);   animation-timing-function: cubic-bezier(0.55, 0.05, 0.67, 0.19); }
+            70%  { transform: rotate(300deg); animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1); }
+            100% { transform: rotate(360deg); }
+        }
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        animation: spin 1s linear infinite;
+        animation-play-state: running;
+
+        &:before, &:after {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 3rem;
+            aspect-ratio: 1;
+            border-radius: 50%;
+            border: 4px solid transparent;
+        }
+
+        &:before {
+            border-color: var(--accent);
+            opacity: 0.2;
+        }
+
+        &:after {
+            border-top: 4px solid var(--accent);
+            opacity: 0.8;
+            z-index: 2;
+        }
+    }
+</style>
