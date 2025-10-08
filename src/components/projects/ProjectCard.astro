@@ -21,7 +21,7 @@ const checkId = `${project.id}-switch`
 		<div class="titlebar">
             <h3>
                 <Icon size="2rem">movie</Icon>
-                Preview - {project.metadata.title}
+                <span>Preview - {project.metadata.title}</span>
             </h3>
 			<label for={checkId} class="close">
 				<Icon size="2rem">close</Icon>
@@ -80,13 +80,17 @@ const checkId = `${project.id}-switch`
 
 			max-width: 1280px; margin: auto auto;
 
+			--width: 440px;
+
 			@media(min-width: 1024px) {
-				width: 900px;
+				--width: 900px;
 			}
 
 			@media(min-width: 1280px) {
-				width: 1100px;
+				--width: 1100px;
 			}
+
+			width: var(--width);
 
 			div.titlebar {
 				background: var(--accent);
@@ -102,14 +106,17 @@ const checkId = `${project.id}-switch`
 					line-height: 1.5rem;
 					font-weight: 700;
 					color: black;
-					display: flex;
+					display: inline-flex;
 					flex-direction: row;
 					align-items: center;
 					gap: 0.75rem;
+					max-width: calc(var(--width) - 80px);
 
-					text-overflow: ellipsis;
-					overflow: hidden;
-					text-wrap: nowrap;
+					span:last-child {
+						text-overflow: ellipsis;
+						overflow: hidden;
+						text-wrap: nowrap;
+					}
 				}
 
 				label.close {
