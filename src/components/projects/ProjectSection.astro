@@ -23,17 +23,23 @@ if (type === "editorial") {
 }
 
 const filtered = items.filter(i => i.metadata.section === section)
-const placeholders = Math.ceil(3 - (filtered.length % 3))
-const total = filtered.length + placeholders
+const rows3 = Math.ceil(filtered.length / 3)
+const rows2 = Math.ceil(filtered.length / 2)
+
+const pad3 = (rows3 * 3) - filtered.length
+const pad2 = (rows2 * 2) - filtered.length
 ---
 <section class="section" id={section}>
 	<h2 class="heading-title">{section}</h2>
-	<div class="projects" data-even={filtered.length % 2 === 0}>
+	<div class="projects">
 		{filtered.map(item => (
 			<ProjectCard project={item}/>
 		))}
-		{Array.from({length: placeholders}, (_, i) => (
-			<div class="empty-project"/>
+		{Array.from({length: pad3}, (_, i) => (
+			<div class="empty-project" data-columns="3"/>
+		))}
+		{Array.from({length: pad2}, (_, i) => (
+			<div class="empty-project" data-columns="2"/>
 		))}
 	</div>
 </section>
@@ -58,30 +64,40 @@ const total = filtered.length + placeholders
 			gap: 2rem;
 
 			display: grid;
+			position: relative;
 
 			div.empty-project {
                 background: #00000033;
                 border-radius: 0.5rem;
 				border: 1px solid black;
 				display: none;
+
+                --width: 390px;
+
+                min-width: var(--width);
+                width: var(--width);
+                max-width: var(--width);
+				aspect-ratio: 16/9;
 			}
 
 			@media(min-width: 920px) {
 				grid-template-columns: repeat(2, 1fr);
 
-				&[data-even="false"] {
-                    div.empty-project:last-child {
-                        display: flex;
-                    }
-				}
+                div.empty-project[data-columns="2"] {
+                    display: flex;
+                }
 			}
 
 			@media(min-width: 1280px) {
 				grid-template-columns: repeat(3, 1fr);
 				width: 100%;
 
-                div.empty-project {
+                div.empty-project[data-columns="3"] {
                     display: flex;
+                }
+
+                div.empty-project[data-columns="2"] {
+                    display: none;
                 }
 			}
 		}
