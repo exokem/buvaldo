@@ -10,6 +10,7 @@ import BackgroundCover from "../../components/BackgroundCover.astro";
         <div class="container">
             <div class="spacer"/>
             <div class="bio">
+                <h1>About Bryan</h1>
                 <p>
                     Bryan Uvaldo is an award-winning Brazilian-American filmmaker with a B.F.A.
                     in Film & Television from NYU Tisch.
@@ -38,6 +39,10 @@ import BackgroundCover from "../../components/BackgroundCover.astro";
                     <em>High Potential</em>, and
                     is determined to use his post-production experience as a building block for his path
                     to becoming a director for blockbuster films.
+                </p>
+                <p>
+                    Email:
+                    <a href="mailto:buvaldo216@gmail.com" class="email">buvaldo216@gmail.com</a>
                 </p>
                 <div class="links">
                     <a class="youtube" href="https://www.youtube.com/channel/UCNDFgziSeSvF3CjxJxo7esg">
@@ -79,6 +84,16 @@ import BackgroundCover from "../../components/BackgroundCover.astro";
 
 <style lang="css">
 
+    h1 {
+        font-size: 2rem;
+        font-weight: 700;
+    }
+
+    a.email {
+        text-decoration: underline;
+        color: dodgerblue;
+    }
+
     div.p1 {
         background: linear-gradient(180deg, #00000000 75%, #0000007d 100%);
     }
@@ -92,7 +107,7 @@ import BackgroundCover from "../../components/BackgroundCover.astro";
         }
 
         img {
-            border-radius: 2rem;
+            border-radius: 1rem;
             filter: drop-shadow(0px 2px 4px #00000077);
         }
 
@@ -159,6 +174,9 @@ import BackgroundCover from "../../components/BackgroundCover.astro";
         a {
             display: block;
             position: relative;
+            filter: drop-shadow(0px 2px 2px #00000077);
+            background: white;
+            border-radius: 1rem;
 
             img {
                 height: 2.5rem;
@@ -168,7 +186,7 @@ import BackgroundCover from "../../components/BackgroundCover.astro";
             transition-duration: 250ms;
 
             &:hover {
-                opacity: 0.9;
+                opacity: 0.8;
             }
         }
     }
