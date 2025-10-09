@@ -33,18 +33,110 @@ const checkId = `${project.id}-details-switch`
                         <p>Coming Soon</p>
                     </div>
 			)}
+            <input type="checkbox" id={checkId} class="details-switch" hidden/>
+            <label for={checkId} class="details-label">
+                <span class="show sym">visibility</span>
+                <span class="hide sym">visibility_off</span>
+                <span class="show label">Show Details</span>
+                <span class="hide label">Hide Details</span>
+            </label>
+
+            <div class="details">
+                <div>
+                    <label for={checkId} class="details-close">
+                        <span class="sym">close</span>
+                    </label>
+                    <h3 class="title">
+                        <em>{project.metadata.title}</em>
+                    </h3>
+                    <p class="subtitle">
+                        <b>{project.metadata.year}</b>
+                        | {project.metadata.genre}
+                        {project.metadata.categories[0] && (
+                            <>
+                                | <em>{project.metadata.categories[0]}</em>
+                            </>
+                        )}
+                    </p>
+                    <hr/>
+                    <p class="description">
+                        {project.metadata.description}
+                    </p>
+                </div>
+            </div>
         </div>
-        <input type="checkbox" id={checkId} class="details-switch" hidden/>
-        <label for={checkId} class="details-label">
-            <span class="show sym">visibility</span>
-            <span class="hide sym">visibility_off</span>
-            <span class="show label">Show Details</span>
-            <span class="hide label">Hide Details</span>
-        </label>
     </article>
 </div>
 
 <style lang="scss">
+    div.details {
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        opacity: 0;
+        transition-property: opacity;
+        transition-duration: 250ms;
+        pointer-events: none;
+
+        /*margin: 0.5rem;*/
+        height: 100%;
+        width: 100%;
+        border-radius: 0.5rem;
+        background: #00000077;
+        backdrop-filter: blur(8px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        div {
+            position: relative;
+            color: white;
+            font-family: "Inter", sans-serif;
+            display: flex;
+            flex-direction: column;
+            background-color: #000000cc;
+            padding: 2.25rem;
+            border-radius: 0.5rem;
+            width: 75%;
+            gap: 1rem;
+
+            label.details-close {
+                position: absolute;
+                font-size: 1.5rem;
+                right: 0;
+                top: 0;
+                padding: 1rem;
+                cursor: pointer;
+
+                .sym {
+                    transition-property: opacity;
+                    transition-duration: 250ms;
+                }
+
+                &:hover {
+                    .sym {
+                        opacity: 0.9;
+                    }
+                }
+            }
+
+            h3.title {
+                font-size: 2rem;
+                font-weight: 700;
+            }
+
+            p.subtitle {
+                font-size: 1.5rem;
+                color: rgb(168 162 158);
+            }
+
+            p.description {
+                font-size: 1.25rem;
+            }
+        }
+    }
+
     label.details-label {
         position: absolute;
         z-index: 999;
@@ -57,9 +149,11 @@ const checkId = `${project.id}-details-switch`
         align-items: center;
         gap: 0.75rem;
         left: 50%;
-        transform: translateX(-50%) translateY(-50%);
+        bottom: 0;
+        transform: translateX(-50%) translateY(50%);
         transition-property: background-color;
         transition-duration: 250ms;
+        filter: drop-shadow(0 1px 4px #00000055);
 
         &:hover {
             background-color: #fccc50;
@@ -79,6 +173,16 @@ const checkId = `${project.id}-details-switch`
             font-weight: 700;
         }
 
+        span.hide {
+            display: none;
+        }
+
+        span.show {
+            display: inline-block;
+        }
+    }
+
+    input.details-switch:checked + label.details-label {
         span.show {
             display: none;
         }
@@ -88,14 +192,9 @@ const checkId = `${project.id}-details-switch`
         }
     }
 
-    input.details-switch:checked + label.details-label {
-        span.hide {
-            display: none;
-        }
-
-        span.show {
-            display: inline-block;
-        }
+    input.details-switch:checked ~ div.details {
+        opacity: 1;
+        pointer-events: auto;
     }
 
 	div.preview {
@@ -191,10 +290,11 @@ const checkId = `${project.id}-details-switch`
 			}
 
 			div.content {
+                position: relative;
 				background-color: black;
 				border-radius: 0.5rem;
 				border: 3px solid var(--accent);
-				overflow: clip;
+				/*overflow: clip;*/
 				padding: 0.5rem;
 
 				min-height: 250px;
@@ -212,6 +312,7 @@ const checkId = `${project.id}-details-switch`
 					display: none;
 					width: 100%;
 					border: none;
+                    border-radius: 0.5rem;
 
 					&:focus {
 						outline: none;
