@@ -70,14 +70,6 @@ const checkId = `${project.id}-details-switch`
 
 <style lang="scss">
     div.details {
-        position: absolute;
-        top: 0;
-        left: 0;
-
-        opacity: 0;
-        transition-property: opacity;
-        transition-duration: 250ms;
-        pointer-events: none;
 
         /*margin: 0.5rem;*/
         height: 100%;
@@ -88,6 +80,7 @@ const checkId = `${project.id}-details-switch`
         display: flex;
         align-items: center;
         justify-content: center;
+        padding: 0.5rem;
 
         div {
             position: relative;
@@ -96,9 +89,7 @@ const checkId = `${project.id}-details-switch`
             display: flex;
             flex-direction: column;
             background-color: #000000cc;
-            padding: 2.25rem;
             border-radius: 0.5rem;
-            width: 75%;
             gap: 1rem;
 
             label.details-close {
@@ -108,6 +99,12 @@ const checkId = `${project.id}-details-switch`
                 top: 0;
                 padding: 1rem;
                 cursor: pointer;
+
+                display: none;
+
+                @media(min-width: 1024px) {
+                    display: flex;
+                }
 
                 .sym {
                     transition-property: opacity;
@@ -135,6 +132,21 @@ const checkId = `${project.id}-details-switch`
                 font-size: 1.25rem;
             }
         }
+
+        @media(min-width: 1024px) {
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transition-property: opacity;
+            transition-duration: 250ms;
+            pointer-events: none;
+
+            div {
+                padding: 2.25rem;
+                width: 75%;
+            }
+        }
     }
 
     label.details-label {
@@ -144,7 +156,6 @@ const checkId = `${project.id}-details-switch`
         padding: 0.75rem;
         border-radius: 0.5rem;
         cursor: pointer;
-        display: flex;
         flex-direction: row;
         align-items: center;
         gap: 0.75rem;
@@ -154,6 +165,12 @@ const checkId = `${project.id}-details-switch`
         transition-property: background-color;
         transition-duration: 250ms;
         filter: drop-shadow(0 1px 4px #00000055);
+
+        display: none;
+
+        @media(min-width: 1024px) {
+            display: flex;
+        }
 
         &:hover {
             background-color: #fccc50;
