@@ -67,10 +67,20 @@ import BackgroundCover from "../../components/BackgroundCover.astro";
 <style lang="scss">
 </style>
 
+<style is:global>
+    main#about {
+        .cover {
+            @media(max-width: 1024px) {
+                background-position-x: calc(50% - 25%);
+            }
+        }
+    }
+</style>
+
 <style lang="css">
 
     div.p1 {
-        background: linear-gradient(180deg, #00000000 45%, #0000007d 100%);
+        background: linear-gradient(180deg, #00000000 75%, #0000007d 100%);
     }
 
     div.p2 {
