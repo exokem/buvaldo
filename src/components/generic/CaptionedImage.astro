@@ -1,0 +1,46 @@
+---
+interface Props {
+	folder: string
+	name: string
+	alt: string
+}
+
+const {
+	folder,
+	name,
+	alt,
+} = Astro.props
+---
+<div class="captioned-image">
+	<img src={`/${folder}/${name}`} alt={alt} />
+	{Astro.slots.has('caption') && (
+		<p class="caption">
+			<slot name="caption"/>
+		</p>
+	)}
+</div>
+
+<style>
+	div.captioned-image {
+		position: relative;
+		border-radius: 0.5rem;
+		overflow: clip;
+
+		& > img {
+
+		}
+
+		& > p.caption {
+			position: absolute;
+			bottom: 0;
+            background-color: rgba(0, 0, 0, 0.78);
+            padding: 0.75rem;
+			width: 100%;
+
+
+			font-family: "Inter", sans-serif;
+			color: white;
+
+		}
+	}
+</style>
