@@ -47,6 +47,16 @@ h1.heading-title {
     }
 }
 
+h2.heading-title {
+    font-size: 3rem;
+    line-height: 3rem;
+
+    @media(min-width: 512px) {
+        font-size: 3rem;
+        line-height: 3rem;
+    }
+}
+
 .sym {
     font-family: 'Material Symbols Rounded';
     font-weight: normal;
