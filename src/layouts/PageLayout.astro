@@ -9,6 +9,8 @@ interface Props
 }
 
 const {title} = Astro.props
+
+const id = title.toLowerCase().replaceAll(" ", "-").replaceAll("'", "")
 ---
 <html lang="en">
 <head>
@@ -30,7 +32,7 @@ const {title} = Astro.props
         <Item href="/editorial" icon="theaters">Editorial</Item>
         <Item href="/about" icon="person">About</Item>
 	</Navigation>
-	<main id={title.toLowerCase().replaceAll(" ", "-")}>
+	<main id={id}>
 		<slot/>
 	</main>
 </body>
