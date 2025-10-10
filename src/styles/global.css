@@ -20,24 +20,12 @@ html {
     max-width: 1280px;
 }
 
-@layer utilities {
-    .highlight-gradient {
-        @apply bg-gradient-to-r from-amber-400 from-60% to-transparent
-    }
-    .highlight-gradient-alt {
-        @apply bg-gradient-to-r from-amber-100 from-60% to-transparent
-    }
-
-    .highlight-gradient-onhover {
-        @apply group-hover:bg-gradient-to-r group-hover:from-yellow-300 group-hover:from-70% group-hover:to-transparent
-    }
-
-    .heading-title {
-        @apply bg-gradient-to-r from-amber-400 from-60% to-transparent
-    }
+.highlight-gradient {
+    background-image: linear-gradient(to right, var(--accent) 60%, transparent);
 }
 
 .heading-title {
+    background-image: linear-gradient(to right, var(--accent) 60%, transparent);
     font-family: "Passion One", sans-serif;
     text-transform: uppercase;
     font-weight: 700;
@@ -47,6 +35,16 @@ html {
     width: min-content;
     padding: 0 0.75rem;
     border-radius: 0.5rem 0 0 0.5rem;
+}
+
+h1.heading-title {
+    font-size: 3.25rem;
+    line-height: 3.25rem;
+
+    @media(min-width: 512px) {
+        font-size: 4rem;
+        line-height: 4rem;
+    }
 }
 
 .sym {
