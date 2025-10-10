@@ -1,0 +1,218 @@
+---
+
+import PageLayout from "../../../layouts/PageLayout.astro";
+import BackgroundCover from "../../../components/BackgroundCover.astro";
+import CaptionedImage from "../../../components/generic/CaptionedImage.astro";
+---
+
+<PageLayout title="Playin' Around">
+    <BackgroundCover src="/cover/playin-around.jpg" blur/>
+	<nav class="contents" aria-labelledby="contents-label">
+		<span id="contents-label" hidden>Table of Contents</span>
+		<ol role="list">
+            <li><a href="#cover">Playin' Around</a></li>
+            <li><a href="#stills">Film Stills</a></li>
+            <li><a href="#bts">Behind the Scenes</a></li>
+            <li><a href="#credits">Credits</a></li>
+            <li><a href="#extras">Extras</a></li>
+		</ol>
+	</nav>
+	<section id="cover" class="sct">
+	</section>
+    <section id="stills" class="sct">
+        <div class="content">
+            <h1 class="heading-title">Stills</h1>
+            <CaptionedImage folder="cover" name="playin-around.jpg" alt="">
+            </CaptionedImage>
+        </div>
+    </section>
+    <section id="bts" class="sct">
+        <div class="content">
+            <h1 class="heading-title">BTS</h1>
+            <CaptionedImage folder="directorial/playin-around" name="still-01.jpg" alt="">
+            </CaptionedImage>
+            <CaptionedImage folder="directorial/playin-around" name="still-02.jpg" alt="">
+            </CaptionedImage>
+            <CaptionedImage folder="directorial/playin-around" name="still-03.JPG" alt="">
+            </CaptionedImage>
+            <CaptionedImage folder="directorial/playin-around" name="still-04.jpg" alt="">
+            </CaptionedImage>
+            <CaptionedImage folder="directorial/playin-around" name="still-05.JPG" alt="">
+            </CaptionedImage>
+        </div>
+    </section>
+    <section id="credits" class="sct">
+        <div class="title">
+			<h1 class="heading-title">Credits</h1>
+		</div>
+		<!--<img src="/directorial/playin-around/still-credits.jpg" alt=""/>-->
+    </section>
+    <section id="extras" class="sct">
+        <!--<img src="/directorial/playin-around/still-additional.jpg" alt="" class="background"/>-->
+		<div class="content">
+            <h1 class="heading-title">Extras</h1>
+            <CaptionedImage folder="directorial/playin-around" name="bts-timeline.jpg" alt="">
+                <Fragment slot="caption">
+                    <em>The editing timeline for Playin' Around</em> &mdash; Edited by Bryan Uvaldo
+				</Fragment>
+            </CaptionedImage>
+            <CaptionedImage folder="directorial/playin-around" name="bts-concept.jpg" alt="">
+                <Fragment slot="caption">
+                	<em>Playin' Around Concept Art</em> &mdash; Drawn by Caroline Ho
+                </Fragment>
+            </CaptionedImage>
+            <CaptionedImage folder="directorial/playin-around" name="bts-lego.jpg" alt="">
+                <Fragment slot="caption">
+                	<em>Lego Diorama for Playin' Around</em> &mdash; Designed by Bryan Uvaldo, Photo by Ruben Sevilla
+                </Fragment>
+            </CaptionedImage>
+		</div>
+    </section>
+</PageLayout>
+
+<style is:global>
+    main#playin-around {
+        .cover {
+            @media(max-width: 1024px) {
+                background-position-x: calc(50% - 15%);
+            }
+        }
+    }
+</style>
+<style>
+	:root {
+        --accent: #eb5a04 !important;
+	}
+
+    nav.contents {
+		@media(max-width: 1024px) {
+			display: none;
+		}
+        ol {
+			z-index: 100;
+			right: 0;
+			margin-right: 2rem;
+			background: #00000066;
+			backdrop-filter: blur(12px);
+			border-radius: 0.5rem;
+			border: 1px solid #00000066;
+			padding: 2rem 2rem;
+            position: fixed;
+			top: 50%;
+			transform: translateY(-50%);
+			display: flex;
+			flex-direction: column;
+			gap: 2rem;
+
+			font-family: "Inter", sans-serif;
+			font-size: 1.5rem;
+			line-height: 1.5rem;
+			font-weight: 700;
+			color: white;
+
+			li > a {
+				width: 100%;
+				display: inline-block;
+				position: relative;
+				padding: 0.5rem 0.75rem;
+				@media(min-width: 1024px) {
+					cursor: pointer;
+                    &::before {
+                        content: "";
+                        border-radius: 0.5rem;
+                        position: absolute;
+                        transition-property: width, left;
+                        transition-duration: 300ms;
+                        height: 100%;
+                        top: 50%;
+                        left: 0;
+                        width: 0;
+                        transform: translate(-50%, -50%);
+                        opacity: 0.6;
+                        z-index: -1;
+                        background-image: linear-gradient(to right, var(--accent) 70%, transparent)
+                    }
+					&:hover {
+                        &::before {
+                            width: 100%;
+                            left: 50%;
+                        }
+					}
+                }
+			}
+        }
+    }
+
+	div.title {
+		display: flex;
+		width: 100%;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		padding: 2rem 0;
+	}
+
+    section.sct {
+
+        div.content {
+            max-width: 1280px;
+            margin: 0 auto;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			gap: 2rem;
+			padding: 2rem 1rem;
+        }
+    }
+
+	section#cover {
+		height: calc(100vh - var(--nav-height));
+	}
+
+	section#credits {
+		height: calc(100vh - var(--nav-height));
+		position: relative;
+		z-index: 10;
+		filter: drop-shadow(0 1px 4px #00000066);
+
+		&:before {
+			content: "";
+			position: absolute;
+			z-index: -1;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+
+            background-image: url("/directorial/playin-around/still-credits.jpg");
+            background-size: cover;
+
+			background-position-x: calc(50%);
+		}
+	}
+
+	section#extras {
+        position: relative;
+
+        &:before, &:after {
+            content: "";
+			position: absolute;
+			z-index: -1;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+		}
+
+		&:before {
+			background-image: url("/directorial/playin-around/still-additional.jpg");
+            background-size: cover;
+			background-repeat: no-repeat;
+
+            background-position-x: calc(50%);
+            filter: blur(4px) brightness(35%) saturate(150%) !important;
+        }
+
+
+	}
+</style>
