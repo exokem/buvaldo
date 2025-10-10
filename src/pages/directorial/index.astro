@@ -7,7 +7,7 @@ import ProjectSection from "../../components/projects/ProjectSection.astro";
 <PageLayout title='Directorial Work'>
     <BackgroundCover src="/cover/directorial.jpg" blur/>
     <div class="title">
-        <h1 class="heading-title">Directorial Work</h1>
+        <h1 class="heading-title">Directorial</h1>
     </div>
     <ProjectSection type="directorial" section="narrative"/>
     <ProjectSection type="directorial" section="student"/>
@@ -20,11 +20,21 @@ import ProjectSection from "../../components/projects/ProjectSection.astro";
         display: flex;
         flex-direction: row;
         justify-content: center;
-        padding: 5rem 0;
+
+        padding: 2rem 0;
+
+        @media(min-width: 512px) {
+            padding: 5rem 0;
+        }
 
         h1 {
-            font-size: 4rem;
-            line-height: 4rem;
+            font-size: 3.25rem;
+            line-height: 3.25rem;
+
+            @media(min-width: 512px) {
+                font-size: 4rem;
+                line-height: 4rem;
+            }
         }
     }
 </style>

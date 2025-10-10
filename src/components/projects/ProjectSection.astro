@@ -56,8 +56,14 @@ const pad2 = (rows2 * 2) - filtered.length
 		gap: 2rem;
 
 		h2 {
+
 			font-size: 3rem;
 			line-height: 3rem;
+
+            @media(min-width: 512px) {
+                font-size: 3rem;
+                line-height: 3rem;
+            }
 		}
 
 		div.projects {
@@ -72,7 +78,11 @@ const pad2 = (rows2 * 2) - filtered.length
 				border: 1px solid black;
 				display: none;
 
-                --width: 390px;
+                --width: 360px;
+
+                @media(min-width: 512px) {
+                    --width: 390px;
+                }
 
                 min-width: var(--width);
                 width: var(--width);

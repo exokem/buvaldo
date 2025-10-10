@@ -104,7 +104,15 @@ const checkId = `${project.id}-switch`
 
 		filter: drop-shadow(0 1px 5px #00000099);
 
-		--width: 390px;
+		--width: calc(100%);
+
+		@media(min-width: 375px) {
+			--width: 360px;
+		}
+
+		@media(min-width: 512px) {
+			--width: 390px;
+		}
 
 		min-width: var(--width);
 		width: var(--width);
