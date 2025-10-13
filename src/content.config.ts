@@ -9,6 +9,15 @@ const creditSectionSchema = z.object({
 	credits: z.record(z.string(), z.string()),
 })
 
+const projectImagesSchema = z.array(z.object({
+	folder: z.string().optional(),
+	name: z.string(),
+	description: z.string().optional().nullable().default(null),
+	credit: z.string().optional(),
+}))
+
+export type ProjectImagesArray = z.infer<typeof projectImagesSchema>
+
 const projectSchema = z.object({
 	id: z.string(),
 	metadata: z.object({
@@ -47,6 +56,18 @@ const projectSchema = z.object({
 			alt: z.string().optional().default(''),
 		}).optional(),
 	}),
+	page: z.object({
+		folder: z.string(),
+		stills: z.object({
+			images: projectImagesSchema
+		}),
+		bts: z.object({
+			images: projectImagesSchema
+		}),
+		extras: z.object({
+			images: projectImagesSchema
+		})
+	}).optional(),
 })
 
 // 3. Define your collection(s)
