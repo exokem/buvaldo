@@ -67,13 +67,24 @@ const seconds = totalSeconds - (totalMinutes * 60)
         backdrop-filter: blur(12px);
         border-radius: 0.5rem;
         border: 1px solid #00000066;
+
+        transition-property: opacity, transform;
+        transition-duration: 500ms;
+        transition-delay: 350ms;
+        @starting-style {
+            opacity: 0;
+            transform: translateY(5rem);
+        }
 	}
 
 	img.poster {
 		border-radius: 0.5rem;
+		aspect-ratio: 250/369;
+		background-color: black;
 
 		@media(min-width: 1024px) {
-			width: 500px;
+			min-width: 500px;
+
 		}
 	}
 
