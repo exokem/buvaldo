@@ -1,0 +1,166 @@
+---
+import type {Project} from "../../content.config";
+interface Props {
+	project: Project
+}
+
+const {
+	project
+} = Astro.props
+
+const traits = []
+
+traits.push(...project.metadata.genre.split(" "))
+traits.push(...project.metadata.categories)
+
+const totalSeconds = project.metadata.duration.seconds
+const totalMinutes = Math.floor(totalSeconds / 60) + project.metadata.duration.minutes
+
+const hours = Math.floor(totalMinutes / 60) + project.metadata.duration.hours
+const minutes = totalMinutes - (hours * 60)
+const seconds = totalSeconds - (totalMinutes * 60)
+---
+<div class="root">
+	{project.display.portrait && (
+		<img src={project.display.portrait.src} alt="" class="poster"/>
+	)}
+	<div class="details">
+        <h1 class="title">{project.metadata.title} (<span class="year">{project.metadata.year}</span>)</h1>
+        <p class="traits">
+			{traits.map((trait, i) => <>
+                <span class="value">{trait}</span>
+				{i < traits.length - 1 ? <span class="unit">/</span> : <></>}
+            </>)}
+            <span class="unit">/</span>
+			<span class="runtime">
+				{0 < hours && (
+						<span class="hours value">{hours}<span class="unit">h</span></span>
+				)}
+				{0 < minutes && (
+						<span class="minutes value">{minutes}<span class="unit">m</span></span>
+				)}
+				{0 < seconds && (
+						<span class="seconds value">{seconds}<span class="unit">s</span></span>
+				)}
+			</span>
+        </p>
+        <p class="description">{project.metadata.description}</p>
+
+        <p class="credits">
+			<em>{project.metadata.credits!.bryan![0]}</em>
+        </p>
+	</div>
+</div>
+
+<style>
+	div.root {
+		display: flex;
+		flex-direction: column;
+
+		@media(min-width: 1024px) {
+            flex-direction: row;
+		}
+		padding: 2rem;
+		gap: 2rem;
+		margin: 2rem 1rem;
+
+        background: #00000066;
+        backdrop-filter: blur(12px);
+        border-radius: 0.5rem;
+        border: 1px solid #00000066;
+	}
+
+	img.poster {
+		border-radius: 0.5rem;
+
+		@media(min-width: 1024px) {
+			width: 500px;
+		}
+	}
+
+	div.details {
+		font-family: "Inter", sans-serif;
+		color: white;
+
+		display: flex;
+		flex-direction: column;
+
+		@media(min-width: 1024px) {
+			padding-top: 2rem;
+		}
+
+		h1.title {
+            font-size: 1.5rem;
+            @media(min-width: 420px) {
+                font-size: 2rem;
+            }
+            @media(min-width: 500px) {
+                font-size: 2.5rem;
+            }
+			@media(min-width: 1160px) {
+                font-size: 3rem;
+			}
+			font-weight: 700;
+
+			span.year {
+				opacity: 0.7 !important;
+			}
+		}
+
+		p.credits {
+            font-size: 1.5rem;
+            line-height: 1.75rem;
+			span.value {
+				font-weight: 700;
+			}
+			opacity: 0.8;
+            @media(max-width: 520px) {
+                font-size: 1.15rem;
+            }
+		}
+
+		p.traits {
+            font-size: 0.75rem;
+            margin-bottom: 1.5rem;
+
+            @media(min-width: 420px) {
+                font-size: 0.90rem;
+            }
+            @media(min-width: 500px) {
+                font-size: 1rem;
+            }
+
+            @media(min-width: 1024px) {
+                margin-bottom: 5rem;
+            }
+
+
+			& > span.value {
+				&:nth-child(1) {
+					font-weight: 700;
+				}
+                &:nth-child(3) {
+                    font-weight: 700;
+                }
+			}
+		}
+
+        span.unit {
+            font-weight: 400;
+            opacity: 0.7;
+        }
+
+		span.runtime {
+			span.unit {
+				opacity: 1;
+			}
+			opacity: 0.7;
+		}
+
+		p.description {
+			font-size: 1.5rem;
+			line-height: 1.75rem;
+            margin-bottom: 2rem;
+		}
+	}
+</style>
