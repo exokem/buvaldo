@@ -18,7 +18,7 @@ categories = ["Short", "NYU Thesis"]
 seconds = 603
 
 [metadata.credits]
-bryan = ["Director", "Editor"]
+bryan = ["Directed and edited by Bryan Uvaldo"]
 
 [display]
 format = "popup"
@@ -27,7 +27,7 @@ format = "popup"
 src = "/directorial/playin-around/thumbnail.png"
 
 [display.portrait]
-src = "https://www.dropbox.com/scl/fi/rkdfqsto0igim6lwzqje5/playin-around.png?rlkey=lydhl3yfeya173f89rb8obur4&dl=0"
+src = "/directorial/playin-around/poster.jpg"
 
 #[display.embed]
 #type = "youtube"

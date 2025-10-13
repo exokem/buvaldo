@@ -18,7 +18,7 @@ categories = ["Short"]
 seconds = 603
 
 [metadata.credits]
-bryan = ["Director", "Writer", "Editor"]
+bryan = ["Directed, written, and edited by Bryan Uvaldo"]
 
 [display]
 format = "popup"
