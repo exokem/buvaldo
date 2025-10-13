@@ -1,5 +1,5 @@
 // 1. Import utilities from `astro:content`
-import {defineCollection, getCollection, z} from 'astro:content';
+import {defineCollection, getCollection, getEntry, z} from 'astro:content';
 
 // 2. Import loader(s)
 import { glob, file } from 'astro/loaders';
@@ -18,7 +18,11 @@ const projectSchema = z.object({
 			hours: z.number().optional().default(0),
 			minutes: z.number().optional().default(0),
 			seconds: z.number().optional().default(0),
-		}).optional(),
+		}).optional().default({
+			hours: 0,
+			minutes: 0,
+			seconds: 0,
+		}),
 		credits: z.object({
 			bryan: z.array(z.string()).optional(), // Bryan's roles
 		}).optional()
@@ -55,6 +59,11 @@ export type Project = z.infer<typeof projectSchema>
 export async function getProjects() {
 	const projects = await getCollection("projects");
 	return projects.map(p => p.data) as Project[];
+}
+
+export async function getProject(name: string): Promise<Project> {
+	const project = await getEntry("projects", name);
+	return project!.data as Project;
 }
 
 export async function getEditorialProjects(): Promise<Project[]> {
