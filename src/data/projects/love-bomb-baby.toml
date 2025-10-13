@@ -18,15 +18,115 @@ roles = "Directed, written, and edited by Bryan Uvaldo"
 #minutes = 0
 seconds = 603
 
+[metadata.credits.main]
+[metadata.credits.main.credits]
+"Director/Writer" = "Bryan Uvaldo"
+"Producers" = "Maggie Soik, Nina Sundermeyer, Guillermo Prieto IV"
+"Co-Producer" = "Avery Sweeney"
+"Associate Producer" = "Colette Poncet"
+[metadata.credits.cast]
+title = "Cast"
+[metadata.credits.cast.credits]
+"Luna" = "Quinn Bringelson"
+"Alexis" = "Kat Capili"
+"Ninja Girl" = "Amanda Whyte"
+"Dr. Moo / Bartender" = "Muhil Vaseekaran"
+"Space Defender" = "Liv D'Arche"
+"Captain H.H." = "Flora Nolan"
+"Academy Wizard / Evil Banana" = "Michael Monroe"
+"Sporty Wizard / Camo Guy" = "Leion Van Osdol"
+"Business Frog" = "Zoe Poppenga"
+"Simulation Warrior" = "Alex Grech"
+"Colonel" = "Ian Dugan"
+"Action Hero" = "Justin Wang"
+"Amateur Archaeologist" = "Guillermo Prieto IV"
+"Blue Balled Boy" = "Cooper Smith"
+"Nurse" = "Matilde Silva"
+[metadata.credits.production]
+title = "On-Set Production"
+[metadata.credits.production.credits]
+"1st Assistant Director" = "Jayla Matthews"
+"2nd Assistant Director" = "Colette Poncet"
+"Fight Choreographers" = "Ian Dugan, Justin Wang"
+"Stunt Coordinator" = "Ian Dugan"
+"Sword Fight Coordinator" = "Liv D'Arche"
+"Director of Photography" = "Tara Zulfikar, Zoe Medranda"
+"Gaffer" = "Kathryn Phillips"
+"Grip" = "Chris St Lawrence"
+"Boom Operator" = "Mame Toure"
+"Production Designer" = "Jessery Darlington"
+"Costume Designer" = "Charli Einhorn"
+"Makeup" = "Zoe Poppenga"
+"Script Supervisor" = "Netyali Ortega"
+"Art Director" = "Dasha Fogelson"
+"Art Assistants" = "Johnny Yassa, Cooper Smith"
+"BTS Photographer" = "Ari Isenberg"
+"Promo Photographer" = "Kathryn Phillips"
+[metadata.credits.post]
+title = "Post Production"
+[metadata.credits.post.credits]
+"Editor" = "Ali Soltan"
+"Co-Editor" = "Bryan Uvaldo"
+"Effects Editor" = "Adriana Guevara"
+"VFX Artists" = "Jonah Arnold, Andre Hall, Alex Vargas, Matthew Levine"
+"Sound Designer" = "Ciara Bess"
+"Rerecording Mixer" = "Thomas Wu"
+"Assistant Sound Editor" = "Jaden Fields"
+"Music Supervisor" = "Chloe Carlson"
+"Colorist" = "Ari Isenberg"
+
+[metadata.credits.counting-cards]
+title = "Music — Counting Cards"
+[metadata.credits.counting-cards.credits]
+"Written by" = "Carolina Rial and Anna Kline"
+"Performed by" = "Carolina Rial"
+"Produced by" = "Zach Golden"
+[metadata.credits.dropped]
+title = "Music — Dropped"
+[metadata.credits.dropped.credits]
+"Written by" = "Alex Greenwald"
+"Performed by" = "Phantom Planet"
+"Courtesy of" = "Fueled by Ramen"
+[metadata.credits.detonation]
+title = "Music — Detonation"
+[metadata.credits.detonation.credits]
+"Composed by" = "Carlotta Romano"
+
 [display]
 format = "popup"
 
 [display.landscape]
-src = "/directorial/love-bomb/thumbnail.png"
+src = "/directorial/love-bomb-baby/thumbnail.png"
 
 [display.portrait]
-src = "https://www.dropbox.com/scl/fi/da8rhbznwiapgcnn2gg9j/love-bomb-baby.png?rlkey=mpzxs4bbt8apz82j4o069ujpm&dl=0"
+src = "/directorial/love-bomb-baby/poster.jpg"
 
 [display.embed]
 type = "youtube"
 src = "https://www.youtube.com/embed/DbYIgkQm-mI?si=UAJHVAo_B7K49OdU"
+
+[page]
+folder = "directorial/love-bomb-baby"
+[page.stills]
+images = [
+    {name = "still-01.jpg"},
+    {name = "still-02.jpg"},
+    {name = "still-03.jpg"},
+    {name = "still-04.jpg"},
+]
+[page.bts]
+images = [
+    {name = "bts-01.jpg"},
+    {name = "bts-02.jpg"},
+    {name = "bts-03.jpg"},
+    {name = "bts-04.jpg"},
+]
+[page.extras]
+background = "/directorial/love-bomb-baby/still-extras.jpg"
+images = [
+    {name = "bts-timeline.jpg", description = "Timeline for Love Bomb Baby", credit = "Edited by Bryan Uvaldo"},
+    {name = "bts-concept.jpg", description = "Love Bomb Baby Concept Art ", credit = "Drawn by Caroline Ho"},
+    {name = "bts-concept-cup.jpg", description = "Love Bomb Baby Teaser Concept Art", credit = "Drawn by Caroline Ho"},
+]
+[page.credits]
+background = "/directorial/love-bomb-baby/still-credits.jpg"

@@ -41,23 +41,6 @@ const page = project.page!
     <ProjectPageSection id="bts" title="BTS">
         <ProjectImages folder={page.folder} images={page.bts.images}/>
     </ProjectPageSection>
-    <!--    <section id="credits" class="sct">-->
-    <!--        <div class="content">-->
-    <!--            <h2 class="heading-title">Credits</h2>-->
-    <!--			{Object.values(project.metadata.credits).map(section => (-->
-    <!--				<div class="credit-section">-->
-    <!--					{section.title && <h3 class="credit-title">{section.title}</h3>}-->
-    <!--					{Object.entries(section.credits).map(([role, names]) => (-->
-    <!--						<p class="credit">-->
-    <!--							<span class="role">{role}</span>-->
-    <!--							<span class="names">{names}</span>-->
-    <!--						</p>-->
-    <!--					))}-->
-    <!--				</div>-->
-    <!--			))}-->
-    <!--        </div>-->
-    <!--		&lt;!&ndash;<img src="/directorial/playin-around/still-credits.jpg" alt=""/>&ndash;&gt;-->
-    <!--    </section>-->
 	<ProjectPageSection id="credits" title="Credits" background={page.credits.background}>
 		<ProjectCredits project={project}/>
 	</ProjectPageSection>
@@ -67,10 +50,6 @@ const page = project.page!
 </PageLayout>
 
 <style>
-    :root {
-        --accent: #eb5a04 !important;
-    }
-
     nav.contents {
         @media(max-width: 1024px) {
             display: none;
