@@ -11,14 +11,12 @@ year = "2025"
 type = "editorial"
 section = "narrative"
 categories = ["Feature Film"]
+roles = "Editor, On-Set DIT"
 
 [metadata.duration]
 #hours = 0
 #minutes = 0
 seconds = 0
-
-[metadata.credits]
-bryan = ["Editor, On-Set DIT"]
 
 [display]
 format = "popup"

@@ -11,14 +11,12 @@ year = "2019"
 type = "directorial"
 section = "student"
 categories = ["NYU Application"]
+roles = "Director, Editor"
 
 [metadata.duration]
 #hours = 0
 #minutes = 0
 seconds = 0
-
-[metadata.credits]
-bryan = ["Director", "Editor"]
 
 [display]
 format = "popup"

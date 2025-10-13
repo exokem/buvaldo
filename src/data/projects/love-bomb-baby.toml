@@ -11,14 +11,12 @@ year = "2023"
 type = "directorial"
 section = "narrative"
 categories = ["Short"]
+roles = "Directed, written, and edited by Bryan Uvaldo"
 
 [metadata.duration]
 #hours = 0
 #minutes = 0
 seconds = 603
-
-[metadata.credits]
-bryan = ["Directed, written, and edited by Bryan Uvaldo"]
 
 [display]
 format = "popup"

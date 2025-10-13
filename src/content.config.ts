@@ -4,6 +4,11 @@ import {defineCollection, getCollection, getEntry, z} from 'astro:content';
 // 2. Import loader(s)
 import { glob, file } from 'astro/loaders';
 
+const creditSectionSchema = z.object({
+	title: z.string().optional(),
+	credits: z.record(z.string(), z.string()),
+})
+
 const projectSchema = z.object({
 	id: z.string(),
 	metadata: z.object({
@@ -14,6 +19,7 @@ const projectSchema = z.object({
 		type: z.string(), // Editorial or directorial
 		section: z.string(), // For page placement - hbo/narrative/etc.
 		categories: z.array(z.string()),
+		roles: z.string().optional().default(""),
 		duration: z.object({
 			hours: z.number().optional().default(0),
 			minutes: z.number().optional().default(0),
@@ -23,9 +29,7 @@ const projectSchema = z.object({
 			minutes: 0,
 			seconds: 0,
 		}),
-		credits: z.object({
-			bryan: z.array(z.string()).optional(), // Bryan's roles
-		}).optional()
+		credits: z.record(z.string(), creditSectionSchema).optional().default({}),
 	}),
 	display: z.object({
 		format: z.enum(['popup', 'page', 'external']),

@@ -11,14 +11,12 @@ year = "2022"
 type = "editorial"
 section = "narrative"
 categories = ["Thesis Short"]
+roles = "Editor"
 
 [metadata.duration]
 #hours = 0
 #minutes = 0
 seconds = 0
-
-[metadata.credits]
-bryan = ["Editor"]
 
 [display]
 format = "popup"
