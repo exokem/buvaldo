@@ -1,0 +1,136 @@
+---
+import {getProject} from "../../content.config";
+import BackgroundCover from "../BackgroundCover.astro";
+import PageLayout from "../../layouts/PageLayout.astro";
+import FilmDetails from "./FilmDetails.astro";
+import CaptionedImage from "../generic/CaptionedImage.astro";
+import ProjectCredits from "./ProjectCredits.astro";
+import ProjectImages from "./ProjectImages.astro";
+import ProjectPageSection from "./ProjectPageSection.astro";
+interface Props {
+	name: string
+}
+
+const {
+	name
+} = Astro.props
+
+const project = await getProject(name)
+
+
+const page = project.page!
+---
+<PageLayout title={project.metadata.title}>
+    <BackgroundCover src="/cover/playin-around.jpg" blur/>
+    <nav class="contents" aria-labelledby="contents-label">
+        <span id="contents-label" hidden>Table of Contents</span>
+        <ol role="list">
+            <li><a href="#cover">Playin' Around</a></li>
+            <li><a href="#stills">Film Stills</a></li>
+            <li><a href="#bts">Behind the Scenes</a></li>
+            <li><a href="#credits">Credits</a></li>
+            <li><a href="#extras">Extras</a></li>
+        </ol>
+    </nav>
+	<ProjectPageSection id="cover">
+        <FilmDetails project={project}/>
+	</ProjectPageSection>
+	<ProjectPageSection id="stills" title="Stills">
+		<ProjectImages folder={page.folder} images={page.stills.images}/>
+	</ProjectPageSection>
+    <ProjectPageSection id="bts" title="BTS">
+        <ProjectImages folder={page.folder} images={page.bts.images}/>
+    </ProjectPageSection>
+    <!--    <section id="credits" class="sct">-->
+    <!--        <div class="content">-->
+    <!--            <h2 class="heading-title">Credits</h2>-->
+    <!--			{Object.values(project.metadata.credits).map(section => (-->
+    <!--				<div class="credit-section">-->
+    <!--					{section.title && <h3 class="credit-title">{section.title}</h3>}-->
+    <!--					{Object.entries(section.credits).map(([role, names]) => (-->
+    <!--						<p class="credit">-->
+    <!--							<span class="role">{role}</span>-->
+    <!--							<span class="names">{names}</span>-->
+    <!--						</p>-->
+    <!--					))}-->
+    <!--				</div>-->
+    <!--			))}-->
+    <!--        </div>-->
+    <!--		&lt;!&ndash;<img src="/directorial/playin-around/still-credits.jpg" alt=""/>&ndash;&gt;-->
+    <!--    </section>-->
+	<ProjectPageSection id="credits" title="Credits" background={page.credits.background}>
+		<ProjectCredits project={project}/>
+	</ProjectPageSection>
+	<ProjectPageSection id="extras" title="Extras" background={page.extras.background}>
+        <ProjectImages folder={page.folder} images={page.extras.images}/>
+    </ProjectPageSection>
+</PageLayout>
+
+<style>
+    :root {
+        --accent: #eb5a04 !important;
+    }
+
+    nav.contents {
+        @media(max-width: 1024px) {
+            display: none;
+        }
+        ol {
+            z-index: 100;
+            right: 0;
+            margin: 2rem;
+            background: #00000066;
+            backdrop-filter: blur(12px);
+            border-radius: 0.5rem;
+            border: 1px solid #00000066;
+            padding: 1rem 1rem;
+            position: fixed;
+            bottom: 0;
+            @media(min-width: 1920px) {
+                top: 50%;
+                transform: translateY(-50%);
+            }
+            height: min-content;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+
+            font-family: "Inter", sans-serif;
+            font-size: 1.5rem;
+            line-height: 1.5rem;
+            font-weight: 700;
+            color: white;
+
+            li > a {
+                width: 100%;
+                display: inline-block;
+                position: relative;
+                padding: 0.5rem 0.75rem;
+                @media(min-width: 1024px) {
+                    cursor: pointer;
+                    &::before {
+                        content: "";
+                        border-radius: 0.5rem;
+                        position: absolute;
+                        transition-property: width, left;
+                        transition-duration: 300ms;
+                        height: 100%;
+                        top: 50%;
+                        left: 0;
+                        width: 0;
+                        transform: translate(-50%, -50%);
+                        opacity: 0.6;
+                        z-index: -1;
+                        background-image: linear-gradient(to right, var(--accent) 70%, transparent)
+                    }
+                    &:hover {
+                        &::before {
+                            width: 100%;
+                            left: 50%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+</style>

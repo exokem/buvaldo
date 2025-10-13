@@ -79,7 +79,7 @@ title = "Post Production"
 "Color" = "Muhil Vaseekaran"
 "Sound Designer" = "Rae King"
 "Re-Recording Mixer" = "Rae King"
-"ADR Engineer I Foley Engineer" = "Nina Sundermeyer"
+"ADR Engineer / Foley Engineer" = "Nina Sundermeyer"
 "End Credits Design" = "Heather Alexis"
 "Title Design" = "Erin Henderson"
 "End Graphic Designs" = "Zoe Poppenega, Atlas Lee-Reid"
@@ -103,3 +103,30 @@ src = "/directorial/playin-around/poster.jpg"
 #[display.embed]
 #type = "youtube"
 #src = ""
+
+[page]
+folder = "directorial/playin-around"
+[page.stills]
+images = [
+    {folder = "cover", name = "playin-around.jpg"}
+]
+[page.bts]
+images = [
+    {name = "still-01.jpg"},
+    {name = "still-02.jpg"},
+    {name = "still-03.JPG"},
+    {name = "still-04.jpg"},
+    {name = "still-05.JPG"},
+]
+[page.extras]
+background = "/directorial/playin-around/still-additional.jpg"
+images = [
+    {name = "bts-timeline.jpg", description = "The editing timeline for Playin' Around", credit = "Edited by Bryan Uvaldo"},
+    {name = "bts-concept.jpg", description = "Playin' Around Concept Art", credit = "Drawn by Caroline Ho"},
+    {name = "bts-lego.jpg", description = "Lego Diorama for Playin' Around", credit = "Designed by Bryan Uvaldo, Photo by Ruben Sevilla"},
+]
+[page.credits]
+background = "/directorial/playin-around/still-credits.jpg"
+
+
+

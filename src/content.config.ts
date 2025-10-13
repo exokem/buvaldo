@@ -65,7 +65,11 @@ const projectSchema = z.object({
 			images: projectImagesSchema
 		}),
 		extras: z.object({
+			background: z.string(),
 			images: projectImagesSchema
+		}),
+		credits: z.object({
+			background: z.string(),
 		})
 	}).optional(),
 })
