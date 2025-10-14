@@ -15,14 +15,16 @@ const {
 const checkId = `${project.id}-switch`
 ---
 
-<input type="checkbox" class="preview-switch" id={checkId} hidden data-project={project.id}/>
+{project.page === undefined && (
+	<input type="checkbox" class="preview-switch" id={checkId} hidden data-project={project.id}/>
 
-<ProjectPreview project={project} class="preview">
-    <label for={checkId} class="outside" slot="background-label"/>
-    <label for={checkId} class="close" slot="close-label">
-        <Icon size="2rem">close</Icon>
-    </label>
-</ProjectPreview>
+	<ProjectPreview project={project} class="preview">
+		<label for={checkId} class="outside" slot="background-label"/>
+		<label for={checkId} class="close" slot="close-label">
+			<Icon size="2rem">close</Icon>
+		</label>
+	</ProjectPreview>
+)}
 
 <article id={project.id} class="thumbnail">
 	<div class="placeholder">
@@ -33,10 +35,23 @@ const checkId = `${project.id}-switch`
     <h3 class="title">{project.metadata.title}</h3>
     <p class="subtitle">{project.metadata.genre} | {project.metadata.categories[0]}</p>
 
-    <label class="thumbnail" for={checkId}></label>
+	{project.page === undefined && (
+    	<label class="thumbnail" for={checkId}></label>
+	)}
+	{project.page && (
+		<a class="page-link" href={`/${project.metadata.type}/${project.id}`}>
+		</a>
+	)}
 </article>
 
 <style>
+	a.page-link {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		z-index: 15;
+	}
+
 	article.thumbnail  {
 		@starting-style {
 			opacity: 0;
