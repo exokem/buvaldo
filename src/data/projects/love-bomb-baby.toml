@@ -7,11 +7,11 @@ description = """
 After catching her cheating girlfriend, a fiery, drunk woman beats up an entire Halloween college party--all while prioritizing which booze is in her hand.
 """
 genre = "Action Comedy"
-year = "2023"
+year = "2024"
 type = "directorial"
 section = "narrative"
 categories = ["Short"]
-roles = "Directed, written, and edited by Bryan Uvaldo"
+roles = "Directed, Written, and Edited by Bryan Uvaldo"
 
 [metadata.duration]
 #hours = 0

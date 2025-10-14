@@ -11,7 +11,7 @@ year = "2024"
 type = "directorial"
 section = "narrative"
 categories = ["Short", "NYU Thesis"]
-roles = "Directed and edited by Bryan Uvaldo"
+roles = "Directed and Edited by Bryan Uvaldo"
 
 [metadata.duration]
 #hours = 0
@@ -108,6 +108,17 @@ src = "https://www.youtube.com/embed/_W2Kq_nPOPg?si=4T2cFiEPaX1l8tWn"
 imdb = "https://www.imdb.com/title/tt31869022/?ref_=nm_knf_t_1"
 youtube = "https://www.youtube.com/embed/_W2Kq_nPOPg?si=4T2cFiEPaX1l8tWn"
 instagram = "https://www.instagram.com/playinaround_film/"
+
+[[awards]]
+laurel = "/directorial/playin-around/aperture-int.png"
+[[awards]]
+laurel = "/directorial/playin-around/fsff.png"
+[[awards]]
+laurel = "/directorial/playin-around/ssff.png"
+[[awards]]
+laurel = "/directorial/playin-around/frff.png"
+[[awards]]
+laurel = "/directorial/playin-around/tammff.png"
 
 [page]
 folder = "directorial/playin-around"
