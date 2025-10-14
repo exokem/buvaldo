@@ -106,6 +106,7 @@ src = "/directorial/playin-around/poster.jpg"
 
 [page]
 folder = "directorial/playin-around"
+trailer = "https://www.youtube.com/embed/Z-hm0aPqips?si=9ZxM_wMao-o7nU1E"
 [page.stills]
 images = [
     {folder = "cover", name = "playin-around.jpg"}

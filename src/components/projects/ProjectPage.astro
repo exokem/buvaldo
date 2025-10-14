@@ -7,6 +7,7 @@ import CaptionedImage from "../generic/CaptionedImage.astro";
 import ProjectCredits from "./ProjectCredits.astro";
 import ProjectImages from "./ProjectImages.astro";
 import ProjectPageSection from "./ProjectPageSection.astro";
+import ImageCaption from "../generic/ImageCaption.astro";
 interface Props {
 	name: string
 }
@@ -46,10 +47,38 @@ const page = project.page!
 	</ProjectPageSection>
 	<ProjectPageSection id="extras" title="Extras" background={page.extras.background}>
         <ProjectImages folder={page.folder} images={page.extras.images}/>
+		{page.trailer && (
+			<div id="trailer">
+				<iframe
+					src="https://www.youtube.com/embed/eqISelyErS0?si=j5Yg8mxe9_UxxAo9"
+					title="YouTube video player"
+					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+					referrerpolicy="strict-origin-when-cross-origin" allowfullscreen
+				/>
+				<ImageCaption overlay={false}>
+					<em>Teaser Trailer</em>
+				</ImageCaption>
+			</div>
+		)}
     </ProjectPageSection>
 </PageLayout>
 
 <style>
+	div#trailer {
+		width: 100%;
+		border: none;
+		border-radius: 0.5rem;
+		overflow: clip;
+		position: relative;
+        background: #00000066;
+        backdrop-filter: blur(12px);
+
+		iframe {
+			width: 100%;
+            aspect-ratio: 16/9;
+		}
+	}
+
     nav.contents {
         @media(max-width: 1024px) {
             display: none;
