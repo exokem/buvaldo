@@ -1,14 +1,21 @@
 ---
+interface Props {
+    overlay?: boolean
+}
 
+const {
+    overlay = true
+} = Astro.props
 ---
-<p class="caption">
+<p class="caption" style={`--position: ${overlay ? "absolute" : "relative"}`}>
     <slot/>
 </p>
 
 <style>
     p.caption {
+        --position: absolute;
         @media(min-width: 1024px) {
-            position: absolute;
+            position: var(--position);
         }
         bottom: 0;
         background-color: rgba(0, 0, 0, 0.78);
