@@ -1,0 +1,66 @@
+---
+interface Props {
+	instagram?: string
+	youtube?: string
+	imdb?: string
+	linkedin?: string
+}
+
+const {
+	instagram,
+	youtube,
+	imdb,
+	linkedin,
+} = Astro.props
+---
+<div class="links">
+	{youtube && (
+		<a class="youtube" href={youtube} target="_blank">
+			<img src="/logo/youtube.svg" alt="YouTube logo"/>
+		</a>
+	)}
+	{imdb && (
+		<a class="imdb" href={imdb} target="_blank">
+			<img src="/logo/imdb.svg" alt="Imdb logo"/>
+		</a>
+	)}
+	{instagram && (
+		<a class="instagram" href={instagram} target="_blank">
+			<img src="/logo/instagram.svg" alt="Instagram logo"/>
+		</a>
+	)}
+	{linkedin && (
+		<a class="linkedin" href={linkedin} target="_blank">
+			<img src="/logo/linkedin.svg" alt="LinkedIn logo"/>
+		</a>
+	)}
+</div>
+
+<style>
+    div.links {
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+        @media(max-width: 1024px) {
+            justify-content: center;
+        }
+        a {
+            display: block;
+            position: relative;
+            filter: drop-shadow(0px 2px 2px #00000077);
+            background: white;
+            border-radius: 1rem;
+
+            img {
+                height: 2.5rem;
+            }
+
+            transition-property: opacity;
+            transition-duration: 250ms;
+
+            &:hover {
+                opacity: 0.8;
+            }
+        }
+    }
+</style>
