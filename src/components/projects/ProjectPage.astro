@@ -60,23 +60,41 @@ const page = project.page!
 				</ImageCaption>
 			</div>
 		)}
+		{page.presskit && (
+			<div id="presskit">
+                <iframe
+					src={page.presskit}
+					allow="autoplay"
+                />
+				<ImageCaption overlay={false}>
+					<em>Press Kit</em>
+				</ImageCaption>
+			</div>
+		)}
+
     </ProjectPageSection>
 </PageLayout>
 
 <style>
-	div#trailer {
-		width: 100%;
-		border: none;
-		border-radius: 0.5rem;
-		overflow: clip;
-		position: relative;
+	div#presskit, div#trailer {
+        width: 100%;
+        border: none;
+        border-radius: 0.5rem;
+        overflow: clip;
+        position: relative;
         background: #00000066;
         backdrop-filter: blur(12px);
+        iframe {
+            width: 100%;
+        }
+	}
 
-		iframe {
-			width: 100%;
-            aspect-ratio: 16/9;
-		}
+	div#trailer > iframe {
+        aspect-ratio: 16/9;
+	}
+
+	div#presskit > iframe {
+		aspect-ratio: 5/7;
 	}
 
     nav.contents {

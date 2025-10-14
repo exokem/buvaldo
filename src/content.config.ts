@@ -59,6 +59,7 @@ const projectSchema = z.object({
 	page: z.object({
 		folder: z.string(),
 		trailer: z.string().optional(),
+		presskit: z.string().optional(),
 		stills: z.object({
 			images: projectImagesSchema
 		}),

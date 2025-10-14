@@ -108,6 +108,7 @@ src = "https://www.youtube.com/embed/DbYIgkQm-mI?si=UAJHVAo_B7K49OdU"
 [page]
 folder = "directorial/love-bomb-baby"
 trailer = "https://www.youtube.com/embed/eqISelyErS0?si=j5Yg8mxe9_UxxAo9"
+presskit = "https://drive.google.com/file/d/1VPp6sxqXxNVH0cPClDHnDqXn3h99PASd/preview"
 [page.stills]
 images = [
     {name = "still-01.jpg"},
