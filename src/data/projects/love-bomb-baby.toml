@@ -110,6 +110,13 @@ instagram = "https://www.instagram.com/playinaround_film/"
 imdb = "https://www.imdb.com/title/tt27975978/?ref_=nm_knf_t_2"
 youtube = "https://www.youtube.com/embed/DbYIgkQm-mI?si=UAJHVAo_B7K49OdU"
 
+[[awards]]
+laurel = "/directorial/love-bomb-baby/austin-action-fest.PNG"
+[[awards]]
+laurel = "/directorial/love-bomb-baby/urban-action-fest.png"
+[[awards]]
+laurel = "/directorial/love-bomb-baby/tammff.png"
+
 [page]
 folder = "directorial/love-bomb-baby"
 trailer = "https://www.youtube.com/embed/eqISelyErS0?si=j5Yg8mxe9_UxxAo9"

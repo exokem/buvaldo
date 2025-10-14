@@ -62,6 +62,9 @@ const projectSchema = z.object({
 		instagram: z.string().optional(),
 		linkedin: z.string().optional(),
 	}).optional().default({}),
+	awards: z.array(z.object({
+		laurel: z.string()
+	})).optional().default([]),
 	page: z.object({
 		folder: z.string(),
 		trailer: z.string().optional(),

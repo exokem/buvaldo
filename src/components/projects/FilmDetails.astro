@@ -52,7 +52,9 @@ const seconds = totalSeconds - (totalMinutes * 60)
         </p>
 
 		<div class="awards">
-
+			{project.awards?.map((award) => (
+				<img class="award" src={award.laurel}/>
+			))}
 		</div>
 
 		{project.socials && (
@@ -92,7 +94,21 @@ const seconds = totalSeconds - (totalMinutes * 60)
 
 	div.awards {
 		flex-grow: 1;
+		max-width: 100%;
 		margin: 2rem 0;
+		display: flex;
+
+		flex-direction: row;
+
+		justify-content: center;
+		align-items: center;
+
+		flex-wrap: wrap;
+		gap: 1rem;
+
+		img.award {
+			max-width: 200px;
+		}
 	}
 
 	img.poster {
