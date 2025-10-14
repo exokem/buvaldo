@@ -104,6 +104,11 @@ src = "/directorial/playin-around/poster.jpg"
 type = "youtube"
 src = "https://www.youtube.com/embed/_W2Kq_nPOPg?si=4T2cFiEPaX1l8tWn"
 
+[socials]
+imdb = "https://www.imdb.com/title/tt31869022/?ref_=nm_knf_t_1"
+youtube = "https://www.youtube.com/embed/_W2Kq_nPOPg?si=4T2cFiEPaX1l8tWn"
+instagram = "https://www.instagram.com/playinaround_film/"
+
 [page]
 folder = "directorial/playin-around"
 trailer = "https://www.youtube.com/embed/Z-hm0aPqips?si=9ZxM_wMao-o7nU1E"

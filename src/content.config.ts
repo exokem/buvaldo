@@ -56,6 +56,12 @@ const projectSchema = z.object({
 			alt: z.string().optional().default(''),
 		}).optional(),
 	}),
+	socials: z.object({
+		youtube: z.string().optional(),
+		imdb: z.string().optional(),
+		instagram: z.string().optional(),
+		linkedin: z.string().optional(),
+	}).optional().default({}),
 	page: z.object({
 		folder: z.string(),
 		trailer: z.string().optional(),

@@ -1,5 +1,6 @@
 ---
 import type {Project} from "../../content.config";
+import SocialLinks from "../generic/SocialLinks.astro";
 interface Props {
 	project: Project
 }
@@ -49,6 +50,18 @@ const seconds = totalSeconds - (totalMinutes * 60)
         <p class="credits">
 			<em>{project.metadata.roles}</em>
         </p>
+
+		<div class="awards">
+
+		</div>
+
+		{project.socials && (
+			<SocialLinks
+				instagram={project.socials.instagram}
+				imdb={project.socials.imdb}
+				youtube={project.socials.youtube}
+			/>
+		)}
 	</div>
 </div>
 
@@ -77,6 +90,11 @@ const seconds = totalSeconds - (totalMinutes * 60)
         }
 	}
 
+	div.awards {
+		flex-grow: 1;
+		margin: 2rem 0;
+	}
+
 	img.poster {
 		border-radius: 0.5rem;
 		aspect-ratio: 250/369;
@@ -84,7 +102,6 @@ const seconds = totalSeconds - (totalMinutes * 60)
 
 		@media(min-width: 1024px) {
 			min-width: 500px;
-
 		}
 	}
 

@@ -105,6 +105,11 @@ src = "/directorial/love-bomb-baby/poster.jpg"
 type = "youtube"
 src = "https://www.youtube.com/embed/DbYIgkQm-mI?si=UAJHVAo_B7K49OdU"
 
+[socials]
+instagram = "https://www.instagram.com/playinaround_film/"
+imdb = "https://www.imdb.com/title/tt27975978/?ref_=nm_knf_t_2"
+youtube = "https://www.youtube.com/embed/DbYIgkQm-mI?si=UAJHVAo_B7K49OdU"
+
 [page]
 folder = "directorial/love-bomb-baby"
 trailer = "https://www.youtube.com/embed/eqISelyErS0?si=j5Yg8mxe9_UxxAo9"
