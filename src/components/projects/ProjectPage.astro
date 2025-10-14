@@ -184,6 +184,14 @@ const page = project.page!
                     }
                 }
             }
+
+            transition-property: opacity, transform;
+            transition-duration: 500ms;
+            transition-delay: 350ms;
+            @starting-style {
+                opacity: 0;
+                transform: translate(5rem, -50%);
+            }
         }
     }
 </style>
