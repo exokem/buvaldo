@@ -100,9 +100,9 @@ src = "/directorial/playin-around/thumbnail.png"
 [display.portrait]
 src = "/directorial/playin-around/poster.jpg"
 
-#[display.embed]
-#type = "youtube"
-#src = ""
+[display.embed]
+type = "youtube"
+src = "https://www.youtube.com/embed/_W2Kq_nPOPg?si=4T2cFiEPaX1l8tWn"
 
 [page]
 folder = "directorial/playin-around"

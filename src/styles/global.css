@@ -70,3 +70,7 @@ h2.heading-title {
     white-space: nowrap;
     direction: ltr;
 }
+
+iframe:focus {
+    outline: none;
+}

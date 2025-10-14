@@ -27,6 +27,9 @@ const page = project.page!
         <span id="contents-label" hidden>Table of Contents</span>
         <ol role="list">
             <li><a href="#cover">Playin' Around</a></li>
+			{project.display.embed && (
+                    <li><a href="#watch-now">Watch Now</a></li>
+			)}
             <li><a href="#stills">Film Stills</a></li>
             <li><a href="#bts">Behind the Scenes</a></li>
             <li><a href="#credits">Credits</a></li>
@@ -36,6 +39,18 @@ const page = project.page!
 	<ProjectPageSection id="cover">
         <FilmDetails project={project}/>
 	</ProjectPageSection>
+	{project.display.embed && (
+		<ProjectPageSection id="watch-now" title="Watch Now">
+            <div id="film-embed">
+                <iframe
+					src={project.display.embed.src}
+					title="YouTube video player"
+					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+					referrerpolicy="strict-origin-when-cross-origin" allowfullscreen
+                />
+			</div>
+		</ProjectPageSection>
+	)}
 	<ProjectPageSection id="stills" title="Stills">
 		<ProjectImages folder={page.folder} images={page.stills.images}/>
 	</ProjectPageSection>
@@ -95,6 +110,18 @@ const page = project.page!
 
 	div#presskit > iframe {
 		aspect-ratio: 5/7;
+	}
+
+	div#film-embed {
+		width: 100%;
+        border-radius: 0.5rem;
+        background: #00000066;
+        backdrop-filter: blur(12px);
+        iframe {
+            width: 100%;
+            aspect-ratio: 16/9;
+            border-radius: 0.5rem;
+        }
 	}
 
     nav.contents {
