@@ -22,12 +22,13 @@ const project = await getProject(name)
 
 const page = project.page!
 ---
-<PageLayout title={project.metadata.title}>
+<PageLayout title={project.metadata.title} style={`--cover-url: url("/cover/${project.id}.jpg");`}>
     <BackgroundCover src={`/cover/${project.id}.jpg`} blur/>
     <nav class="contents" aria-labelledby="contents-label">
         <span id="contents-label" hidden>Table of Contents</span>
         <ol role="list">
             <li><a href="#cover">{project.metadata.title}</a></li>
+            <li><a href="#details">Details</a></li>
 			{project.display.embed && (
                     <li><a href="#watch-now">Watch Now</a></li>
 			)}
@@ -35,9 +36,15 @@ const page = project.page!
             <li><a href="#bts">Behind the Scenes</a></li>
             <li><a href="#trailer">Trailer</a></li>
             <li><a href="#extras">Extras</a></li>
+			<span class="material-symbols-rounded icon" aria-hidden="true">toc</span>
         </ol>
     </nav>
 	<ProjectPageSection id="cover">
+		<div class="cover-content">
+            <h1 class="title heading-title">{project.metadata.title}</h1>
+		</div>
+	</ProjectPageSection>
+	<ProjectPageSection id="details" title="details">
         <FilmDetails project={project}/>
 	</ProjectPageSection>
 	{project.display.embed && (
@@ -87,6 +94,64 @@ const page = project.page!
 </PageLayout>
 
 <style>
+	div.cover-content {
+		max-width: 1280px;
+		@media(min-width: 1280px) {
+			width: 100%;
+		}
+        color: black;
+
+		width: 100%;
+		display: flex;
+		justify-content: center;
+
+		@media(min-width: 1024px) {
+            justify-content: start;
+			margin: 0 auto;
+		}
+		padding: 2rem 1rem;
+        h1.title {
+            font-size: 2.25rem;
+			font-family: "Passion One", cursive;
+			text-transform: uppercase;
+            @media(min-width: 420px) {
+                font-size: 3rem;
+            }
+            @media(min-width: 500px) {
+                font-size: 3.75rem;
+            }
+            @media(min-width: 1024px) {
+                font-size: 7rem;
+                line-height: 7rem;
+            }
+            font-weight: 700;
+            filter: drop-shadow(0px 1px 3px #000000FF);
+        }
+
+        p.traits {
+            font-size: 0.75rem;
+
+            @media(min-width: 420px) {
+                font-size: 1.00rem;
+            }
+            @media(min-width: 500px) {
+                font-size: 1.25rem;
+            }
+
+			opacity: 0.8;
+
+
+            & > span.value {
+                &:nth-child(1) {
+                    font-weight: 700;
+                }
+                &:nth-child(3) {
+                    font-weight: 700;
+                }
+            }
+        }
+	}
+
 	div#presskit, div#trailer {
         width: 100%;
         border: none;
@@ -121,24 +186,39 @@ const page = project.page!
 	}
 
     nav.contents {
-        @media(max-width: 1024px) {
-            display: none;
-        }
+		@media(max-width: 1024px) {
+			display: none;
+		}
         ol {
+			span.icon {
+				position: absolute;
+				top: 0;
+				left: -1rem;
+				padding: 0.75rem;
+				width: 100%;
+				height: 50%;
+				font-size: 3rem;
+				user-select: none;
+
+                transition-property: opacity;
+                transition-duration: 500ms;
+				opacity: 0;
+				z-index: -1;
+				align-content: center;
+                background-color: #00000099;
+                border-radius: 0.5rem 0 0 0.5rem;
+                border: 1px solid #00000066;
+			}
+
             z-index: 100;
             right: 0;
-            margin: 2rem;
-            background: #00000066;
-            backdrop-filter: blur(12px);
-            border-radius: 0.5rem;
+            margin-top: 2rem;
+            background-color: #000000aa;
+            border-radius: 0.5rem 0 0 0.5rem;
             border: 1px solid #00000066;
-            padding: 1rem 1rem;
+            padding: 3rem;
             position: fixed;
-            bottom: 0;
-            @media(min-width: 1920px) {
-                top: 50%;
-                transform: translateY(-50%);
-            }
+            top: var(--nav-height);
             height: min-content;
             display: flex;
             flex-direction: column;
@@ -149,12 +229,32 @@ const page = project.page!
             line-height: 1.5rem;
             font-weight: 700;
             color: white;
+            @media(max-width: 1970px) {
+                transform: translateX(calc(100% - 3.5rem));
+				background-color: #00000001;
+				border-color: transparent;
+				span.icon {
+					opacity: 1;
+				}
+
+				&:hover {
+                    background-color: #000000aa;
+                    border: 1px solid #00000066;
+                    transform: none;
+                    backdrop-filter: blur(12px);
+
+					span.icon {
+						opacity: 0;
+					}
+				}
+            }
 
             li > a {
                 width: 100%;
                 display: inline-block;
                 position: relative;
                 padding: 0.5rem 0.75rem;
+				padding-left: 3rem;
                 @media(min-width: 1024px) {
                     cursor: pointer;
                     &::before {
@@ -181,12 +281,12 @@ const page = project.page!
                 }
             }
 
-            transition-property: opacity, transform;
+            transition-property: opacity, transform, backdrop-filter, background-color, border-color;
             transition-duration: 500ms;
-            transition-delay: 350ms;
             @starting-style {
                 opacity: 0;
-                transform: translate(5rem, -50%);
+                transform: translate(5rem);
+                transition-delay: 350ms;
             }
         }
     }
