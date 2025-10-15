@@ -6,9 +6,17 @@ import CaptionedImage from "../../../components/generic/CaptionedImage.astro";
 import FilmDetails from "../../../components/projects/FilmDetails.astro";
 import {getProject} from "../../../content.config";
 import ProjectPage from "../../../components/projects/ProjectPage.astro";
+import ImageCaption from "../../../components/generic/ImageCaption.astro";
 ---
 
-<ProjectPage name="playin-around"/>
+<ProjectPage name="playin-around">
+    <div slot="extras" class="campaign">
+		<iframe src="https://www.youtube.com/embed/fHj3me8BIj0?si=EeRTRbLYxOrFgjeq"  referrerpolicy="strict-origin-when-cross-origin" allowfullscreen/>
+		<ImageCaption>
+			<em>Fundraising Campaign Video</em>
+		</ImageCaption>
+	</div>
+</ProjectPage>
 
 <style is:global>
     main#playin-around {
@@ -23,4 +31,16 @@ import ProjectPage from "../../../components/projects/ProjectPage.astro";
     :root {
         --accent: #eb5a04 !important;
     }
+
+	div.campaign {
+        width: 100%;
+        border-radius: 0.5rem;
+        background: #00000066;
+        backdrop-filter: blur(12px);
+		overflow: clip;
+        iframe {
+            width: 100%;
+            aspect-ratio: 16/9;
+        }
+	}
 </style>
