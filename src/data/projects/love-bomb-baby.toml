@@ -93,7 +93,7 @@ title = "Music — Detonation"
 "Composed by" = "Carlotta Romano"
 
 [display]
-format = "popup"
+format = "page"
 
 [display.landscape]
 src = "/directorial/love-bomb-baby/thumbnail.png"

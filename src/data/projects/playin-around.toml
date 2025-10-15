@@ -92,7 +92,7 @@ title = "Post Production"
 "Original Soundtrack By" = "Joshua Conway and Dani Martinez"
 
 [display]
-format = "popup"
+format = "page"
 
 [display.landscape]
 src = "/directorial/playin-around/thumbnail.png"

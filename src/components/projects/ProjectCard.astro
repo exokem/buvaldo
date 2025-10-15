@@ -15,7 +15,7 @@ const {
 const checkId = `${project.id}-switch`
 ---
 
-{project.page === undefined && (
+{project.page === undefined && project.display.format === "popup" && (
 	<input type="checkbox" class="preview-switch" id={checkId} hidden data-project={project.id}/>
 
 	<ProjectPreview project={project} class="preview">
@@ -40,11 +40,15 @@ const checkId = `${project.id}-switch`
 		</>}
 	</p>
 
-	{project.page === undefined && (
+	{project.page === undefined && project.display.format === "popup" && (
     	<label class="thumbnail" for={checkId}></label>
 	)}
-	{project.page && (
+	{project.page && project.display.format === "page" && (
 		<a class="page-link" href={`/${project.metadata.type}/${project.id}`}>
+		</a>
+	)}
+	{project.display.embed && project.display.format === "external" && (
+		<a class="page-link" href={project.display.embed.src} target="_blank">
 		</a>
 	)}
 </article>
