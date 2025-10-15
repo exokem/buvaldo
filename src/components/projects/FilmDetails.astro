@@ -32,18 +32,18 @@ const seconds = totalSeconds - (totalMinutes * 60)
                 <span class="value">{trait}</span>
 				{i < traits.length - 1 ? <span class="unit">/</span> : <></>}
             </>)}
-            <span class="unit">/</span>
-			<span class="runtime">
-				{0 < hours && (
-						<span class="hours value">{hours}<span class="unit">h</span></span>
-				)}
-				{0 < minutes && (
-						<span class="minutes value">{minutes}<span class="unit">m</span></span>
-				)}
-				{0 < seconds && (
-						<span class="seconds value">{seconds}<span class="unit">s</span></span>
-				)}
-			</span>
+            <!--<span class="unit">/</span>-->
+			<!--<span class="runtime">-->
+			<!--	{0 < hours && (-->
+			<!--			<span class="hours value">{hours}<span class="unit">h</span></span>-->
+			<!--	)}-->
+			<!--	{0 < minutes && (-->
+			<!--			<span class="minutes value">{minutes}<span class="unit">m</span></span>-->
+			<!--	)}-->
+			<!--	{0 < seconds && (-->
+			<!--			<span class="seconds value">{seconds}<span class="unit">s</span></span>-->
+			<!--	)}-->
+			<!--</span>-->
         </p>
         <p class="description">{project.metadata.description}</p>
 
@@ -168,10 +168,10 @@ const seconds = totalSeconds - (totalMinutes * 60)
             margin-bottom: 1.5rem;
 
             @media(min-width: 420px) {
-                font-size: 0.90rem;
+                font-size: 1.00rem;
             }
             @media(min-width: 500px) {
-                font-size: 1rem;
+                font-size: 1.25rem;
             }
 
             @media(min-width: 1024px) {
