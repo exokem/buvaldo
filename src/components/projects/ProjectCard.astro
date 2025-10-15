@@ -33,7 +33,12 @@ const checkId = `${project.id}-switch`
     <img src={project.display.landscape.src} alt={project.display.landscape.alt} />
 
     <h3 class="title">{project.metadata.title}</h3>
-    <p class="subtitle">{project.metadata.genre} | {project.metadata.categories[0]}</p>
+    <p class="subtitle">
+		{project.metadata.genre}
+		{project.metadata.categories.length !== 0 && <>
+            | {project.metadata.categories[0]}
+		</>}
+	</p>
 
 	{project.page === undefined && (
     	<label class="thumbnail" for={checkId}></label>
