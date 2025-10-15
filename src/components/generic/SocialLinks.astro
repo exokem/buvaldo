@@ -4,6 +4,7 @@ interface Props {
 	youtube?: string
 	imdb?: string
 	linkedin?: string
+	letterboxd?: string
 	class?: string
 }
 
@@ -12,6 +13,7 @@ const {
 	youtube,
 	imdb,
 	linkedin,
+	letterboxd,
 	class: className
 } = Astro.props
 ---
@@ -24,6 +26,11 @@ const {
 	{imdb && (
 		<a class="imdb" href={imdb} target="_blank">
 			<img src="/logo/imdb.svg" alt="Imdb logo"/>
+		</a>
+	)}
+	{letterboxd && (
+		<a class="letterboxd" href={letterboxd} target="_blank">
+			<img src="/logo/letterboxd.svg" alt="Letterboxd logo"/>
 		</a>
 	)}
 	{instagram && (

@@ -108,6 +108,7 @@ src = "https://www.youtube.com/embed/_W2Kq_nPOPg?si=4T2cFiEPaX1l8tWn"
 imdb = "https://www.imdb.com/title/tt31869022/?ref_=nm_knf_t_1"
 youtube = "https://www.youtube.com/embed/_W2Kq_nPOPg?si=4T2cFiEPaX1l8tWn"
 instagram = "https://www.instagram.com/playinaround_film/"
+letterboxd = "https://letterboxd.com/film/playin-around/"
 
 [[awards]]
 laurel = "/directorial/playin-around/aperture-int.png"
