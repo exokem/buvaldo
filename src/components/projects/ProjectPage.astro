@@ -8,6 +8,7 @@ import ProjectCredits from "./ProjectCredits.astro";
 import ProjectImages from "./ProjectImages.astro";
 import ProjectPageSection from "./ProjectPageSection.astro";
 import ImageCaption from "../generic/ImageCaption.astro";
+import Icon from "../Icon.astro";
 interface Props {
 	name: string
 }
@@ -22,17 +23,17 @@ const project = await getProject(name)
 const page = project.page!
 ---
 <PageLayout title={project.metadata.title}>
-    <BackgroundCover src="/cover/playin-around.jpg" blur/>
+    <BackgroundCover src={`/cover/${project.id}.jpg`} blur/>
     <nav class="contents" aria-labelledby="contents-label">
         <span id="contents-label" hidden>Table of Contents</span>
         <ol role="list">
-            <li><a href="#cover">Playin' Around</a></li>
+            <li><a href="#cover">{project.metadata.title}</a></li>
 			{project.display.embed && (
                     <li><a href="#watch-now">Watch Now</a></li>
 			)}
             <li><a href="#stills">Film Stills</a></li>
             <li><a href="#bts">Behind the Scenes</a></li>
-            <li><a href="#credits">Credits</a></li>
+            <li><a href="#trailer">Trailer</a></li>
             <li><a href="#extras">Extras</a></li>
         </ol>
     </nav>
@@ -57,36 +58,30 @@ const page = project.page!
     <ProjectPageSection id="bts" title="BTS">
         <ProjectImages folder={page.folder} images={page.bts.images}/>
     </ProjectPageSection>
-	<ProjectPageSection id="credits" title="Credits" background={page.credits.background}>
-		<ProjectCredits project={project}/>
+	<ProjectPageSection id="trailer" title="trailer" background={page.credits.background}>
+		<!--<ProjectCredits project={project}/>-->
+		{page.trailer && (
+                <div id="trailer">
+                    <iframe
+                            src="https://www.youtube.com/embed/eqISelyErS0?si=j5Yg8mxe9_UxxAo9"
+                            title="YouTube video player"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen
+                    />
+                    <ImageCaption overlay={false}>
+                        <em>Teaser Trailer</em>
+                    </ImageCaption>
+                </div>
+		)}
 	</ProjectPageSection>
 	<ProjectPageSection id="extras" title="Extras" background={page.extras.background}>
         <ProjectImages folder={page.folder} images={page.extras.images}/>
-		{page.trailer && (
-			<div id="trailer">
-				<iframe
-					src="https://www.youtube.com/embed/eqISelyErS0?si=j5Yg8mxe9_UxxAo9"
-					title="YouTube video player"
-					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-					referrerpolicy="strict-origin-when-cross-origin" allowfullscreen
-				/>
-				<ImageCaption overlay={false}>
-					<em>Teaser Trailer</em>
-				</ImageCaption>
-			</div>
-		)}
 		{page.presskit && (
-			<div id="presskit">
-                <iframe
-					src={page.presskit}
-					allow="autoplay"
-                />
-				<ImageCaption overlay={false}>
-					<em>Press Kit</em>
-				</ImageCaption>
-			</div>
+			<a href={`/epk/${project.id}-epk.pdf`} class="shortcut-button">
+				<Icon>download</Icon>
+				Download EPK
+			</a>
 		)}
-
     </ProjectPageSection>
 </PageLayout>
 
@@ -109,7 +104,7 @@ const page = project.page!
 	}
 
 	div#presskit > iframe {
-		aspect-ratio: 5/7;
+		aspect-ratio: 5/5;
 	}
 
 	div#film-embed {
