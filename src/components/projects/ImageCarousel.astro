@@ -17,34 +17,34 @@ const {
 } = Astro.props
 ---
 <div class="image-list-clip-wrapper">
-    <div class="image-list" style={`--aspect-ratio: ${aspect}`}>
+    <div class="image-list" style={`--aspect-ratio: ${aspect}`} id={id}>
 		{images.map((image, i) => (
-                <div class="slide" id={`${id}-slide-${i}`}>
-                    <CaptionedImage folder={image.folder ?? folder} name={image.name} alt={image.description ?? ""}>
-						{image.description !== null && (
-                                <ImageCaption>
-                                    <em>{image.description}</em>
-									{image.credit && (
-                                            <span> &mdash; {image.credit}</span>
-									)}
-                                </ImageCaption>
-						)}
-                    </CaptionedImage>
-					{0 < i && (
-                            <a href={`#${id}-slide-${i - 1}`} class="button prev">
-						<span class="material-symbols-rounded icon">
-							chevron_left
-						</span>
-                            </a>
-					)}
-					{i + 1 < images.length && (
-                            <a href={`#${id}-slide-${i + 1}`} class="button next">
-						<span class="material-symbols-rounded icon">
-							chevron_right
-						</span>
-                            </a>
-					)}
-                </div>
+            <div class="slide" id={`${id}-slide-${i}`}>
+                <CaptionedImage folder={image.folder ?? folder} name={image.name} alt={image.description ?? ""}>
+                    {image.description !== null && (
+                        <ImageCaption>
+                            <em>{image.description}</em>
+                            {image.credit && (
+                                    <span> &mdash; {image.credit}</span>
+                            )}
+                        </ImageCaption>
+                    )}
+                </CaptionedImage>
+                {0 < i && (
+                    <a href={`#${id}-slide-${i - 1}`} class="carousel button prev">
+                        <span class="material-symbols-rounded icon">
+                            chevron_left
+                        </span>
+                    </a>
+                )}
+                {i + 1 < images.length && (
+                    <a href={`#${id}-slide-${i + 1}`} class="carousel button next">
+                        <span class="material-symbols-rounded icon">
+                            chevron_right
+                        </span>
+                    </a>
+                )}
+            </div>
 		))}
     </div>
 </div>
@@ -138,3 +138,30 @@ const {
         }
     }
 </style>
+
+<script>
+    const carousels = Array.from(
+        document.querySelectorAll<HTMLDivElement>("div.image-list")
+    )
+
+    for (const carousel of carousels) {
+        const buttons = Array.from(carousel.querySelectorAll<HTMLAnchorElement>("a.carousel.button"))
+        console.log(buttons)
+
+        for (const button of buttons) {
+            const id = button.getAttribute("href")!
+
+            const target = carousel.querySelector<HTMLDivElement>(id)!
+
+            button.addEventListener("click", e => {
+                e.preventDefault()
+                carousel.scrollTo({
+                    left: target.offsetLeft,
+                    behavior: "smooth"
+                })
+            })
+        }
+    }
+
+
+</script>
