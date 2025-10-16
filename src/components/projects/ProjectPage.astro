@@ -9,6 +9,7 @@ import ProjectImages from "./ProjectImages.astro";
 import ProjectPageSection from "./ProjectPageSection.astro";
 import ImageCaption from "../generic/ImageCaption.astro";
 import Icon from "../Icon.astro";
+import ImageCarousel from "./ImageCarousel.astro";
 interface Props {
 	name: string
 }
@@ -60,10 +61,20 @@ const page = project.page!
 		</ProjectPageSection>
 	)}
 	<ProjectPageSection id="stills" title="Stills">
-		<ProjectImages folder={page.folder} images={page.stills.images}/>
+		<ImageCarousel
+			folder={page.folder}
+			images={page.stills.images}
+			id="images-stills"
+			aspect="48/25"
+		/>
 	</ProjectPageSection>
     <ProjectPageSection id="bts" title="BTS">
-        <ProjectImages folder={page.folder} images={page.bts.images}/>
+        <ImageCarousel
+			folder={page.folder}
+			images={page.bts.images}
+			id="images-bts"
+            aspect="3/2"
+		/>
     </ProjectPageSection>
 	<ProjectPageSection id="trailer" title="trailer" background={page.credits.background}>
 		<!--<ProjectCredits project={project}/>-->
@@ -82,7 +93,10 @@ const page = project.page!
 		)}
 	</ProjectPageSection>
 	<ProjectPageSection id="extras" title="Extras" background={page.extras.background}>
-        <ProjectImages folder={page.folder} images={page.extras.images}/>
+        <ProjectImages
+			folder={page.folder}
+			images={page.extras.images}
+		/>
 		<slot name="extras"/>
 		{page.presskit && (
 			<a href={`/epk/${project.id}-epk.pdf`} class="shortcut-button">
@@ -286,6 +300,9 @@ const page = project.page!
             @starting-style {
                 opacity: 0;
                 transform: translate(5rem);
+                @media(max-width: 1970px) {
+                    transform: translateX(calc(100% - 3.5rem));
+                }
                 transition-delay: 350ms;
             }
         }
