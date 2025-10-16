@@ -13,6 +13,37 @@ import ProjectSection from "../../components/projects/ProjectSection.astro";
     <ProjectSection type="directorial" section="student"/>
     <ProjectSection type="directorial" section="commercial"/>
 </PageLayout>
+
+<style is:global>
+    main#directorial-work {
+        section#narrative {
+            div.projects {
+                width: 100%;
+
+                @media(min-width: 390px) {
+                    width: auto;
+                    display: flex;
+                    justify-content: center;
+                }
+
+                @media(max-width: 1080px) {
+                    flex-direction: column;
+                }
+
+                article {
+                    @media(min-width: 550px) {
+                        --width: 475px;
+                    }
+                }
+            }
+
+            div.empty-project {
+                display: none;
+            }
+        }
+    }
+</style>
+
 <style>
     div.title {
         max-width: 1280px;
