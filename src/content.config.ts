@@ -14,7 +14,7 @@ const projectImagesSchema = z.array(z.object({
 	name: z.string(),
 	description: z.string().optional().nullable().default(null),
 	credit: z.string().optional(),
-}))
+})).optional().default([])
 
 export type ProjectImagesArray = z.infer<typeof projectImagesSchema>
 

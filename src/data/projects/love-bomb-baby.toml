@@ -138,10 +138,5 @@ images = [
 ]
 [page.extras]
 background = "/directorial/love-bomb-baby/still-extras.jpg"
-images = [
-    {name = "bts-timeline.jpg", description = "Timeline for Love Bomb Baby", credit = "Edited by Bryan Uvaldo"},
-    {name = "bts-concept.jpg", description = "Love Bomb Baby Concept Art ", credit = "Drawn by Caroline Ho"},
-    {name = "bts-concept-cup.jpg", description = "Love Bomb Baby Teaser Concept Art", credit = "Drawn by Caroline Ho"},
-]
 [page.credits]
 background = "/directorial/love-bomb-baby/still-credits.jpg"

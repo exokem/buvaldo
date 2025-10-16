@@ -3,15 +3,17 @@ interface Props {
 	folder: string
 	name: string
 	alt: string
+	id?: string
 }
 
 const {
 	folder,
 	name,
 	alt,
+	id,
 } = Astro.props
 ---
-<div class="captioned-image">
+<div class="captioned-image" id={id}>
 	<img src={`/${folder}/${name}`} alt={alt} />
 	<slot/>
 </div>
@@ -21,6 +23,8 @@ const {
 		position: relative;
 		border-radius: 0.5rem;
 		overflow: clip;
+		display: flex;
+		flex-direction: column;
 
 		& > img {
 

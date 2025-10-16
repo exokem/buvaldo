@@ -93,10 +93,6 @@ const page = project.page!
 		)}
 	</ProjectPageSection>
 	<ProjectPageSection id="extras" title="Extras" background={page.extras.background}>
-        <ProjectImages
-			folder={page.folder}
-			images={page.extras.images}
-		/>
 		<slot name="extras"/>
 		{page.presskit && (
 			<a href={`/epk/${project.id}-epk.pdf`} class="shortcut-button">
