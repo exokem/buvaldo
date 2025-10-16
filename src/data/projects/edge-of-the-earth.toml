@@ -11,14 +11,12 @@ year = "2022"
 type = "editorial"
 section = "hbo"
 categories = ["HBO Max Video Hero"]
+roles = ""
 
 [metadata.duration]
 #hours = 0
 #minutes = 0
 seconds = 0
-
-[metadata.credits]
-bryan = []
 
 [display]
 format = "popup"

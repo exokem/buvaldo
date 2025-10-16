@@ -7,28 +7,146 @@ description = """
  Determined to buy the perfect gift for her little brother, a young woman must fight her way through crazed customers at a toy store turned madhouse.
 """
 genre = "Action Comedy"
-year = "2024"
+year = "2025"
 type = "directorial"
 section = "narrative"
 categories = ["Short", "NYU Thesis"]
+roles = "Directed and Edited by Bryan Uvaldo"
 
 [metadata.duration]
 #hours = 0
 #minutes = 0
 seconds = 603
 
-[metadata.credits]
-bryan = ["Director", "Editor"]
+[metadata.credits.main]
+[metadata.credits.main.credits]
+"Director" = "Bryan Uvaldo"
+"Writer" = "Sebastian Hunt"
+"Producer" = "Mason Kidd"
+"Post Producer" = "Nic LeBlanc"
+"Executive Producers" = "Maggie Soik, Jessi Thomas, Sunil Thomas, Bryan Uvaldo"
+"Associate Producers" = "Jayla Matthews, Christine Yu"
+
+[metadata.credits.cast]
+title = "Cast"
+[metadata.credits.cast.credits]
+"Anna" = "Amanda Whyte"
+"Carl" = "Chris Hahn"
+"Lois" = "Alice Kelly Bahlke"
+"Lily" = "Scarlet Presley"
+"Michael" = "John Tabaniag"
+"Jimmy" = "Brian Sterling Chan"
+"Alec" = "Thomas King"
+"Ryland" = "Levi Blaise"
+"Mom" = "Shevonne Monique"
+"Customers" = "Michael Monroe, Alex Grech, Minami Ando, Kerry Mosier, Alec Inagamov, Ian Dugan"
+
+[metadata.credits.production]
+title = "Production"
+[metadata.credits.production.credits]
+"Assistant Director" = "Tucker Papa"
+"Unit Production Manager" = "Arabella Sharkey"
+"Stunt Coordinator" = "Ian Dugan"
+"Director of Photography" = "Ari Isenberg"
+"Casting Director" = "Parker Sack"
+"Easy Rig Operator" = "Chris St Lawrence"
+"1st Assistant Camera" = "Tara Zulfikar"
+"2nd Assistant Camera" = "Carter Chun, Sarah Westrich, Fronia Raharso"
+"BTS Still Photographer" = "Josh Li, Ruben Sevilla"
+"Gaffer" = "Griffin Bowie"
+"Key Grip" = "Vadium Garbaty"
+"Grip" = "Liam Stine, Renzo Olivieri"
+"Production Sound Mixer" = "Alec Inagamov, Cooper Smith"
+"Boom Operator" = "Raya Farage, Edo Barel"
+"Script Supervisor" = "Maria Quezada"
+"Script Consultants" = "Zishan Sun, Jack Whitehurst"
+"Production Designer" = "Dasha Fogelson"
+"Supervising Art Director" = "Sara Ettinger"
+"Set Construction" = "Heather Alexis"
+"Graphic Designer" = "Atlas Lee-Reid"
+"Art Department Assistants" = "Olivia Gao, Ben Kadish, Zane Reimer"
+"Makeup" = "Zoe Poppenega"
+"Costume Designer" = "Charli Einhorn"
+
+[metadata.credits.post]
+title = "Post Production"
+[metadata.credits.post.credits]
+"Post Production Supervisor" = "Heather Alexis"
+"Editor" = "Bryan Uvaldo"
+"Co-Editor" = "Pedro Rojas"
+"Assistant Editor 1 On-Set DIT" = "Pedro Rojas"
+"VFX" = "Danielle Benedict"
+"Color" = "Muhil Vaseekaran"
+"Sound Designer" = "Rae King"
+"Re-Recording Mixer" = "Rae King"
+"ADR Engineer / Foley Engineer" = "Nina Sundermeyer"
+"End Credits Design" = "Heather Alexis"
+"Title Design" = "Erin Henderson"
+"End Graphic Designs" = "Zoe Poppenega, Atlas Lee-Reid"
+"Concept Art" = "Caroline Ho"
+"Poster Design" = "Breanna VandeBurgt"
+"Poster Photo Shoot" = "Ruben Sevilla"
+
+[metadata.credits.soundtrack]
+[metadata.credits.soundtrack.credits]
+"Original Soundtrack By" = "Joshua Conway and Dani Martinez"
 
 [display]
-format = "popup"
+format = "page"
 
 [display.landscape]
 src = "/directorial/playin-around/thumbnail.png"
 
 [display.portrait]
-src = "https://www.dropbox.com/scl/fi/rkdfqsto0igim6lwzqje5/playin-around.png?rlkey=lydhl3yfeya173f89rb8obur4&dl=0"
+src = "/directorial/playin-around/poster.jpg"
 
-#[display.embed]
-#type = "youtube"
-#src = ""
+[display.embed]
+type = "youtube"
+src = "https://www.youtube.com/embed/_W2Kq_nPOPg?si=4T2cFiEPaX1l8tWn"
+
+[socials]
+imdb = "https://www.imdb.com/title/tt31869022/?ref_=nm_knf_t_1"
+youtube = "https://www.youtube.com/embed/_W2Kq_nPOPg?si=4T2cFiEPaX1l8tWn"
+instagram = "https://www.instagram.com/playinaround_film/"
+letterboxd = "https://letterboxd.com/film/playin-around/"
+
+[[awards]]
+laurel = "/directorial/playin-around/aperture-int.png"
+[[awards]]
+laurel = "/directorial/playin-around/fsff.png"
+[[awards]]
+laurel = "/directorial/playin-around/ssff.png"
+[[awards]]
+laurel = "/directorial/playin-around/frff.png"
+[[awards]]
+laurel = "/directorial/playin-around/tammff.png"
+[[awards]]
+laurel = "/directorial/playin-around/soff.png"
+
+[page]
+folder = "directorial/playin-around"
+trailer = "https://www.youtube.com/embed/Z-hm0aPqips?si=9ZxM_wMao-o7nU1E"
+presskit = "https://drive.google.com/file/d/1ma4BjEk-hBoOhssBJ1gljUjswTp2b-N6/preview"
+[page.stills]
+images = [
+    {folder = "cover", name = "playin-around.jpg"},
+    {name = "sstill-04.jpg"},
+    {name = "still-credits.jpg"},
+    {name = "sstill-03.jpg"},
+    {name = "sstill-02.jpg"},
+]
+[page.bts]
+images = [
+    {name = "still-01.jpg"},
+    {name = "still-02.jpg"},
+    {name = "still-03.JPG"},
+    {name = "still-04.jpg"},
+    {name = "still-05.JPG"},
+]
+[page.extras]
+background = "/directorial/playin-around/still-additional.jpg"
+[page.credits]
+background = "/directorial/playin-around/still-credits.jpg"
+
+
+

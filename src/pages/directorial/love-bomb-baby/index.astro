@@ -1,0 +1,197 @@
+---
+
+import PageLayout from "../../../layouts/PageLayout.astro";
+import BackgroundCover from "../../../components/BackgroundCover.astro";
+import CaptionedImage from "../../../components/generic/CaptionedImage.astro";
+import FilmDetails from "../../../components/projects/FilmDetails.astro";
+import {getProject} from "../../../content.config";
+import ProjectPage from "../../../components/projects/ProjectPage.astro";
+import ImageCaption from "../../../components/generic/ImageCaption.astro";
+
+const folder = "directorial/love-bomb-baby"
+---
+
+<ProjectPage name="love-bomb-baby">
+	<div slot="extras" class="gallery">
+		<div class="row timeline">
+            <CaptionedImage folder={folder} name="bts-timeline.jpg" alt={""} id="x-timeline">
+                <ImageCaption>
+                    <em>Timeline for Love Bomb Baby</em> &mdash; Edited by Bryan Uvaldo
+                </ImageCaption>
+            </CaptionedImage>
+		</div>
+
+		<div class="row cast">
+            <CaptionedImage folder={folder} name="cast-quinn.jpg" alt={""} id="x-quinn">
+                <ImageCaption>
+                    Quinn Bringelson <em>as Luna</em>
+                </ImageCaption>
+            </CaptionedImage>
+            <CaptionedImage folder={folder} name="cast-kat.jpg" alt={""} id="x-kat">
+                <ImageCaption>
+                    Kat Capili <em>as Alexis</em>
+                </ImageCaption>
+            </CaptionedImage>
+            <CaptionedImage folder={folder} name="cast-amanda.jpg" alt={""} id="x-amanda">
+                <ImageCaption>
+                    Amanda Whyte <em>as Ninja Girl</em>
+                </ImageCaption>
+            </CaptionedImage>
+            <CaptionedImage folder={folder} name="crew-bryan.jpg" alt={""} id="x-bryan">
+                <ImageCaption>
+                    <em>Bryan Uvaldo</em> &mdash; Director, Writer, and Editor
+                </ImageCaption>
+            </CaptionedImage>
+		</div>
+
+        <div class="row alt">
+            <CaptionedImage folder={folder} name="crew-bryan.jpg" alt={""} id="x-bryan-alt">
+                <ImageCaption>
+                    <em>Bryan Uvaldo</em> &mdash; Director, Writer, and Editor
+                </ImageCaption>
+            </CaptionedImage>
+            <CaptionedImage folder={folder} name="bts-concept-cup.jpg" alt={""} id="x-concept-2-alt">
+                <ImageCaption>
+                    <em>Teaser Concept Art</em> &mdash; Drawn by Caroline Ho
+                </ImageCaption>
+            </CaptionedImage>
+        </div>
+
+		<div class="row concepts">
+            <CaptionedImage folder={folder} name="bts-concept-cup.jpg" alt={""} id="x-concept-2">
+                <ImageCaption>
+                    <em>Teaser Concept Art</em> &mdash; Drawn by Caroline Ho
+                </ImageCaption>
+            </CaptionedImage>
+            <CaptionedImage folder={folder} name="bts-concept.jpg" alt={""} id="x-concept-1">
+                <ImageCaption>
+                    <em>Love Bomb Baby Concept Art</em> &mdash; Drawn by Caroline Ho
+                </ImageCaption>
+            </CaptionedImage>
+		</div>
+
+        <div class="row crew">
+            <CaptionedImage folder={folder} name="crew-maggie.jpg" alt={""} id="x-maggie">
+                <ImageCaption>
+                    <em>Maggie Soik</em> &mdash; Producer
+                </ImageCaption>
+            </CaptionedImage>
+            <CaptionedImage folder={folder} name="crew-ian.jpg" alt={""} id="x-ian">
+                <ImageCaption>
+                    <em>Ian Dugan</em> &mdash; Stunt Coordinator
+                </ImageCaption>
+            </CaptionedImage>
+            <CaptionedImage folder={folder} name="yellow.png" alt={""} id="x-yellow">
+                <ImageCaption>
+                    <em>Alternate Logo</em> &mdash; Designed by Erin Henderson
+                </ImageCaption>
+            </CaptionedImage>
+        </div>
+	</div>
+</ProjectPage>
+
+<style is:global>
+    main#love-bomb-baby {
+        @media(max-width: 600px) {
+            p.caption {
+                display: none;
+            }
+        }
+		.captioned-image {
+			&#x-bryan, &#x-bryan-alt {
+				flex: calc(500 / 501);
+			}
+
+            &#x-bryan {
+                @media(max-width: 500px) {
+                    display: none;
+                }
+            }
+
+			&#x-timeline {
+                flex: calc(1920 / 788);
+			}
+
+			&#x-maggie {
+                flex: calc(500 / 501);
+			}
+
+            &#x-ian {
+                flex: calc(500 / 500);
+            }
+
+            &#x-concept-2, &#x-concept-2-alt {
+                flex: calc(1920 / 1926);
+            }
+			&#x-concept-2 {
+                @media(max-width: 500px) {
+                    display: none;
+                }
+			}
+
+            &#x-concept-1 {
+                flex: calc(1920 / 960);
+
+                @media(max-width: 500px) {
+                    flex-basis: 100% !important;
+                }
+            }
+
+			&#x-amanda {
+                flex: calc(500 / 752);
+			}
+
+			&#x-quinn, &#x-kat {
+				flex: calc(500 / 750);
+			}
+
+            &#x-yellow {
+                flex: calc(3377 / 2891);
+            }
+
+            @media(max-width: 500px) {
+                flex-basis: 30% !important;
+            }
+		}
+    }
+</style>
+<style>
+    :root {
+        --accent: #e851a4 !important;
+    }
+
+	div.gallery {
+
+		grid-template-rows: 1fr 1fr;
+		display: flex;
+		flex-direction: column;
+        gap: 1rem;
+        @media(min-width: 1024px) {
+            gap: 2rem;
+        }
+
+		div.row {
+			display: flex;
+			flex-direction: row;
+			max-width: 100%;
+            gap: 1rem;
+			@media(min-width: 1024px) {
+                gap: 2rem;
+            }
+
+			&.crew {
+                justify-content: start;
+            }
+
+            div.spacer {
+                flex-grow: 1;
+            }
+
+            &.alt {
+                @media(min-width: 500px) {
+                    display: none;
+                }
+            }
+		}
+	}
+</style>

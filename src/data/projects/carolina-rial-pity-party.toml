@@ -11,14 +11,12 @@ year = "2022"
 type = "directorial"
 section = "commercial"
 categories = []
+roles = "Director"
 
 [metadata.duration]
 #hours = 0
 #minutes = 0
 seconds = 0
-
-[metadata.credits]
-bryan = ["Director"]
 
 [display]
 format = "popup"

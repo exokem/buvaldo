@@ -11,14 +11,12 @@ year = "2021"
 type = "directorial"
 section = "student"
 categories = ["NYU Short"]
+roles = "Director, Editor"
 
 [metadata.duration]
 #hours = 0
 #minutes = 0
 seconds = 0
-
-[metadata.credits]
-bryan = ["Director", "Editor"]
 
 [display]
 format = "popup"

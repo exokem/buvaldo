@@ -7,7 +7,7 @@ import ProjectSection from "../../components/projects/ProjectSection.astro";
 <PageLayout title='Editorial Work'>
     <BackgroundCover src="/cover/editorial.jpg" blur/>
     <div class="title">
-        <h1 class="heading-title">Editorial Work</h1>
+        <h1 class="heading-title">Editorial</h1>
     </div>
     <ProjectSection type="editorial" section="hbo"/>
     <ProjectSection type="editorial" section="narrative"/>
@@ -20,11 +20,11 @@ import ProjectSection from "../../components/projects/ProjectSection.astro";
         display: flex;
         flex-direction: row;
         justify-content: center;
-        padding: 5rem 0;
 
-        h1 {
-            font-size: 4rem;
-            line-height: 4rem;
+        padding: 2rem 0;
+
+        @media(min-width: 512px) {
+            padding: 5rem 0;
         }
     }
 </style>

@@ -1,0 +1,26 @@
+---
+import type {ProjectImagesArray} from "../../content.config";
+import ImageCaption from "../generic/ImageCaption.astro";
+import CaptionedImage from "../generic/CaptionedImage.astro";
+interface Props {
+	folder: string
+	images: ProjectImagesArray
+}
+
+const {
+	folder,
+	images
+} = Astro.props
+---
+{images.map(image => (
+	<CaptionedImage folder={image.folder ?? folder} name={image.name} alt={image.description ?? ""}>
+		{image.description !== null && (
+			<ImageCaption>
+				<em>{image.description}</em>
+				{image.credit && (
+					<span> &mdash; {image.credit}</span>
+				)}
+			</ImageCaption>
+		)}
+	</CaptionedImage>
+))}

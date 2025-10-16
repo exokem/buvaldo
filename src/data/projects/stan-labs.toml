@@ -11,14 +11,12 @@ year = "2020"
 type = "editorial"
 section = "commercial"
 categories = []
+roles = ""
 
 [metadata.duration]
 #hours = 0
 #minutes = 0
 seconds = 0
-
-[metadata.credits]
-bryan = []
 
 [display]
 format = "popup"

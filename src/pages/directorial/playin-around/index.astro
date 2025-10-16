@@ -1,0 +1,166 @@
+---
+
+import PageLayout from "../../../layouts/PageLayout.astro";
+import BackgroundCover from "../../../components/BackgroundCover.astro";
+import CaptionedImage from "../../../components/generic/CaptionedImage.astro";
+import FilmDetails from "../../../components/projects/FilmDetails.astro";
+import {getProject} from "../../../content.config";
+import ProjectPage from "../../../components/projects/ProjectPage.astro";
+import ImageCaption from "../../../components/generic/ImageCaption.astro";
+
+const folder = "directorial/playin-around"
+---
+
+<ProjectPage name="playin-around">
+    <div slot="extras" class="campaign">
+		<iframe src="https://www.youtube.com/embed/fHj3me8BIj0?si=EeRTRbLYxOrFgjeq"  referrerpolicy="strict-origin-when-cross-origin" allowfullscreen/>
+		<ImageCaption>
+			<em>Fundraising Campaign Video</em>
+		</ImageCaption>
+	</div>
+    <div slot="extras" class="gallery">
+        <div class="row timeline">
+            <CaptionedImage folder={folder} name="bts-timeline.jpg" alt={""} id="x-timeline">
+                <ImageCaption>
+                    <em>Timeline for Playin' Around</em> &mdash; Edited by Bryan Uvaldo
+                </ImageCaption>
+            </CaptionedImage>
+        </div>
+
+        <div class="row concept">
+            <CaptionedImage folder={folder} name="bts-concept.jpg" alt={""} id="x-concept">
+                <ImageCaption>
+                    <em>Playin' Around Concept Art</em> &mdash; Drawn by Caroline Ho
+                </ImageCaption>
+            </CaptionedImage>
+            <CaptionedImage folder={folder} name="bts-lego.jpg" alt={""} id="x-lego">
+                <ImageCaption>
+                    <em>Lego Diorama for Playin' Around</em> <br/> Designed by Bryan Uvaldo
+                </ImageCaption>
+            </CaptionedImage>
+        </div>
+
+        <div class="row cast">
+            <CaptionedImage folder={folder} name="bryan-amanda-1.jpg" alt={""} id="x-bam-1">
+                <ImageCaption>
+                    <em>Bryan Uvaldo & Amanda Whyte</em> <br/>Photo by Ruben Sevilla
+                </ImageCaption>
+            </CaptionedImage>
+            <CaptionedImage folder={folder} name="bryan-amanda-2.jpg" alt={""} id="x-bam-2">
+                <ImageCaption>
+                    <em>Bryan Uvaldo & Amanda Whyte</em> <br/>Photo by Ruben Sevilla
+                </ImageCaption>
+            </CaptionedImage>
+            <CaptionedImage folder={folder} name="bryan-amanda-3.jpg" alt={""} id="x-bam-3">
+                <ImageCaption>
+                    <em>Bryan Uvaldo & Amanda Whyte</em> <br/>Photo by Ruben Sevilla
+                </ImageCaption>
+            </CaptionedImage>
+        </div>
+    </div>
+</ProjectPage>
+
+<style is:global>
+    main#playin-around {
+        .cover {
+            @media(max-width: 1024px) {
+                background-position-x: calc(50% - 15%);
+            }
+        }
+
+		section#cover {
+            @media(max-width: 1024px) {
+                background-position-x: calc(50% - 15%);
+            }
+		}
+
+        @media(max-width: 600px) {
+            p.caption {
+                display: none;
+            }
+        }
+        .captioned-image {
+            &#x-timeline {
+                flex: calc(1920 / 775);
+            }
+
+            &#x-concept {
+                flex: calc(1920 / 803);
+
+                @media(max-width: 500px) {
+                    flex-basis: 100% !important;
+                }
+            }
+
+            &#x-lego {
+                flex: calc(1920 / 1280);
+            }
+
+            &#x-concept-1 {
+                flex: calc(1920 / 960);
+            }
+
+            @media(max-width: 500px) {
+                flex-basis: 30% !important;
+            }
+        }
+    }
+</style>
+<style>
+    :root {
+        --accent: #eb5a04 !important;
+    }
+
+	div.campaign {
+        width: 100%;
+        border-radius: 0.5rem;
+        background: #00000066;
+        backdrop-filter: blur(12px);
+		overflow: clip;
+        iframe {
+            width: 100%;
+            aspect-ratio: 16/9;
+        }
+	}
+
+    div.gallery {
+
+        grid-template-rows: 1fr 1fr;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        @media(min-width: 1024px) {
+            gap: 2rem;
+        }
+
+        div.row {
+            display: flex;
+            flex-direction: row;
+            max-width: 100%;
+            gap: 1rem;
+            @media(min-width: 1024px) {
+                gap: 2rem;
+            }
+
+            &.crew {
+                justify-content: start;
+            }
+
+            div.spacer {
+                flex-grow: 1;
+            }
+
+            &.alt {
+                @media(min-width: 500px) {
+                    display: none;
+                }
+            }
+
+			&.concept {
+                @media(max-width: 500px) {
+                    flex-wrap: wrap;
+                }
+			}
+        }
+    }
+</style>

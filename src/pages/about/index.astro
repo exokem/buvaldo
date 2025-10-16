@@ -1,6 +1,7 @@
 ---
 import PageLayout from "../../layouts/PageLayout.astro";
 import BackgroundCover from "../../components/BackgroundCover.astro";
+import SocialLinks from "../../components/generic/SocialLinks.astro";
 
 ---
 
@@ -44,26 +45,17 @@ import BackgroundCover from "../../components/BackgroundCover.astro";
                     Email:
                     <a href="mailto:buvaldo216@gmail.com" class="email">buvaldo216@gmail.com</a>
                 </p>
-                <div class="links">
-                    <a class="youtube" href="https://www.youtube.com/channel/UCNDFgziSeSvF3CjxJxo7esg">
-                        <img src="/logo/youtube.svg" alt="YouTube logo"/>
-                    </a>
-                    <a class="imdb" href="https://www.imdb.com/name/nm12071705/">
-                        <img src="/logo/imdb.svg" alt="Imdb logo"/>
-                    </a>
-                    <a class="linkedin" href="https://www.linkedin.com/in/bryan-uvaldo-59827a1b9/">
-                        <img src="/logo/linkedin.svg" alt="LinkedIn logo"/>
-                    </a>
-                    <!--<a class="instagram" href="https://www.instagram.com/buvaldo218/">-->
-                    <!--    <img src="/logo/instagram.svg" alt="Instagram logo"/>-->
-                    <!--</a>-->
-                </div>
+                <SocialLinks
+                    youtube="https://www.youtube.com/channel/UCNDFgziSeSvF3CjxJxo7esg"
+                    imdb="https://www.imdb.com/name/nm12071705/"
+                    linkedin="https://www.linkedin.com/in/bryan-uvaldo-59827a1b9/"
+                />
             </div>
         </div>
     </div>
     <div class="p2">
         <div class="container">
-            <img src="/directorial/love-bomb/bts-01.jpg"/>
+            <img src="/directorial/love-bomb-baby/bts-01.jpg"/>
             <img src="/directorial/playin-around/bts-01.jpg"/>
         </div>
     </div>
@@ -104,11 +96,22 @@ import BackgroundCover from "../../components/BackgroundCover.astro";
         div.container {
             min-height: 0 !important;
             gap: 2rem;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+            justify-content: center;
+            @media(min-width: 1090px) {
+                justify-content: space-between;
+            }
         }
 
         img {
             border-radius: 1rem;
             filter: drop-shadow(0px 2px 4px #00000077);
+
+            @media(min-width: 1024px) {
+                width: 32rem;
+            }
         }
 
         padding-bottom: 1rem;
@@ -162,42 +165,5 @@ import BackgroundCover from "../../components/BackgroundCover.astro";
                 transform: translateY(5rem);
             }
         }
-    }
-
-    div.links {
-        display: flex;
-        flex-direction: row;
-        gap: 1rem;
-        @media(max-width: 1024px) {
-            justify-content: center;
-        }
-        a {
-            display: block;
-            position: relative;
-            filter: drop-shadow(0px 2px 2px #00000077);
-            background: white;
-            border-radius: 1rem;
-
-            img {
-                height: 2.5rem;
-            }
-
-            transition-property: opacity;
-            transition-duration: 250ms;
-
-            &:hover {
-                opacity: 0.8;
-            }
-        }
-    }
-
-    rect.instagram-gradient {
-        /*fill: transparent;*/
-        /*background: radial-gradient(circle farthest-corner at 35% 90%, #fec564, transparent 50%), radial-gradient(circle farthest-corner at 0 140%, #fec564, transparent 50%), radial-gradient(ellipse farthest-corner at 0 -25%, #5258cf, transparent 50%), radial-gradient(ellipse farthest-corner at 20% -50%, #5258cf, transparent 50%), radial-gradient(ellipse farthest-corner at 100% 0, #893dc2, transparent 50%), radial-gradient(ellipse farthest-corner at 60% -20%, #893dc2, transparent 50%), radial-gradient(ellipse farthest-corner at 100% 100%, #d9317a, transparent), linear-gradient(#6559ca, #bc318f 30%, #e33f5f 50%, #f77638 70%, #fec66d 100%);*/
-
-    }
-
-    a.instagram {
-        /*background: radial-gradient(circle farthest-corner at 35% 90%, #fec564, transparent 50%), radial-gradient(circle farthest-corner at 0 140%, #fec564, transparent 50%), radial-gradient(ellipse farthest-corner at 0 -25%, #5258cf, transparent 50%), radial-gradient(ellipse farthest-corner at 20% -50%, #5258cf, transparent 50%), radial-gradient(ellipse farthest-corner at 100% 0, #893dc2, transparent 50%), radial-gradient(ellipse farthest-corner at 60% -20%, #893dc2, transparent 50%), radial-gradient(ellipse farthest-corner at 100% 100%, #d9317a, transparent), linear-gradient(#6559ca, #bc318f 30%, #e33f5f 50%, #f77638 70%, #fec66d 100%);*/
     }
 </style>

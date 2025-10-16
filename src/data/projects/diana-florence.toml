@@ -11,14 +11,12 @@ year = "2020-2021"
 type = "editorial"
 section = "commercial"
 categories = ["Advertising Campaign"]
+roles = ""
 
 [metadata.duration]
 #hours = 0
 #minutes = 0
 seconds = 0
-
-[metadata.credits]
-bryan = []
 
 [display]
 format = "popup"
@@ -31,4 +29,4 @@ src = ""
 
 [display.embed]
 type = "youtube"
-src = "https://www.youtube.com/embed/Ws7EbmiXohM?si=jaZIUorrhvTAijOH"
+src = "https://www.youtube.com/embed/vf_jYqOG7ko?si=GdHQ_jQSfr-wAFnn"

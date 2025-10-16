@@ -11,17 +11,15 @@ year = "2022"
 type = "editorial"
 section = "narrative"
 categories = ["NYU Thesis Short"]
+roles = "Editor"
 
 [metadata.duration]
 #hours = 0
 #minutes = 0
 seconds = 0
 
-[metadata.credits]
-bryan = ["Editor"]
-
 [display]
-format = "popup"
+format = "external"
 
 [display.landscape]
 src = "/editorial/scrambled-eggs/thumbnail.png"
@@ -29,6 +27,6 @@ src = "/editorial/scrambled-eggs/thumbnail.png"
 [display.portrait]
 src = ""
 
-#[display.embed]
-#type = ""
-#src = ""
+[display.embed]
+type = "youtube"
+src = "https://filmfreeway.com/ScrambledEggs166"

@@ -7,28 +7,136 @@ description = """
 After catching her cheating girlfriend, a fiery, drunk woman beats up an entire Halloween college party--all while prioritizing which booze is in her hand.
 """
 genre = "Action Comedy"
-year = "2023"
+year = "2024"
 type = "directorial"
 section = "narrative"
 categories = ["Short"]
+roles = "Directed, Written, and Edited by Bryan Uvaldo"
 
 [metadata.duration]
 #hours = 0
 #minutes = 0
 seconds = 603
 
-[metadata.credits]
-bryan = ["Director", "Writer", "Editor"]
+[metadata.credits.main]
+[metadata.credits.main.credits]
+"Director/Writer" = "Bryan Uvaldo"
+"Producers" = "Maggie Soik, Nina Sundermeyer, Guillermo Prieto IV"
+"Co-Producer" = "Avery Sweeney"
+"Associate Producer" = "Colette Poncet"
+[metadata.credits.cast]
+title = "Cast"
+[metadata.credits.cast.credits]
+"Luna" = "Quinn Bringelson"
+"Alexis" = "Kat Capili"
+"Ninja Girl" = "Amanda Whyte"
+"Dr. Moo / Bartender" = "Muhil Vaseekaran"
+"Space Defender" = "Liv D'Arche"
+"Captain H.H." = "Flora Nolan"
+"Academy Wizard / Evil Banana" = "Michael Monroe"
+"Sporty Wizard / Camo Guy" = "Leion Van Osdol"
+"Business Frog" = "Zoe Poppenga"
+"Simulation Warrior" = "Alex Grech"
+"Colonel" = "Ian Dugan"
+"Action Hero" = "Justin Wang"
+"Amateur Archaeologist" = "Guillermo Prieto IV"
+"Blue Balled Boy" = "Cooper Smith"
+"Nurse" = "Matilde Silva"
+[metadata.credits.production]
+title = "On-Set Production"
+[metadata.credits.production.credits]
+"1st Assistant Director" = "Jayla Matthews"
+"2nd Assistant Director" = "Colette Poncet"
+"Fight Choreographers" = "Ian Dugan, Justin Wang"
+"Stunt Coordinator" = "Ian Dugan"
+"Sword Fight Coordinator" = "Liv D'Arche"
+"Director of Photography" = "Tara Zulfikar, Zoe Medranda"
+"Gaffer" = "Kathryn Phillips"
+"Grip" = "Chris St Lawrence"
+"Boom Operator" = "Mame Toure"
+"Production Designer" = "Jessery Darlington"
+"Costume Designer" = "Charli Einhorn"
+"Makeup" = "Zoe Poppenga"
+"Script Supervisor" = "Netyali Ortega"
+"Art Director" = "Dasha Fogelson"
+"Art Assistants" = "Johnny Yassa, Cooper Smith"
+"BTS Photographer" = "Ari Isenberg"
+"Promo Photographer" = "Kathryn Phillips"
+[metadata.credits.post]
+title = "Post Production"
+[metadata.credits.post.credits]
+"Editor" = "Ali Soltan"
+"Co-Editor" = "Bryan Uvaldo"
+"Effects Editor" = "Adriana Guevara"
+"VFX Artists" = "Jonah Arnold, Andre Hall, Alex Vargas, Matthew Levine"
+"Sound Designer" = "Ciara Bess"
+"Rerecording Mixer" = "Thomas Wu"
+"Assistant Sound Editor" = "Jaden Fields"
+"Music Supervisor" = "Chloe Carlson"
+"Colorist" = "Ari Isenberg"
+
+[metadata.credits.counting-cards]
+title = "Music — Counting Cards"
+[metadata.credits.counting-cards.credits]
+"Written by" = "Carolina Rial and Anna Kline"
+"Performed by" = "Carolina Rial"
+"Produced by" = "Zach Golden"
+[metadata.credits.dropped]
+title = "Music — Dropped"
+[metadata.credits.dropped.credits]
+"Written by" = "Alex Greenwald"
+"Performed by" = "Phantom Planet"
+"Courtesy of" = "Fueled by Ramen"
+[metadata.credits.detonation]
+title = "Music — Detonation"
+[metadata.credits.detonation.credits]
+"Composed by" = "Carlotta Romano"
 
 [display]
-format = "popup"
+format = "page"
 
 [display.landscape]
-src = "/directorial/love-bomb/thumbnail.png"
+src = "/directorial/love-bomb-baby/thumbnail.png"
 
 [display.portrait]
-src = "https://www.dropbox.com/scl/fi/da8rhbznwiapgcnn2gg9j/love-bomb-baby.png?rlkey=mpzxs4bbt8apz82j4o069ujpm&dl=0"
+src = "/directorial/love-bomb-baby/poster.jpg"
 
 [display.embed]
 type = "youtube"
 src = "https://www.youtube.com/embed/DbYIgkQm-mI?si=UAJHVAo_B7K49OdU"
+
+[socials]
+instagram = "https://www.instagram.com/playinaround_film/"
+imdb = "https://www.imdb.com/title/tt27975978/?ref_=nm_knf_t_2"
+youtube = "https://www.youtube.com/embed/DbYIgkQm-mI?si=UAJHVAo_B7K49OdU"
+letterboxd = "https://letterboxd.com/film/love-bomb-baby/"
+
+[[awards]]
+laurel = "/directorial/love-bomb-baby/austin-action-fest.PNG"
+[[awards]]
+laurel = "/directorial/love-bomb-baby/urban-action-fest.png"
+[[awards]]
+laurel = "/directorial/love-bomb-baby/tammff.png"
+
+[page]
+folder = "directorial/love-bomb-baby"
+trailer = "https://www.youtube.com/embed/eqISelyErS0?si=j5Yg8mxe9_UxxAo9"
+presskit = "https://drive.google.com/file/d/1VPp6sxqXxNVH0cPClDHnDqXn3h99PASd/preview"
+[page.stills]
+images = [
+    {name = "still-01.jpg"},
+    {name = "still-02.jpg"},
+    {name = "still-03.jpg"},
+    {name = "still-04.jpg"},
+]
+[page.bts]
+images = [
+    {name = "bts-01.jpg"},
+    {name = "bts-02.jpg"},
+    {name = "bts-03.jpg"},
+    {name = "bts-04.jpg"},
+]
+[page.extras]
+background = "/directorial/love-bomb-baby/still-extras.jpg"
+[page.credits]
+background = "/directorial/love-bomb-baby/still-credits.jpg"

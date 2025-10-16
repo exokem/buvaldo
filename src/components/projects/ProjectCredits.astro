@@ -1,0 +1,81 @@
+---
+import type {Project} from "../../content.config";
+interface Props {
+	project: Project
+}
+
+const {
+	project,
+} = Astro.props
+---
+<div class="credit-section">
+	{Object.values(project.metadata.credits).map(section => (
+		<div class="subsection">
+				{section.title && <h3 class="credit-title">{section.title}</h3>}
+				{Object.entries(section.credits).map(([role, names]) => (
+                        <p class="credit">
+                            <span class="role">{role}</span>
+                            <span class="names">{names}</span>
+                        </p>
+				))}
+		</div>
+	))}
+</div>
+
+<style>
+    div.credit-section {
+
+		div.subsection {
+			display: grid;
+            grid-template-columns: subgrid;
+            grid-column-start: 1;
+            grid-column-end: 3;
+		}
+        display: grid;
+        grid-template-columns: subgrid;
+        grid-column-start: 1;
+        grid-column-end: 3;
+        row-gap: 0.5rem;
+        z-index: 15;
+        background: #000000cc;
+        backdrop-filter: blur(12px);
+        border-radius: 0.5rem;
+        border: 1px solid #00000066;
+
+		padding: 1rem;
+        @media(min-width: 1024px) {
+            padding: 2rem;
+		}
+
+        color: white;
+
+        h3.credit-title {
+            grid-column-start: 1;
+            grid-column-end: 3;
+            justify-self: center;
+            font-weight: 700;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        p.credit {
+            display: grid;
+            grid-template-columns: subgrid;
+            grid-column-start: 1;
+            grid-column-end: 3;
+            font-size: 1.25rem;
+
+            span.role {
+                font-weight: 700;
+                @media(min-width: 500px) {
+                    text-wrap: nowrap;
+				}
+                text-align: right;
+            }
+
+            span.names {
+                font-style: italic;
+            }
+        }
+    }
+</style>
