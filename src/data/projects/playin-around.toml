@@ -145,11 +145,6 @@ images = [
 ]
 [page.extras]
 background = "/directorial/playin-around/still-additional.jpg"
-images = [
-    {name = "bts-timeline.jpg", description = "The editing timeline for Playin' Around", credit = "Edited by Bryan Uvaldo"},
-    {name = "bts-concept.jpg", description = "Playin' Around Concept Art", credit = "Drawn by Caroline Ho"},
-    {name = "bts-lego.jpg", description = "Lego Diorama for Playin' Around", credit = "Designed by Bryan Uvaldo, Photo by Ruben Sevilla"},
-]
 [page.credits]
 background = "/directorial/playin-around/still-credits.jpg"
 

@@ -7,6 +7,8 @@ import FilmDetails from "../../../components/projects/FilmDetails.astro";
 import {getProject} from "../../../content.config";
 import ProjectPage from "../../../components/projects/ProjectPage.astro";
 import ImageCaption from "../../../components/generic/ImageCaption.astro";
+
+const folder = "directorial/playin-around"
 ---
 
 <ProjectPage name="playin-around">
@@ -16,6 +18,46 @@ import ImageCaption from "../../../components/generic/ImageCaption.astro";
 			<em>Fundraising Campaign Video</em>
 		</ImageCaption>
 	</div>
+    <div slot="extras" class="gallery">
+        <div class="row timeline">
+            <CaptionedImage folder={folder} name="bts-timeline.jpg" alt={""} id="x-timeline">
+                <ImageCaption>
+                    <em>Timeline for Playin' Around</em> &mdash; Edited by Bryan Uvaldo
+                </ImageCaption>
+            </CaptionedImage>
+        </div>
+
+        <div class="row concept">
+            <CaptionedImage folder={folder} name="bts-concept.jpg" alt={""} id="x-concept">
+                <ImageCaption>
+                    <em>Playin' Around Concept Art</em> &mdash; Drawn by Caroline Ho
+                </ImageCaption>
+            </CaptionedImage>
+            <CaptionedImage folder={folder} name="bts-lego.jpg" alt={""} id="x-lego">
+                <ImageCaption>
+                    <em>Lego Diorama for Playin' Around</em> &mdash; Designed by Bryan Uvaldo, Photo by Ruben Sevilla
+                </ImageCaption>
+            </CaptionedImage>
+        </div>
+
+        <div class="row cast">
+            <CaptionedImage folder={folder} name="bryan-amanda-1.jpg" alt={""} id="x-bam-1">
+                <ImageCaption>
+                    Bryan & Amanda
+                </ImageCaption>
+            </CaptionedImage>
+            <CaptionedImage folder={folder} name="bryan-amanda-2.jpg" alt={""} id="x-bam-2">
+                <ImageCaption>
+                    Bryan & Amanda
+                </ImageCaption>
+            </CaptionedImage>
+            <CaptionedImage folder={folder} name="bryan-amanda-3.jpg" alt={""} id="x-bam-3">
+                <ImageCaption>
+                    Bryan & Amanda
+                </ImageCaption>
+            </CaptionedImage>
+        </div>
+    </div>
 </ProjectPage>
 
 <style is:global>
@@ -31,6 +73,37 @@ import ImageCaption from "../../../components/generic/ImageCaption.astro";
                 background-position-x: calc(50% - 15%);
             }
 		}
+
+        @media(max-width: 600px) {
+            p.caption {
+                display: none;
+            }
+        }
+        .captioned-image {
+            &#x-timeline {
+                flex: calc(1920 / 775);
+            }
+
+            &#x-concept {
+                flex: calc(1920 / 803);
+
+                @media(max-width: 500px) {
+                    flex-basis: 100% !important;
+                }
+            }
+
+            &#x-lego {
+                flex: calc(1920 / 1280);
+            }
+
+            &#x-concept-1 {
+                flex: calc(1920 / 960);
+            }
+
+            @media(max-width: 500px) {
+                flex-basis: 30% !important;
+            }
+        }
     }
 </style>
 <style>
@@ -49,4 +122,45 @@ import ImageCaption from "../../../components/generic/ImageCaption.astro";
             aspect-ratio: 16/9;
         }
 	}
+
+    div.gallery {
+
+        grid-template-rows: 1fr 1fr;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        @media(min-width: 1024px) {
+            gap: 2rem;
+        }
+
+        div.row {
+            display: flex;
+            flex-direction: row;
+            max-width: 100%;
+            gap: 1rem;
+            @media(min-width: 1024px) {
+                gap: 2rem;
+            }
+
+            &.crew {
+                justify-content: start;
+            }
+
+            div.spacer {
+                flex-grow: 1;
+            }
+
+            &.alt {
+                @media(min-width: 500px) {
+                    display: none;
+                }
+            }
+
+			&.concept {
+                @media(max-width: 500px) {
+                    flex-wrap: wrap;
+                }
+			}
+        }
+    }
 </style>
