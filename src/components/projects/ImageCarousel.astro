@@ -146,7 +146,6 @@ const {
 
     for (const carousel of carousels) {
         const buttons = Array.from(carousel.querySelectorAll<HTMLAnchorElement>("a.carousel.button"))
-        console.log(buttons)
 
         for (const button of buttons) {
             const id = button.getAttribute("href")!
