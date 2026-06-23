@@ -55,22 +55,27 @@ import SocialLinks from "../../components/generic/SocialLinks.astro";
     </div>
     <div class="p2">
         <div class="container">
+            <img src="/about/bryan-portrait.jpg"/>
+			<div class="stack">
+                <div class="interviews">
+                    <h2>Press Interviews</h2>
+                    <p><a href="https://voyagela.com/interview/life-work-with-bryan-uvaldo-of-north-hollywood" class="email">Voyage LA Interview</a></p>
+                    <p><a href="https://vimeo.com/1147239591" class="email">Sherman Oaks Red Carpet Interview</a></p>
+                    <p><a href="https://vimeo.com/showcase/12028176?video=1147509521" class="email">Sherman Oaks Film Festival Q&A</a></p>
+                    <p><a href="https://youtu.be/7v0jRKAOYbo?si=6J94JKM0BBsBFcur" class="email">Podcast Interview on Fights with Friends</a></p>
+                    <p><a href="https://youtu.be/vMVw-b0zjPo?si=DeyCjfXLpiw_sQcG" class="email">Fighting Spirit Film Festival Interview</a></p>
+                </div>
+				<!--<div class="sample"/>-->
+                <img src="/about/33.jpg"/>
+			</div>
+        </div>
+    </div>
+    <div class="p2">
+        <div class="container">
             <img src="/directorial/love-bomb-baby/bts-01.jpg"/>
             <img src="/directorial/playin-around/bts-01.jpg"/>
         </div>
     </div>
-	<div class="p2">
-        <div class="container">
-            <div class="interviews">
-                <h2>Press Interviews</h2>
-                <p><a href="https://voyagela.com/interview/life-work-with-bryan-uvaldo-of-north-hollywood" class="email">Voyage LA Interview</a></p>
-                <p><a href="https://vimeo.com/1147239591" class="email">Sherman Oaks Red Carpet Interview</a></p>
-                <p><a href="https://vimeo.com/showcase/12028176?video=1147509521" class="email">Sherman Oaks Film Festival Q&A</a></p>
-                <p><a href="https://youtu.be/7v0jRKAOYbo?si=6J94JKM0BBsBFcur" class="email">Podcast Interview on Fights with Friends</a></p>
-                <p><a href="https://youtu.be/vMVw-b0zjPo?si=DeyCjfXLpiw_sQcG" class="email">Fighting Spirit Film Festival Interview</a></p>
-            </div>
-        </div>
-	</div>
 </PageLayout>
 
 <style lang="scss">
@@ -122,7 +127,10 @@ import SocialLinks from "../../components/generic/SocialLinks.astro";
 
         div.container {
             min-height: 0 !important;
-            gap: 2rem;
+			gap: 3rem;
+            @media(max-width: 1024px) {
+                gap: 2rem;
+            }
             display: flex;
             flex-wrap: wrap;
             flex-direction: row;
@@ -138,7 +146,9 @@ import SocialLinks from "../../components/generic/SocialLinks.astro";
             }
         }
 
-        padding-bottom: 1rem;
+        @media(min-width: 1024px) {
+            padding-bottom: 1rem;
+		}
     }
 
 	div.container {
@@ -154,7 +164,7 @@ import SocialLinks from "../../components/generic/SocialLinks.astro";
             background: #ffffffcc;
             backdrop-filter: blur(12px);
             padding: 2rem;
-            border-radius: 0.5rem;
+            border-radius: 1rem;
 
             font-family: "Inter", sans-serif;
             font-size: 1.125rem;
@@ -164,10 +174,19 @@ import SocialLinks from "../../components/generic/SocialLinks.astro";
             gap: 1rem;
         }
 
+		div.stack {
+			display: flex;
+			flex-direction: column;
+			gap: 2rem;
+		}
+
 		div.interviews {
-			flex-basis: 75%;
+			//flex-basis: 75%;
 			@media(max-width: 1024px) {
 				flex-grow: 1;
+            }
+            @media(min-width: 1024px) {
+                width: 32rem;
             }
 		}
 	}
