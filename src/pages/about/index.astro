@@ -85,6 +85,16 @@ const press = [
             <!--</div>-->
         </div>
     </div>
+	<div class="p2">
+		<div class="portraits container">
+			{[
+				{path: "portrait-1", alt: "Bryan holding a lego camera stylistically"},
+				{path: "portrait-2", alt: "Bryan in sunglasses crouching and directing"},
+				{path: "portrait-3", alt: "Bryan looking confused using a red corded phone"},
+				{path: "portrait-4", alt: "Bryan sitting and joyfully playing with a lego biplane"}
+			].map(a => (<img src={`/about/${a.path}.JPG`} alt={a.alt}/>))}
+		</div>
+	</div>
 </PageLayout>
 
 <style lang="scss">
@@ -144,6 +154,14 @@ const press = [
             flex-wrap: wrap;
             flex-direction: row;
             justify-content: center;
+
+			&.portraits {
+				display: grid;
+                grid-template-columns: repeat(2, 1fr);
+				@media(min-width: 1024px) {
+                    grid-template-columns: repeat(4, 1fr);
+                }
+			}
         }
 
         img {
