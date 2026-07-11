@@ -57,6 +57,27 @@ const folder = "directorial/playin-around"
                 </ImageCaption>
             </CaptionedImage>
         </div>
+
+		<div class="row crew-dga">
+			<CaptionedImage alt="" folder={folder} name="crew-dga.JPG">
+				<ImageCaption>
+                    <em>Playin’ Around Crew celebrate at the Director’s Guild of America Ceremony</em>
+				</ImageCaption>
+			</CaptionedImage>
+            <CaptionedImage alt="" folder={folder} name="bryan-amanda-dga.JPG">
+                <ImageCaption>
+                    <em>Bryan Uvaldo & Amanda Whyte at the Director’s Guild of America Ceremony</em>
+                </ImageCaption>
+            </CaptionedImage>
+		</div>
+
+		<div class="row dga-finalists">
+            <CaptionedImage alt="" folder={folder} name="finalists-dga.jpg">
+                <ImageCaption>
+                    <em>2026 DGA Student Spotlight Awards for Underrepresented Directors Finalists list</em>
+                </ImageCaption>
+            </CaptionedImage>
+		</div>
     </div>
 </ProjectPage>
 
@@ -145,6 +166,16 @@ const folder = "directorial/playin-around"
             &.crew {
                 justify-content: start;
             }
+
+			&.crew-dga {
+                display: grid;
+                grid-template-columns: 2.77fr 1.25fr;
+			}
+
+			&.dga-finalists {
+				justify-content: center;
+
+			}
 
             div.spacer {
                 flex-grow: 1;
