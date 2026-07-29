@@ -3,6 +3,7 @@
 import PageLayout from "../layouts/PageLayout.astro";
 import BackgroundCover from "../components/BackgroundCover.astro";
 import Icon from "../components/Icon.astro";
+import SpecialLink from "../components/generic/SpecialLink.astro";
 ---
 
 <PageLayout title='Bryan Uvaldo'>
@@ -15,22 +16,22 @@ import Icon from "../components/Icon.astro";
             </h2>
             <ul class="shortcuts">
                 <li>
-                    <a href="/directorial">
+                    <SpecialLink href="/directorial">
                         <Icon>movie</Icon>
                         Directing
-                    </a>
+                    </SpecialLink>
                 </li>
                 <li>
-                    <a href="/editorial">
+					<SpecialLink href="/editorial">
                         <Icon>theaters</Icon>
                         Editing
-                    </a>
+					</SpecialLink>
                 </li>
                 <li>
-                    <a href="/about">
+                    <SpecialLink href="/about">
                         <Icon>person</Icon>
                         About
-                    </a>
+                    </SpecialLink>
                 </li>
             </ul>
         </section>
@@ -133,32 +134,6 @@ import Icon from "../components/Icon.astro";
 
         ul.shortcuts {
             display: flex;
-
-            a {
-                font-family: "Inter", sans-serif;
-                font-weight: 700;
-                font-size: 1.125rem;
-                color: var(--accent);
-                display: flex;
-                align-items: center;
-                gap: 0.5em;
-
-                transition-property: scale, opacity, background-color, color, transform;
-                transition-duration: 250ms !important;
-
-                justify-content: center;
-
-                border: 3px solid var(--accent);
-                border-radius: 0.75rem;
-                background-color: #0000007D;
-                padding: 1rem 3rem;
-                width: min-content;
-                text-wrap: nowrap;
-
-                &:active {
-                    scale: 0.9;
-                }
-            }
 
             /* Mobile */
             @media(max-width: 1024px) {

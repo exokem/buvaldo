@@ -1,0 +1,49 @@
+---
+interface Props {
+	href: string
+	external?: boolean
+}
+
+const {
+	href,
+	external = false
+} = Astro.props
+---
+<a href={href} target={external ? "_blank" : "_self"} rel="noopener noreferrer">
+	<slot/>
+</a>
+
+<style lang="scss">
+	a {
+		font-family: "Inter", sans-serif;
+		font-weight: 700;
+		font-size: 1.125rem;
+		color: var(--accent);
+		display: flex;
+		align-items: center;
+		gap: 0.5em;
+
+		transition-property: scale, opacity, background-color, color, transform;
+		transition-duration: 250ms !important;
+
+		justify-content: center;
+
+		border: 3px solid var(--accent);
+		border-radius: 0.75rem;
+		background-color: #0000007D;
+		padding: 1rem 3rem;
+		width: min-content;
+		text-wrap: nowrap;
+
+		&:active {
+			scale: 0.9;
+		}
+
+		@media(min-width: 1024px) {
+			&:hover {
+				background-color: var(--accent);
+				color: black;
+			}
+		}
+	}
+</style>
