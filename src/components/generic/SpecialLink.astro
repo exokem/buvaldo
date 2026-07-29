@@ -33,7 +33,9 @@ const {
 		background-color: #0000007D;
 		padding: 1rem 3rem;
 		width: min-content;
-		text-wrap: nowrap;
+		@media(min-width: 1024px) {
+			text-wrap: nowrap;
+		}
 
 		&:active {
 			scale: 0.9;
