@@ -1,0 +1,72 @@
+---
+interface Props {
+	src: string
+	alt: string
+	// aspect: number
+	// height: number
+}
+
+const {
+	src,
+	alt,
+	// aspect,
+	// height
+} = Astro.props
+---
+<!-- style={`--aspect-ratio: ${aspect}; --height: ${height}rem; --width: ${height * aspect}rem;`}-->
+<div class="root">
+    <label>
+		<img src={src} alt={alt}/>
+        <input type="checkbox" id={src} name={src} hidden/>
+    </label>
+</div>
+<label class="expanded" for={src}>
+    <img src={src} alt={alt}/>
+</label>
+
+<style lang="scss">
+	div.root {
+		flex-grow: 1;
+		position: relative;
+
+		/*max-height: 100%;*/
+		/*aspect-ratio: var(--aspect-ratio);*/
+
+		&, img, label, div.placeholder {
+			cursor: zoom-in;
+		}
+	}
+
+	label.expanded {
+		position: fixed;
+		top: var(--nav-height);
+		left: 0;
+		width: 100vw;
+		height: calc(100vh - var(--nav-height));
+		background: #00000077;
+		backdrop-filter: blur(8px);
+		opacity: 0;
+		z-index: -100;
+		user-select: none;
+		cursor: zoom-out;
+
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: center;
+
+		transition-property: z-index, opacity;
+		transition-duration: 250ms;
+		transition-timing-function: ease-in-out;
+
+		padding: 8rem 0.5rem;
+		img {
+			max-height: 100%;
+		}
+	}
+
+	div.root:has(:checked) + label.expanded {
+		opacity: 1;
+		z-index: 500;
+	}
+</style>

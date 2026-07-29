@@ -2,6 +2,22 @@
 import PageLayout from "../../layouts/PageLayout.astro";
 import BackgroundCover from "../../components/BackgroundCover.astro";
 import SocialLinks from "../../components/generic/SocialLinks.astro";
+import SpecialLink from "../../components/generic/SpecialLink.astro";
+import Icon from "../../components/Icon.astro";
+import ImageView from "../../components/generic/ImageView.astro";
+
+const press = [
+	["2026 DGA Student Spotlight Awards for Underrepresented Directors", "https://www.dga.org/events/2026/august2026/studentspotlightawards_2026", "editor_choice"],
+	["2026 DGA Press Release Instagram", "https://www.instagram.com/p/DaBnvVsHId5/?igsh=NTc4MTIwNjQ2YQ%3D%3D&img_index=7", "article"],
+	["Voyage LA Interview", "https://voyagela.com/interview/life-work-with-bryan-uvaldo-of-north-hollywood", "interpreter_mode"],
+	["Sherman Oaks Red Carpet Interview", "https://vimeo.com/1147239591", "interpreter_mode"],
+	["Sherman Oaks Film Festival Q&A", "https://vimeo.com/showcase/12028176?video=1147509521", "interpreter_mode"],
+	["Podcast Interview on Fights with Friends ", "https://youtu.be/7v0jRKAOYbo?si=6J94JKM0BBsBFcur", "interpreter_mode"],
+	["Fighting Spirit Film Festival Interview", "https://youtu.be/vMVw-b0zjPo?si=DeyCjfXLpiw_sQcG", "interpreter_mode"],
+	["Discover Indie Film Podcast Interview", "https://discoverindiefilm.com/707-bryan-uvaldo-playin-around/", "interpreter_mode"],
+	["Discover Indie Film 4Q’s Interview", "https://discoverindiefilm.com/708-4qs-with-bryan-uvaldo/", "interpreter_mode"],
+	// ["", ""],
+]
 
 ---
 
@@ -13,21 +29,21 @@ import SocialLinks from "../../components/generic/SocialLinks.astro";
             <div class="bio">
                 <h1>About Bryan</h1>
                 <p>
-                    Bryan Uvaldo is an award-winning Brazilian-American filmmaker with a B.F.A.
-                    in Film & Television from NYU Tisch.
+                    Bryan Uvaldo is an award-winning Brazilian-American filmmaker and DGA Award
+					Finalist with a B.F.A. in Film & Television from NYU Tisch.
                 </p>
                 <p>
                     Passionate for the action film genre, his action shorts
                     <em>Love Bomb Baby (2023)</em>
                     and
                     <em>Playin’ Around (2025)</em>,
-                    have made splashy debuts at festivals around the globe with
-                    the former winning Best Stunt Performance and the latter winning Best Editing and
-                    Sound Design.
+                    have made splashy debuts at festivals around the globe with the former
+					winning Best Stunt Performance and the latter winning Best Editing,
+					Sound Design and earning Bryan a nomination at the DGA Student Spotlight Awards.
                 </p>
                 <p>
-                    Bryan has edited a feature film, eleven short films, multiple promos for HBO Max,
-                    and commercials for Pizza Hut and Taco Bell.
+                    Bryan has edited a feature film, twelve short films, multiple promos for
+					HBO Max, and commercials for Pizza Hut and Taco Bell.
 
                     As an intern at Warner Bros. Discovery, Bryan worked as an editor for
                     the marketing campaigns of
@@ -36,7 +52,7 @@ import SocialLinks from "../../components/generic/SocialLinks.astro";
                     <em>Edge of the Earth</em>.
                 </p>
                 <p>
-                    Now based in LA, Bryan is currently a Post PA on Season 2 of ABC’s
+                    Now based in LA, Bryan is currently a Post PA on Season 3 of ABC’s
                     <em>High Potential</em>, and
                     is determined to use his post-production experience as a building block for his path
                     to becoming a director for blockbuster films.
@@ -53,26 +69,49 @@ import SocialLinks from "../../components/generic/SocialLinks.astro";
             </div>
         </div>
     </div>
-    <div class="p2">
-        <div class="container">
-            <img src="/directorial/love-bomb-baby/bts-01.jpg"/>
-            <img src="/directorial/playin-around/bts-01.jpg"/>
+	<div class="p2 images">
+		<div class="first row container">
+            <ImageView src="/about/lbb.jpg"/>
+            <ImageView src="/about/portrait-1.JPG" alt="Bryan holding a lego camera stylistically"/>
+            <ImageView src="/about/portrait-2.JPG" alt="Bryan in sunglasses crouching and directing"/>
+		</div>
+        <div class="second row container">
+            <ImageView src="/about/portrait-3.JPG" alt="Bryan looking confused using a red corded phone"/>
+            <ImageView src="/about/portrait-4.JPG" alt="Bryan sitting and joyfully playing with a lego biplane"/>
+            <ImageView src="/about/photo-10.jpg"/>
         </div>
-    </div>
-    <div class="p2">
+        <div class="container">
+            <p class="credit">Bryan Uvaldo // Portraits by Carleigh Hyser</p>
+        </div>
+	</div>
+    <!--<div class="p2">-->
+    <!--    <div class="bts container">-->
+    <!--        <img src="/directorial/love-bomb-baby/bts-01.jpg" class="bts"/>-->
+	<!--		{[-->
+	<!--			{path: "portrait-1", alt: "Bryan holding a lego camera stylistically"},-->
+	<!--			{path: "portrait-2", alt: "Bryan in sunglasses crouching and directing"},-->
+	<!--		].map(a => (<img src={`/about/${a.path}.JPG`} class="portrait" alt={a.alt}/>))}-->
+    <!--    </div>-->
+    <!--</div>-->
+	<!--<div class="p2">-->
+	<!--	<div class="bts container">-->
+	<!--		{[-->
+	<!--			{path: "portrait-3", alt: "Bryan looking confused using a red corded phone"},-->
+	<!--			{path: "portrait-4", alt: "Bryan sitting and joyfully playing with a lego biplane"}-->
+	<!--		].map(a => (<img src={`/about/${a.path}.JPG`} class="portrait" alt={a.alt}/>))}-->
+    <!--        <img src="/directorial/playin-around/bts-01.jpg" class="bts"/>-->
+	<!--	</div>-->
+	<!--</div>-->
+    <div class="p2 interviews-section">
         <div class="container">
             <!--<img src="/about/bryan-portrait.jpg"/>-->
             <!--<div class="stack">-->
             <div class="interviews">
                 <h2>Press Interviews</h2>
-                <p><a href="https://www.instagram.com/p/DaBnvVsHId5/?igsh=NTc4MTIwNjQ2YQ%3D%3D&img_index=7" class="email">DGA Press Release</a></p>
-                <p><a href="https://voyagela.com/interview/life-work-with-bryan-uvaldo-of-north-hollywood" class="email">Voyage LA Interview</a></p>
-                <p><a href="https://vimeo.com/1147239591" class="email">Sherman Oaks Red Carpet Interview</a></p>
-                <p><a href="https://vimeo.com/showcase/12028176?video=1147509521" class="email">Sherman Oaks Film Festival Q&A</a></p>
-                <p><a href="https://youtu.be/7v0jRKAOYbo?si=6J94JKM0BBsBFcur" class="email">Podcast Interview on Fights with Friends</a></p>
-                <p><a href="https://youtu.be/vMVw-b0zjPo?si=DeyCjfXLpiw_sQcG" class="email">Fighting Spirit Film Festival Interview</a></p>
-                <p><a href="https://discoverindiefilm.com/707-bryan-uvaldo-playin-around/" class="email">Discover Indie Film Podcast Interview</a></p>
-                <p><a href="https://discoverindiefilm.com/708-4qs-with-bryan-uvaldo/" class="email">Discover Indie Film 4Q's Interview</a></p>
+				{press.map(p => (<SpecialLink href={p[1]}>
+                    <Icon>{p[2]}</Icon>
+					{p[0]}
+                </SpecialLink>))}
             </div>
             <!--<div class="sample"/>-->
             <!--<img src="/about/33.jpg"/>-->
@@ -132,27 +171,54 @@ import SocialLinks from "../../components/generic/SocialLinks.astro";
             min-height: 0 !important;
 			gap: 3rem;
             @media(max-width: 1024px) {
-                gap: 2rem;
+                gap: 1rem;
             }
             display: flex;
             flex-wrap: wrap;
+            &.row {
+                @media(min-width: 1024px) {
+                    flex-wrap: nowrap;
+					//height: 28rem;
+                }
+			}
             flex-direction: row;
             justify-content: center;
+
+			&.portraits {
+				display: grid;
+                grid-template-columns: repeat(2, 1fr);
+				@media(min-width: 1024px) {
+                    grid-template-columns: repeat(4, 1fr);
+                }
+			}
         }
 
-        img {
+		img {
             border-radius: 1rem;
             filter: drop-shadow(0px 2px 4px #00000077);
 
-            @media(min-width: 1024px) {
-                width: 32rem;
+			@media(min-width: 1024px) {
+                //width: 32rem;
+
+				&.bts {
+                    width: calc((100% - 3rem) / 2);
+				}
+
+				&.portrait {
+					width: calc((100% - 9rem) / 4);
+				}
             }
-        }
+		}
 
         @media(min-width: 1024px) {
-            padding-bottom: 1rem;
+            padding-bottom: 2.5rem;
 		}
     }
+
+	div.interviews-section {
+        background: rgba(0, 0, 0, 0.72);
+		backdrop-filter: blur(10px);
+	}
 
 	div.container {
         max-width: 1280px;
@@ -162,7 +228,7 @@ import SocialLinks from "../../components/generic/SocialLinks.astro";
         align-items: center;
         padding: 1rem;
 
-        div.interviews, div.bio {
+        div.bio {
             filter: drop-shadow(0px 2px 4px #00000077);
             background: #ffffffcc;
             backdrop-filter: blur(12px);
@@ -184,6 +250,23 @@ import SocialLinks from "../../components/generic/SocialLinks.astro";
 		}
 
 		div.interviews {
+			h2 {
+                font-family: "Permanent Marker", sans-serif;
+				color: var(--accent);
+				font-size: 2.5rem;
+				@media(min-width: 1024px) {
+                    font-size: 4rem;
+				}
+			}
+            gap: 1rem;
+            display: flex;
+            flex-direction: column;
+			align-items: center;
+
+			& > * {
+				width: 100%;
+			}
+
 			@media(max-width: 1024px) {
 				flex-grow: 1;
             }
@@ -193,6 +276,29 @@ import SocialLinks from "../../components/generic/SocialLinks.astro";
             }
 		}
 	}
+
+    div.row.container {
+        flex-wrap: nowrap;
+        max-width: 1280px;
+        margin: 0 auto;
+		padding: 0;
+
+		display: grid !important;
+		grid-template-columns: repeat(4, 1fr);
+		justify-items: center;
+		align-items: center;
+
+		@media(max-width: 1024px) {
+			grid-template-columns: repeat(2, 1fr);
+			padding: 1rem;
+        }
+
+		&.second {
+			@media(max-width: 1024px) {
+				padding-bottom: 2rem;
+            }
+		}
+    }
 
     div.container:has(div.bio) {
         min-height: calc(100vh - var(--nav-height));
@@ -222,4 +328,44 @@ import SocialLinks from "../../components/generic/SocialLinks.astro";
             }
         }
     }
+
+	p.credit {
+		font-family: "Inter", sans-serif;
+		color: white;
+		font-size: 1.25rem;
+        background: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(10px);
+		padding: 1rem;
+		border-radius: 1rem;
+	}
+
+	div.p2.images {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+		padding-bottom: 1rem;
+        @media(min-width: 1024px) {
+            gap: 3rem;
+            padding-bottom: 3rem;
+        }
+		div.container {
+			padding-top: 0 !important;
+			padding-bottom: 0 !important;
+		}
+	}
+</style>
+
+<style is:global lang="scss">
+	.row.first > div:first-child {
+		grid-column-start: 1;
+		grid-column-end: 3;
+	}
+	.row.second > div:nth-child(5) {
+		grid-column-start: 1;
+		grid-column-end: 3;
+		@media(min-width: 1024px) {
+			grid-column-start: 3;
+			grid-column-end: 5;
+		}
+	}
 </style>

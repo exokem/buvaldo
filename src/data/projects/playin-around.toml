@@ -111,6 +111,8 @@ instagram = "https://www.instagram.com/playinaround_film/"
 letterboxd = "https://letterboxd.com/film/playin-around/"
 
 [[awards]]
+laurel = "/directorial/playin-around/dga.png"
+[[awards]]
 laurel = "/directorial/playin-around/aperture-int.png"
 [[awards]]
 laurel = "/directorial/playin-around/fsff.png"
