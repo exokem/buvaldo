@@ -4,6 +4,7 @@ import BackgroundCover from "../../components/BackgroundCover.astro";
 import SocialLinks from "../../components/generic/SocialLinks.astro";
 import SpecialLink from "../../components/generic/SpecialLink.astro";
 import Icon from "../../components/Icon.astro";
+import ImageView from "../../components/generic/ImageView.astro";
 
 const press = [
 	["2026 DGA Student Spotlight Awards for Underrepresented Directors", "https://www.dga.org/events/2026/august2026/studentspotlightawards_2026", "editor_choice"],
@@ -51,7 +52,7 @@ const press = [
                     <em>Edge of the Earth</em>.
                 </p>
                 <p>
-                    Now based in LA, Bryan is currently a Post PA on Season 2 of ABC’s
+                    Now based in LA, Bryan is currently a Post PA on Season 3 of ABC’s
                     <em>High Potential</em>, and
                     is determined to use his post-production experience as a building block for his path
                     to becoming a director for blockbuster films.
@@ -68,24 +69,38 @@ const press = [
             </div>
         </div>
     </div>
-    <div class="p2">
-        <div class="bts container">
-            <img src="/directorial/love-bomb-baby/bts-01.jpg" class="bts"/>
-			{[
-				{path: "portrait-1", alt: "Bryan holding a lego camera stylistically"},
-				{path: "portrait-2", alt: "Bryan in sunglasses crouching and directing"},
-			].map(a => (<img src={`/about/${a.path}.JPG`} class="portrait" alt={a.alt}/>))}
-        </div>
-    </div>
 	<div class="p2">
-		<div class="bts container">
-			{[
-				{path: "portrait-3", alt: "Bryan looking confused using a red corded phone"},
-				{path: "portrait-4", alt: "Bryan sitting and joyfully playing with a lego biplane"}
-			].map(a => (<img src={`/about/${a.path}.JPG`} class="portrait" alt={a.alt}/>))}
-            <img src="/directorial/playin-around/bts-01.jpg" class="bts"/>
+		<div class="first row container">
+            <ImageView src="/about/lbb.jpg"/>
+            <ImageView src="/about/portrait-1.JPG" alt="Bryan holding a lego camera stylistically"/>
+            <ImageView src="/about/portrait-2.JPG" alt="Bryan in sunglasses crouching and directing"/>
 		</div>
 	</div>
+	<div class="p2">
+		<div class="second row container">
+            <ImageView src="/about/portrait-3.JPG" alt="Bryan looking confused using a red corded phone"/>
+            <ImageView src="/about/portrait-4.JPG" alt="Bryan sitting and joyfully playing with a lego biplane"/>
+            <ImageView src="/about/photo-10.jpg"/>
+		</div>
+	</div>
+    <!--<div class="p2">-->
+    <!--    <div class="bts container">-->
+    <!--        <img src="/directorial/love-bomb-baby/bts-01.jpg" class="bts"/>-->
+	<!--		{[-->
+	<!--			{path: "portrait-1", alt: "Bryan holding a lego camera stylistically"},-->
+	<!--			{path: "portrait-2", alt: "Bryan in sunglasses crouching and directing"},-->
+	<!--		].map(a => (<img src={`/about/${a.path}.JPG`} class="portrait" alt={a.alt}/>))}-->
+    <!--    </div>-->
+    <!--</div>-->
+	<!--<div class="p2">-->
+	<!--	<div class="bts container">-->
+	<!--		{[-->
+	<!--			{path: "portrait-3", alt: "Bryan looking confused using a red corded phone"},-->
+	<!--			{path: "portrait-4", alt: "Bryan sitting and joyfully playing with a lego biplane"}-->
+	<!--		].map(a => (<img src={`/about/${a.path}.JPG`} class="portrait" alt={a.alt}/>))}-->
+    <!--        <img src="/directorial/playin-around/bts-01.jpg" class="bts"/>-->
+	<!--	</div>-->
+	<!--</div>-->
     <div class="p2 interviews-section">
         <div class="container">
             <!--<img src="/about/bryan-portrait.jpg"/>-->
@@ -159,6 +174,12 @@ const press = [
             }
             display: flex;
             flex-wrap: wrap;
+            &.row {
+                @media(min-width: 1024px) {
+                    flex-wrap: nowrap;
+					height: 28rem;
+                }
+			}
             flex-direction: row;
             justify-content: center;
 
@@ -176,7 +197,7 @@ const press = [
             filter: drop-shadow(0px 2px 4px #00000077);
 
 			@media(min-width: 1024px) {
-                width: 32rem;
+                //width: 32rem;
 
 				&.bts {
                     width: calc((100% - 3rem) / 2);
@@ -189,7 +210,7 @@ const press = [
 		}
 
         @media(min-width: 1024px) {
-            padding-bottom: 1rem;
+            padding-bottom: 2.5rem;
 		}
     }
 
@@ -231,7 +252,10 @@ const press = [
 			h2 {
                 font-family: "Permanent Marker", sans-serif;
 				color: var(--accent);
-				font-size: 4rem;
+				font-size: 2.5rem;
+				@media(min-width: 1024px) {
+                    font-size: 4rem;
+				}
 			}
             gap: 1rem;
             display: flex;
@@ -251,6 +275,29 @@ const press = [
             }
 		}
 	}
+
+    div.row.container {
+        flex-wrap: nowrap;
+        max-width: 1280px;
+        margin: 0 auto;
+		padding: 0;
+
+		display: grid !important;
+		grid-template-columns: repeat(4, 1fr);
+		justify-items: center;
+		align-items: center;
+
+		@media(max-width: 1024px) {
+			grid-template-columns: repeat(2, 1fr);
+			padding: 1rem;
+        }
+
+		&.second {
+			@media(max-width: 1024px) {
+				padding-bottom: 2rem;
+            }
+		}
+    }
 
     div.container:has(div.bio) {
         min-height: calc(100vh - var(--nav-height));
@@ -280,4 +327,19 @@ const press = [
             }
         }
     }
+</style>
+
+<style is:global lang="scss">
+	.row.first > div:first-child {
+		grid-column-start: 1;
+		grid-column-end: 3;
+	}
+	.row.second > div:nth-child(5) {
+		grid-column-start: 1;
+		grid-column-end: 3;
+		@media(min-width: 1024px) {
+			grid-column-start: 3;
+			grid-column-end: 5;
+		}
+	}
 </style>
