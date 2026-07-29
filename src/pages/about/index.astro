@@ -2,17 +2,19 @@
 import PageLayout from "../../layouts/PageLayout.astro";
 import BackgroundCover from "../../components/BackgroundCover.astro";
 import SocialLinks from "../../components/generic/SocialLinks.astro";
+import SpecialLink from "../../components/generic/SpecialLink.astro";
+import Icon from "../../components/Icon.astro";
 
 const press = [
-	["2026 DGA Student Spotlight Awards for Underrepresented Directors", "https://www.dga.org/events/2026/august2026/studentspotlightawards_2026"],
-	["2026 DGA Press Release Instagram", "https://www.instagram.com/p/DaBnvVsHId5/?igsh=NTc4MTIwNjQ2YQ%3D%3D&img_index=7"],
-	["Voyage LA Interview", "https://voyagela.com/interview/life-work-with-bryan-uvaldo-of-north-hollywood"],
-	["Sherman Oaks Red Carpet Interview", "https://vimeo.com/1147239591"],
-	["Sherman Oaks Film Festival Q&A", "https://vimeo.com/showcase/12028176?video=1147509521"],
-	["Podcast Interview on Fights with Friends ", "https://youtu.be/7v0jRKAOYbo?si=6J94JKM0BBsBFcur"],
-	["Fighting Spirit Film Festival Interview", "https://youtu.be/vMVw-b0zjPo?si=DeyCjfXLpiw_sQcG"],
-	["Discover Indie Film Podcast Interview", "https://discoverindiefilm.com/707-bryan-uvaldo-playin-around/"],
-	["Discover Indie Film 4Q’s Interview", "https://discoverindiefilm.com/708-4qs-with-bryan-uvaldo/"],
+	["2026 DGA Student Spotlight Awards for Underrepresented Directors", "https://www.dga.org/events/2026/august2026/studentspotlightawards_2026", "editor_choice"],
+	["2026 DGA Press Release Instagram", "https://www.instagram.com/p/DaBnvVsHId5/?igsh=NTc4MTIwNjQ2YQ%3D%3D&img_index=7", "article"],
+	["Voyage LA Interview", "https://voyagela.com/interview/life-work-with-bryan-uvaldo-of-north-hollywood", "interpreter_mode"],
+	["Sherman Oaks Red Carpet Interview", "https://vimeo.com/1147239591", "interpreter_mode"],
+	["Sherman Oaks Film Festival Q&A", "https://vimeo.com/showcase/12028176?video=1147509521", "interpreter_mode"],
+	["Podcast Interview on Fights with Friends ", "https://youtu.be/7v0jRKAOYbo?si=6J94JKM0BBsBFcur", "interpreter_mode"],
+	["Fighting Spirit Film Festival Interview", "https://youtu.be/vMVw-b0zjPo?si=DeyCjfXLpiw_sQcG", "interpreter_mode"],
+	["Discover Indie Film Podcast Interview", "https://discoverindiefilm.com/707-bryan-uvaldo-playin-around/", "interpreter_mode"],
+	["Discover Indie Film 4Q’s Interview", "https://discoverindiefilm.com/708-4qs-with-bryan-uvaldo/", "interpreter_mode"],
 	// ["", ""],
 ]
 
@@ -67,34 +69,39 @@ const press = [
         </div>
     </div>
     <div class="p2">
-        <div class="container">
-            <img src="/directorial/love-bomb-baby/bts-01.jpg"/>
-            <img src="/directorial/playin-around/bts-01.jpg"/>
+        <div class="bts container">
+            <img src="/directorial/love-bomb-baby/bts-01.jpg" class="bts"/>
+			{[
+				{path: "portrait-1", alt: "Bryan holding a lego camera stylistically"},
+				{path: "portrait-2", alt: "Bryan in sunglasses crouching and directing"},
+			].map(a => (<img src={`/about/${a.path}.JPG`} class="portrait" alt={a.alt}/>))}
         </div>
     </div>
-    <div class="p2">
+	<div class="p2">
+		<div class="bts container">
+			{[
+				{path: "portrait-3", alt: "Bryan looking confused using a red corded phone"},
+				{path: "portrait-4", alt: "Bryan sitting and joyfully playing with a lego biplane"}
+			].map(a => (<img src={`/about/${a.path}.JPG`} class="portrait" alt={a.alt}/>))}
+            <img src="/directorial/playin-around/bts-01.jpg" class="bts"/>
+		</div>
+	</div>
+    <div class="p2 interviews-section">
         <div class="container">
             <!--<img src="/about/bryan-portrait.jpg"/>-->
             <!--<div class="stack">-->
             <div class="interviews">
                 <h2>Press Interviews</h2>
-				{press.map(p => (<p><a class="email" href={p[1]}>{p[0]}</a></p>))}
+				{press.map(p => (<SpecialLink href={p[1]}>
+                    <Icon>{p[2]}</Icon>
+					{p[0]}
+                </SpecialLink>))}
             </div>
             <!--<div class="sample"/>-->
             <!--<img src="/about/33.jpg"/>-->
             <!--</div>-->
         </div>
     </div>
-	<div class="p2">
-		<div class="portraits container">
-			{[
-				{path: "portrait-1", alt: "Bryan holding a lego camera stylistically"},
-				{path: "portrait-2", alt: "Bryan in sunglasses crouching and directing"},
-				{path: "portrait-3", alt: "Bryan looking confused using a red corded phone"},
-				{path: "portrait-4", alt: "Bryan sitting and joyfully playing with a lego biplane"}
-			].map(a => (<img src={`/about/${a.path}.JPG`} alt={a.alt}/>))}
-		</div>
-	</div>
 </PageLayout>
 
 <style lang="scss">
@@ -164,19 +171,32 @@ const press = [
 			}
         }
 
-        img {
+		img {
             border-radius: 1rem;
             filter: drop-shadow(0px 2px 4px #00000077);
 
-            @media(min-width: 1024px) {
+			@media(min-width: 1024px) {
                 width: 32rem;
+
+				&.bts {
+                    width: calc((100% - 3rem) / 2);
+				}
+
+				&.portrait {
+					width: calc((100% - 9rem) / 4);
+				}
             }
-        }
+		}
 
         @media(min-width: 1024px) {
             padding-bottom: 1rem;
 		}
     }
+
+	div.interviews-section {
+        background: rgba(0, 0, 0, 0.72);
+		backdrop-filter: blur(10px);
+	}
 
 	div.container {
         max-width: 1280px;
@@ -186,7 +206,7 @@ const press = [
         align-items: center;
         padding: 1rem;
 
-        div.interviews, div.bio {
+        div.bio {
             filter: drop-shadow(0px 2px 4px #00000077);
             background: #ffffffcc;
             backdrop-filter: blur(12px);
@@ -208,6 +228,20 @@ const press = [
 		}
 
 		div.interviews {
+			h2 {
+                font-family: "Permanent Marker", sans-serif;
+				color: var(--accent);
+				font-size: 4rem;
+			}
+            gap: 1rem;
+            display: flex;
+            flex-direction: column;
+			align-items: center;
+
+			& > * {
+				width: 100%;
+			}
+
 			@media(max-width: 1024px) {
 				flex-grow: 1;
             }
